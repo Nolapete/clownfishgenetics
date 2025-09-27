@@ -1,0 +1,43 @@
+{% extends 'calculator/base.html' %}
+
+{% block content %}
+    <h2>Cross between {{ parent1.name }} and {{ parent2.name }}</h2>
+    <p><strong>Parent 1:</strong> {{ parent1.name }} ({{ parent1.full_species_name }})</p>
+    <p><strong>Parent 2:</strong> {{ parent2.name }} ({{ parent2.full_species_name }})</p>
+    
+    <p>Here is the Punnett square for the cross:</p>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                {% for gamete in parent2_gametes %}
+                    <th>{{ gamete }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for p1_gamete, row in punnett_with_gametes %}
+            <tr>
+                <th>{{ p1_gamete }}</th>
+                {% for cell in row %}
+                    <td>
+                        <strong class="genotype-display">{{ cell.genotype }}</strong>
+                        <br>
+                        {{ cell.phenotype }}
+                    </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Offspring Phenotype Probabilities:</h3>
+    <ul>
+        {% for phenotype, percentage in phenotype_percentages.items %}
+            <li>{{ phenotype }}: {{ percentage|floatformat:"-2" }}%</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'parent_selection' %}">Perform Another Parent Selection</a><br>
+    <a href="{% url 'calculator_view' %}">Define Cross with Traits</a>
+{% endblock %}

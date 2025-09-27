@@ -1,0 +1,89 @@
+- model: calculator.trait
+  pk: 1
+  fields:
+    name: "Picasso / Misbar"
+    description: "Affects the white stripes in Ocellaris clownfish. Commonly cited as a codominant trait."
+    inheritance_pattern: "codominant"
+
+- model: calculator.allele
+  pk: 1
+  fields:
+    trait: 1
+    name: "N"
+    display_name: "Normal"
+
+- model: calculator.allele
+  pk: 2
+  fields:
+    trait: 1
+    name: "P"
+    display_name: "Picasso"
+
+- model: calculator.genotypephenotype
+  pk: 1
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 1
+    phenotype: "Normal"
+
+- model: calculator.genotypephenotype
+  pk: 2
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 2
+    phenotype: "Misbar"
+
+- model: calculator.genotypephenotype
+  pk: 3
+  fields:
+    trait: 1
+    allele1: 2
+    allele2: 2
+    phenotype: "Picasso"
+
+- model: calculator.trait
+  pk: 2
+  fields:
+    name: "Black Coloration"
+    description: "Controls the expression of black pigment. Can show varying levels of dominance depending on the line."
+    inheritance_pattern: "dominant"
+
+- model: calculator.allele
+  pk: 3
+  fields:
+    trait: 2
+    name: "b"
+    display_name: "Normal Orange"
+
+- model: calculator.allele
+  pk: 4
+  fields:
+    trait: 2
+    name: "B"
+    display_name: "Black"
+
+- model: calculator.genotypephenotype
+  pk: 4
+  fields:
+    trait: 2
+    allele1: 3
+    allele2: 3
+    phenotype: "Normal Orange"
+
+- model: calculator.genotypephenotype
+  pk: 5
+  fields:
+    trait: 2
+    allele1: 3
+    allele2: 4
+    phenotype: "Black"
+
+- model: calculator.genotypephenotype
+  pk: 6
+  fields:
+    trait: 2
+    allele1: 4
+    allele2: 4
+    phenotype: "Black"

@@ -1,0 +1,151 @@
+# ----------------------------------------
+# Trait and Allele Data
+# ----------------------------------------
+
+- model: calculator.trait
+  pk: 1
+  fields:
+    name: "Picasso / Misbar"
+    inheritance_pattern: "codominant"
+
+- model: calculator.allele
+  pk: 1
+  fields:
+    trait: 1
+    name: "N"
+    display_name: "Normal"
+
+- model: calculator.allele
+  pk: 2
+  fields:
+    trait: 1
+    name: "P"
+    display_name: "Picasso"
+
+- model: calculator.trait
+  pk: 2
+  fields:
+    name: "Black Coloration"
+    inheritance_pattern: "dominant"
+
+- model: calculator.allele
+  pk: 3
+  fields:
+    trait: 2
+    name: "b"
+    display_name: "Normal Orange"
+
+- model: calculator.allele
+  pk: 4
+  fields:
+    trait: 2
+    name: "B"
+    display_name: "Black"
+
+# ----------------------------------------
+# GenotypePhenotype Mapping Data
+# ----------------------------------------
+
+- model: calculator.genotypephenotype
+  pk: 1
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 1
+    phenotype: "Normal"
+
+- model: calculator.genotypephenotype
+  pk: 2
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 2
+    phenotype: "Misbar"
+
+- model: calculator.genotypephenotype
+  pk: 3
+  fields:
+    trait: 1
+    allele1: 2
+    allele2: 2
+    phenotype: "Picasso"
+
+- model: calculator.genotypephenotype
+  pk: 4
+  fields:
+    trait: 2
+    allele1: 3
+    allele2: 3
+    phenotype: "Normal Orange"
+
+- model: calculator.genotypephenotype
+  pk: 5
+  fields:
+    trait: 2
+    allele1: 3
+    allele2: 4
+    phenotype: "Black"
+
+- model: calculator.genotypephenotype
+  pk: 6
+  fields:
+    trait: 2
+    allele1: 4
+    allele2: 4
+    phenotype: "Black"
+
+# ----------------------------------------
+# Individual Clownfish Data
+# ----------------------------------------
+
+- model: calculator.clownfish
+  pk: 1
+  fields:
+    name: "Clownfish A"
+    genus: "Amphiprion"
+    species: "ocellaris"
+
+- model: calculator.clownfish
+  pk: 2
+  fields:
+    name: "Clownfish B"
+    genus: "Amphiprion"
+    species: "ocellaris"
+
+# ----------------------------------------
+# Clownfish Genotype (Through Model) Data
+# ----------------------------------------
+
+# Genotype for Clownfish A: Normal for both traits
+- model: calculator.clownfishgenotype
+  pk: 1
+  fields:
+    clownfish: 1
+    trait: 1
+    allele1: 1
+    allele2: 1
+
+- model: calculator.clownfishgenotype
+  pk: 2
+  fields:
+    clownfish: 1
+    trait: 2
+    allele1: 3
+    allele2: 3
+
+# Genotype for Clownfish B: Misbar and Black
+- model: calculator.clownfishgenotype
+  pk: 3
+  fields:
+    clownfish: 2
+    trait: 1
+    allele1: 1
+    allele2: 2
+
+- model: calculator.clownfishgenotype
+  pk: 4
+  fields:
+    clownfish: 2
+    trait: 2
+    allele1: 3
+    allele2: 4

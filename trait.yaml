@@ -1,0 +1,45 @@
+- model: calculator.trait
+  pk: 1
+  fields:
+    name: Color
+    description: ''
+    inheritance_pattern: codominant
+- model: calculator.allele
+  pk: 1
+  fields:
+    trait: 1
+    name: R
+    display_name: Red
+- model: calculator.allele
+  pk: 2
+  fields:
+    trait: 1
+    name: W
+    display_name: White
+- model: calculator.allele
+  pk: 3
+  fields:
+    trait: 1
+    name: B
+    display_name: Black
+- model: calculator.genotypephenotype
+  pk: 1
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 1
+    phenotype: Red
+- model: calculator.genotypephenotype
+  pk: 2
+  fields:
+    trait: 1
+    allele1: 2
+    allele2: 2
+    phenotype: White
+- model: calculator.genotypephenotype
+  pk: 3
+  fields:
+    trait: 1
+    allele1: 1
+    allele2: 2
+    phenotype: Red and White Spotted

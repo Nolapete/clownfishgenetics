@@ -1,0 +1,19 @@
+- model: calculator.clownfish
+  pk: 1
+  fields:
+    name: "Clownfish A"
+    genus: "Amphiprion"
+    species: "ocellaris"
+    genotype:
+      "1": ["N", "N"]
+      "2": ["b", "B"]
+
+- model: calculator.clownfish
+  pk: 2
+  fields:
+    name: "Clownfish B"
+    genus: "Amphiprion"
+    species: "ocellaris"
+    genotype:
+      "1": ["N", "P"]
+      "2": ["b", "B"]
