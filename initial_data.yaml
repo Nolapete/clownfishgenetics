@@ -1,0 +1,111 @@
+# Varieties
+- model: calcRefactor.variety
+  pk: 1
+  fields:
+    name: "Picasso"
+    species: "Amphiprion percula"
+    genotype_pattern: "P"
+
+- model: calcRefactor.variety
+  pk: 2
+  fields:
+    name: "Platinum"
+    species: "Amphiprion percula"
+    genotype_pattern: "P"
+
+- model: calcRefactor.variety
+  pk: 3
+  fields:
+    name: "Double Black Photon"
+    species: "Amphiprion"
+    genotype_pattern: "Sf/Sf N/N"
+
+- model: calcRefactor.variety
+  pk: 4
+  fields:
+    name: "DaVinci / Fancy White / Gladiator"
+    species: "Amphiprion ocellaris"
+    genotype_pattern: "DV"
+
+- model: calcRefactor.variety
+  pk: 5
+  fields:
+    name: "Lightning"
+    species: "Premnas biaculeatus"
+    genotype_pattern: "L"
+
+- model: calcRefactor.variety
+  pk: 6
+  fields:
+    name: "White Stripe"
+    species: "Premnas biaculeatus"
+    genotype_pattern: "+"
+
+# Cross Naming Rules
+- model: calcRefactor.crossnamingrule
+  pk: 1
+  fields:
+    variety1: 1 # Picasso
+    variety2: 2 # Platinum
+
+- model: calcRefactor.crossnamingrule
+  pk: 2
+  fields:
+    variety1: 3 # Double Black Photon
+    variety2: 4 # DaVinci
+
+- model: calcRefactor.crossnamingrule
+  pk: 3
+  fields:
+    variety1: 5 # Lightning
+    variety2: 6 # White Stripe
+
+# Progeny Naming Rules
+- model: calcRefactor.progenynamingrule
+  pk: 1
+  fields:
+    cross_rule: 1 # Picasso x Platinum
+    genotype_pattern: "P/+"
+    phenotype_name: "Amphiprion percula \"Picasso\""
+
+- model: calcRefactor.progenynamingrule
+  pk: 2
+  fields:
+    cross_rule: 1
+    genotype_pattern: "P/P"
+    phenotype_name: "Amphiprion percula \"Platinum\""
+
+- model: calcRefactor.progenynamingrule
+  pk: 3
+  fields:
+    cross_rule: 1
+    genotype_pattern: "+/+"
+    phenotype_name: "Amphiprion percula"
+
+- model: calcRefactor.progenynamingrule
+  pk: 4
+  fields:
+    cross_rule: 2 # Double Black Photon x DaVinci
+    genotype_pattern: "DV/+"
+    phenotype_name: "Amphiprion \"Dr. DaVinci\""
+
+- model: calcRefactor.progenynamingrule
+  pk: 5
+  fields:
+    cross_rule: 2
+    genotype_pattern: "+/+"
+    phenotype_name: "Amphiprion \"Dr.\""
+
+- model: calcRefactor.progenynamingrule
+  pk: 6
+  fields:
+    cross_rule: 3 # Lightning x White Stripe
+    genotype_pattern: "L/+"
+    phenotype_name: "Premnas biaculeatus \"Lightning\""
+
+- model: calcRefactor.progenynamingrule
+  pk: 7
+  fields:
+    cross_rule: 3
+    genotype_pattern: "+/+"
+    phenotype_name: "Premnas biaculeatus \"White Stripe\""

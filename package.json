@@ -1,0 +1,13 @@
+{
+  "name": "clownfishgenetics",
+  "version": "1.0.0",
+  "scripts": {
+    "tailwind:watch": "npx tailwindcss -i ./input.css -o ./static/css/output.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./input.css -o ./static/css/output.css --minify"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  }
+}

@@ -1,0 +1,53 @@
+{% extends 'calcRefactor/base.html' %}
+
+<!-- Fix the title to be specific to this cross -->
+{% block title %}Cross Detail: {{ object.parent1.variety.name }} X {{ object.parent2.variety.name }}{% endblock title %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Cross Details</h1>
+
+    {% if object %}
+    <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6 mb-8">
+        <h2 class="text-xl font-semibold mb-4 border-b pb-2">Cross: {{ object.parent1.variety.name }} X {{ object.parent2.variety.name }}</h2>
+
+        <p class="mb-2">
+            <strong class="text-gray-600">Parent 1:</strong>
+            <a href="{% url 'parent-detail' pk=object.parent1.pk %}" class="text-blue-600 hover:text-blue-800 underline ml-2">
+                {{ object.parent1 }}
+            </a>
+        </p>
+        <p>
+            <strong class="text-gray-600">Parent 2:</strong>
+            <a href="{% url 'parent-detail' pk=object.parent2.pk %}" class="text-blue-600 hover:text-blue-800 underline ml-2">
+                {{ object.parent2 }}
+            </a>
+        </p>
+    </div>
+
+    <h3 class="text-xl font-semibold mb-4">Progeny from this Cross</h3>
+    {% if progeny_list %}
+        <ul class="bg-white shadow overflow-hidden sm:rounded-lg mb-8">
+            {% for progeny in progeny_list %}
+                <li class="px-4 py-3 border-b last:border-b-0">
+                    {{ progeny.phenotype_name }} (Genotype: {{ progeny.genotype }})
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="mb-4 text-gray-600">No specific progeny recorded for this cross yet.</p>
+        <!-- Add a prominent button link if needed for an action -->
+    {% endif %}
+
+    {% else %}
+    <p class="text-gray-600">Cross not found.</p>
+    {% endif %}
+
+    <hr class="my-6">
+    <!-- Use an outlined button style for the "Back" link -->
+    <p>
+        <a href="{% url 'cross-list' %}"
+           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+            Back to Cross List
+        </a>
+    </p>
+{% endblock content %}

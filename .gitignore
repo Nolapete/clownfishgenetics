@@ -9,29 +9,23 @@ __pycache__/
 *.pot
 db.sqlite3  # Default SQLite database file
 /media/      # User-uploaded media files
-/static/     # Collected static files (can be uncommented if you use a build process)
+# /static/     # Collected static files
+/staticfiles/ # The folder where 'collectstatic' dumps production files
 
 # Virtual environment
-# Ignore the virtual environment folder to keep it out of version control.
-# Common names include:
 env/
 venv/
 .venv/
 
 # Environment variables
-# This file contains sensitive information like API keys and database passwords.
 .env
 
 # IDE-specific files and folders
-# Visual Studio Code
 .vscode/
-# PyCharm
 .idea/
 
 # Operating System files
-# Windows
 Thumbs.db
-# macOS
 .DS_Store
 
 # Test and coverage files
@@ -44,7 +38,32 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Distribution / packaging
-# Ignore build artifacts and distribution files
 build/
 dist/
 *.egg-info/
+
+# --------------------------------------------------
+# Tailwind CSS / Node.js Specific Files to Ignore
+# --------------------------------------------------
+
+# Node modules folder (DO NOT include this in repo)
+node_modules/
+
+# NPM debug logs
+npm-debug.log
+.npm/
+npm-debug.log.*
+yarn-debug.log
+yarn-error.log
+lerna-debug.log
+.pnpm-store/
+
+# Input CSS file (only source, no need to commit)
+input.css
+
+# --------------------------------------------------
+# Files that SHOULD BE in the repository
+# --------------------------------------------------
+
+# Commit the generated output.css file to ensure deployment works:
+# /static/css/output.css

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'landing',
     'calculator',
+    'calcRefactor',
 ]
 
 MIDDLEWARE = [

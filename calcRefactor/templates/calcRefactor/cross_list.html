@@ -1,0 +1,49 @@
+{% extends 'calcRefactor/base.html' %}
+
+{% block title %}Recent Crosses{% endblock title %}
+
+{% block content %}
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold text-gray-800">Recent Crosses</h2>
+
+        <!-- Use the outlined button style for the "Add New Cross" link -->
+        <a href="{% url 'cross-create' %}"
+           class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+            Add New Cross
+        </a>
+    </div>
+
+    {% if cross_list %}
+        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Parent 1</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Parent 2</th>
+                        <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {% for cross in cross_list %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent1.variety.species }} "{{ cross.parent1.variety.name }}"</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent2.variety.species }} "{{ cross.parent2.variety.name }}"</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <!-- Use a slightly smaller button style for "View Details" -->
+                                <a href="{% url 'cross-detail' pk=cross.pk %}"
+                                   class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white py-1 px-3 rounded text-xs transition duration-200">
+                                    View Details
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-gray-600">
+            No crosses found.
+            <a href="{% url 'cross-create' %}" class="text-blue-600 hover:text-blue-800 underline">Create the first one</a>!
+        </p>
+    {% endif %}
+{% endblock content %}
