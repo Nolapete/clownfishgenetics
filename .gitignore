@@ -1,69 +1,97 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# .gitignore needs to be fixed up
 
-# Django-specific files
-*.log
-*.pot
-db.sqlite3  # Default SQLite database file
-/media/      # User-uploaded media files
-# /static/     # Collected static files
-/staticfiles/ # The folder where 'collectstatic' dumps production files
-
-# Virtual environment
-env/
-venv/
-.venv/
-
-# Environment variables
-.env
-
-# IDE-specific files and folders
-.vscode/
-.idea/
-
-# Operating System files
-Thumbs.db
+# -------------------------------------------------------------
+# Operating System & IDE Files
+# -------------------------------------------------------------
+# macOS
 .DS_Store
+# Windows
+Thumbs.db
 
-# Test and coverage files
-.coverage
-htmlcov/
-.tox/
+# IDE specific files (PyCharm, VS Code, etc.)
+# IDE-specific files and folders
+.idea/          # PyCharm project files
+.vscode/        # VS Code settings
+
+# -------------------------------------------------------------
+# General Build Artifacts and Distribution
+# -------------------------------------------------------------
+# Ignore build artifacts and distribution files
+# Distribution / packaging
+bin/
+build/
+/dist/
+*.log
+share/
+
+# Compiled assets (if you use front-end build tools)
+/node_modules/
+
+# -------------------------------------------------------------
+# Python Specific Ignores
+# -------------------------------------------------------------
+# Python
+# Byte-code files
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyd
+*.pyo
+*.py[co]
+__pycache__/
+
+# Virtual environments
+# Ignore the virtual environment folder to keep it out of version control.
+# Virtual environment (generic names)
+.Python
+env/
+ENV/
+include/
+lib/
+.venv/
+venv/
+*_env             # Custom Virtual environments (specific to your 'first letter' naming convention)
 
 # Installer logs
-pip-log.txt
 pip-delete-this-directory.txt
-
-# Distribution / packaging
-build/
-dist/
+pip-log.txt
 *.egg-info/
+*.pot
 
-# --------------------------------------------------
-# Tailwind CSS / Node.js Specific Files to Ignore
-# --------------------------------------------------
+# Test and coverage files
+# Testing and coverage
+.coverage
+/htmlcov/
+.tox/
 
-# Node modules folder (DO NOT include this in repo)
-node_modules/
+# -------------------------------------------------------------
+# Django / Configuration Files
+# -------------------------------------------------------------
+# Environment variables
+# This file contains sensitive information like API keys and database passwords.
+.env
+*.env
+.env-sample
+# Django-environ secrets file
 
-# NPM debug logs
-npm-debug.log
-.npm/
-npm-debug.log.*
-yarn-debug.log
-yarn-error.log
-lerna-debug.log
-.pnpm-store/
+# SQLite database file
+db.sqlite3      # Default SQLite database file
+/sqlite.db
 
-# Input CSS file (only source, no need to commit)
-input.css
+# Media and Static Files (Generated/Uploaded by users)
+/media/         # User-uploaded media files
+/static/        # Collected static files (can be uncommented if you use a build process)
 
-# --------------------------------------------------
-# Files that SHOULD BE in the repository
-# --------------------------------------------------
+# Prevents committing server-specific configuration
+# If you have specific names like "site_a.ini", add them here
+# site_a.ini
+# UWSGI Configuration Files
+uwsgi.ini
+*_uwsgi.py
 
-# Commit the generated output.css file to ensure deployment works:
-# /static/css/output.css
+# -------------------------------------------------------------
+# Other / Misc
+# -------------------------------------------------------------
+*~              # Common names include:
+.aider*
+*.sublime-project
+*.sublime-workspace
