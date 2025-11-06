@@ -5,7 +5,7 @@ output_path = "cleaned_phenotype.py"
 
 # Read the entire content of the file
 try:
-    with open(file_path, "r", encoding="utf-8") as file:
+    with open(file_path, encoding="utf-8") as file:
         content = file.read()
 except FileNotFoundError:
     print(f"Error: The file '{file_path}' was not found.")

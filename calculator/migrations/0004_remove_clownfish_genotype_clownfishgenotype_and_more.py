@@ -5,32 +5,69 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('calculator', '0003_clownfish'),
+        ("calculator", "0003_clownfish"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='clownfish',
-            name='genotype',
+            model_name="clownfish",
+            name="genotype",
         ),
         migrations.CreateModel(
-            name='ClownfishGenotype',
+            name="ClownfishGenotype",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('allele1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='allele1_set', to='calculator.allele')),
-                ('allele2', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='allele2_set', to='calculator.allele')),
-                ('clownfish', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='calculator.clownfish')),
-                ('trait', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='calculator.trait')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "allele1",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="allele1_set",
+                        to="calculator.allele",
+                    ),
+                ),
+                (
+                    "allele2",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="allele2_set",
+                        to="calculator.allele",
+                    ),
+                ),
+                (
+                    "clownfish",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="calculator.clownfish",
+                    ),
+                ),
+                (
+                    "trait",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="calculator.trait",
+                    ),
+                ),
             ],
             options={
-                'unique_together': {('clownfish', 'trait')},
+                "unique_together": {("clownfish", "trait")},
             },
         ),
         migrations.AddField(
-            model_name='clownfish',
-            name='genotype',
-            field=models.ManyToManyField(through='calculator.ClownfishGenotype', through_fields=('clownfish', 'allele1'), to='calculator.allele'),
+            model_name="clownfish",
+            name="genotype",
+            field=models.ManyToManyField(
+                through="calculator.ClownfishGenotype",
+                through_fields=("clownfish", "allele1"),
+                to="calculator.allele",
+            ),
         ),
     ]

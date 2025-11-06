@@ -4,14 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('calculator', '0004_remove_clownfish_genotype_clownfishgenotype_and_more'),
+        ("calculator", "0004_remove_clownfish_genotype_clownfishgenotype_and_more"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='clownfish',
-            options={'verbose_name_plural': 'Clownfish'},
+            name="clownfish",
+            options={"verbose_name_plural": "Clownfish"},
         ),
     ]

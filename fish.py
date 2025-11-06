@@ -92,8 +92,8 @@ def cross_fish(f1, f2):
     f2_type_names = f2_types.keys()
 
     # find any missing keys from either fish
-    f2_missing = list(filter(lambda a: not a in f2_type_names, f1_type_names))
-    f1_missing = list(filter(lambda a: not a in f1_type_names, f2_type_names))
+    f2_missing = list(filter(lambda a: a not in f2_type_names, f1_type_names))
+    f1_missing = list(filter(lambda a: a not in f1_type_names, f2_type_names))
 
     # add in the missing keys
     for n in f1_missing:
@@ -245,7 +245,6 @@ def pheno(genotype, parent1, parent2):
         )
 
     elif parent1 == parent2:
-
         if (
             parents.find('Amphiprion percula "Picasso"') != -1
             or parents.find('Amphiprion percula "Platinum"') != -1
@@ -1031,7 +1030,6 @@ def pheno(genotype, parent1, parent2):
             pheno = "(".join([fmtIt('Amphiprion "Mocha"'), ")"])
 
     elif p1epigra == -1 and p1darwin == -1 and p2darwin != -1:
-
         pheno = fmtIt(p1S[0]).join(
             [
                 " (",
@@ -1044,7 +1042,6 @@ def pheno(genotype, parent1, parent2):
         )
 
     elif p1darwin != -1 and p2epigra == -1 and p2darwin == -1:
-
         pheno = fmtIt(p1S[0]).join(
             [
                 " (",

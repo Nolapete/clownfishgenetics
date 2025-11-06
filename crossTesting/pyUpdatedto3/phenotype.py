@@ -1,7 +1,7 @@
 # phenotype.py
 
-from pyUpdatedto3.newPhen import newPhen
 from pyUpdatedto3.fmtIt import fmtIt
+from pyUpdatedto3.newPhen import newPhen
 
 
 def pheno(genotype, parent1, parent2):

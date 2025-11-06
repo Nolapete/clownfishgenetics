@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Variety, Parent, Cross, Progeny, CrossNamingRule, ProgenyNamingRule
+
+from .models import Cross, CrossNamingRule, Parent, Progeny, ProgenyNamingRule, Variety
 
 
 # A TabularInline for ProgenyNamingRule makes it easy to add rules

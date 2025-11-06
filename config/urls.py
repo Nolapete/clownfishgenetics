@@ -1,14 +1,13 @@
 from django.contrib import admin
-from django.urls import path, include
-
+from django.urls import include, path
 
 admin.site.site_header = "clownfishgenetics.org Administration"
 admin.site.site_title = "clownfishgenetics.org"
 admin.site.index_title = "Clownfish Genetics Admin Portal"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('landing.urls')),
-    path('calculator/', include('calculator.urls')),
-    path('breeding/', include('calcRefactor.urls')),
+    path("admin/", admin.site.urls),
+    path("", include("landing.urls")),
+    path("calculator/", include("calculator.urls")),
+    path("breeding/", include("calcRefactor.urls")),
 ]

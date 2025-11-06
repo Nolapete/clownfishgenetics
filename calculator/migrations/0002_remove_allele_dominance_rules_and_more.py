@@ -5,33 +5,74 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('calculator', '0001_initial'),
+        ("calculator", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='allele',
-            name='dominance_rules',
+            model_name="allele",
+            name="dominance_rules",
         ),
         migrations.AddField(
-            model_name='trait',
-            name='inheritance_pattern',
-            field=models.CharField(choices=[('dominant', 'Dominant/Recessive'), ('codominant', 'Codominant'), ('incomplete', 'Incomplete Dominance')], default='dominant', max_length=20),
+            model_name="trait",
+            name="inheritance_pattern",
+            field=models.CharField(
+                choices=[
+                    ("dominant", "Dominant/Recessive"),
+                    ("codominant", "Codominant"),
+                    ("incomplete", "Incomplete Dominance"),
+                ],
+                default="dominant",
+                max_length=20,
+            ),
         ),
         migrations.CreateModel(
-            name='GenotypePhenotype',
+            name="GenotypePhenotype",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phenotype', models.CharField(max_length=200)),
-                ('allele1', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='+', to='calculator.allele')),
-                ('allele2', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='+', to='calculator.allele')),
-                ('trait', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='phenotypes', to='calculator.trait')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("phenotype", models.CharField(max_length=200)),
+                (
+                    "allele1",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="+",
+                        to="calculator.allele",
+                    ),
+                ),
+                (
+                    "allele2",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="+",
+                        to="calculator.allele",
+                    ),
+                ),
+                (
+                    "trait",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="phenotypes",
+                        to="calculator.trait",
+                    ),
+                ),
             ],
             options={
-                'indexes': [models.Index(fields=['trait', 'allele1', 'allele2'], name='calculator__trait_i_3a279a_idx')],
-                'unique_together': {('trait', 'allele1', 'allele2')},
+                "indexes": [
+                    models.Index(
+                        fields=["trait", "allele1", "allele2"],
+                        name="calculator__trait_i_3a279a_idx",
+                    )
+                ],
+                "unique_together": {("trait", "allele1", "allele2")},
             },
         ),
     ]

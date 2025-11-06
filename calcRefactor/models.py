@@ -51,10 +51,14 @@ class Progeny(models.Model):
 
     cross = models.ForeignKey(Cross, on_delete=models.CASCADE)
     genotype = models.CharField(max_length=50)
-    phenotype_name = models.CharField(max_length=150, blank=True, null=True)
+    phenotype_name = models.CharField(max_length=150, blank=True)
 
     class Meta:
         verbose_name_plural = "Progeny"  # The plural of progeny is also progeny.
+
+    # MOVED: __str__ is now before save()
+    def __str__(self):
+        return f"{self.phenotype_name} ({self.genotype})"
 
     def save(self, *args, **kwargs):
         from .services import get_progeny_phenotype_name
@@ -63,9 +67,6 @@ class Progeny(models.Model):
         if not self.phenotype_name:
             self.phenotype_name = get_progeny_phenotype_name(self.cross, self.genotype)
         super().save(*args, **kwargs)
-
-    def __str__(self):
-        return f"{self.phenotype_name} ({self.genotype})"
 
 
 class CrossNamingRule(models.Model):

@@ -1,4 +1,6 @@
-import pytest
+# ruff: noqa: S101, W0621
+# crostTesting/tests/test_phenotype.py
+
 from pyUpdatedto3.phenotype import pheno
 
 # You can reuse the mock functions defined in conftest.py
@@ -15,7 +17,8 @@ def test_pheno_ocellaris_same_parents(mock_fmtIt, mock_newPhen):
 
     expected = '<i>Amphiprion ocellaris</i> "Black Ice"), Sf/+)'
     assert result == expected
-    # Additional assertions to check if the mock functions were called correctly can be added.
+    # Additional assertions to check if the mock functions were
+    # called correctly can be added.
     # For example, mock_newPhen.assert_called_once()
 
 

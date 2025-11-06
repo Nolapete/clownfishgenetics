@@ -1,0 +1,67 @@
+[project]
+name = "clownfishgenetics"
+description = "Clownfish Genetics Org website"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "asgiref==3.9.1",
+    "black==25.9.0",
+    "click==8.3.0",
+    "django==5.2.6",
+    "django-environ==0.12.0",
+    "django-filter==25.1",
+    "djangorestframework==3.16.1",
+    "markdown==3.9",
+    "mypy-extensions==1.1.0",
+    "packaging==25.0",
+    "pathspec==0.12.1",
+    "phonenumbers==9.0.14",
+    "pillow==11.3.0",
+    "platformdirs==4.5.0",
+    "psycopg2-binary==2.9.10",
+    "pytokens==0.2.0",
+    "pyyaml==6.0.2",
+    "sqlparse==0.5.3",
+    "tzdata==2025.2",
+]
+
+[tool.ruff]
+# Match black's default line length
+line-length = 88
+target-version = "py312" # Set your target Python version
+[tool.ruff.lint]
+# Enable Flake8's F, E, W rules by default, plus some extras
+select = ["E", "W", "F", "I", "UP", "B", "C4", "DJ", "S"]
+# E: pycodestyle errors
+# W: pycodestyle warnings
+# F: Pyflakes
+# I: isort (import sorting)
+# UP: pyupgrade (modernizing syntax)
+# B: flake8-bugbear (common issues)
+# C4: flake8-comprehensions
+# DJ: Django-specific rules
+# S: bandit (security issues)
+
+# Exclude migration files from linting
+exclude = [
+    "**/migrations/*.py",
+    "phenotype.py",
+    "fishwork.py",
+    "fish.py",
+    "cleaned_phenotype.py",
+]
+# Ignore some specific rules if needed, e.g., missing docstrings
+ignore = ["D100", "D101", "D102", "D103", "D104"]
+
+[tool.ruff.format]
+# Enable Ruff's highly performant formatter as a drop-in Black replacement
+# It is recommended to use ruff format instead of black now
+exclude = [
+    "**/migrations/*.py",
+    "phenotype.py",
+    "fishwork.py",
+    "fish.py",
+    "cleaned_phenotype.py",
+]
+quote-style = "double"
+indent-style = "space"
