@@ -84,6 +84,8 @@ class Clownfish(models.Model):
     name = models.CharField(max_length=100, unique=True)
     genus = models.CharField(max_length=100)
     species = models.CharField(max_length=100)
+    variant = models.CharField(max_length=255, blank=True)
+    hybrid = models.BooleanField(default=False)
     # Specify the through_fields to resolve the ambiguity
     genotype = models.ManyToManyField(
         Allele,

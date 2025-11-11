@@ -7,7 +7,10 @@ class Variety(models.Model):
     """Represents a named clownfish variety, e.g., 'Picasso'."""
 
     name = models.CharField(max_length=100, unique=True)
+    genus = models.CharField(max_length=100)
     species = models.CharField(max_length=100)
+    variant = models.CharField(max_length=255, blank=True)
+    hybrid = models.BooleanField(default=False)
     genotype_pattern = models.CharField(max_length=50)
 
     class Meta:
