@@ -1,5 +1,3 @@
-# In your project: genetics_manager/management/commands/process_phenotypes.py
-
 import json
 import os
 import re
@@ -16,7 +14,6 @@ class Command(BaseCommand):
     )
 
     def add_arguments(self, parser):
-        # A required positional argument for the input file name
         parser.add_argument(
             "input_filename",
             type=str,
@@ -35,7 +32,6 @@ class Command(BaseCommand):
                 for line in f:
                     stripped_line = line.strip()
                     if stripped_line and not stripped_line.startswith("#"):
-                        # Remove the specific '- ' prefix if it exists
                         if stripped_line.startswith("- "):
                             clean_name = stripped_line[2:].strip()
                         else:
@@ -43,28 +39,23 @@ class Command(BaseCommand):
                         if clean_name:
                             names_list.append(clean_name)
         except FileNotFoundError as err:
-            # Fix for B904 linter rule: explicitly chain exceptions
             raise CommandError(f"Error: '{input_file}' was not found.") from err
 
         data = []
         skipped_count = 0
 
-        # Regex to capture parts of the name:
-        # (Genus) (Optional species/sp.) (Optional "Variant")
         name_pattern = re.compile(
             r"^(?P<genus>\w+)\s*(?P<species_part>.*?)\s*" r"(?P<variant>\"[^\"]+\")?$"
         )
 
         for full_name in names_list:
-            # Check the database for existing records using the ORM
             if CommercialPhenotypeRecipe.objects.filter(phenotype=full_name).exists():
                 self.stdout.write(
                     self.style.WARNING(f"Skipping existing record in DB: {full_name}")
                 )
                 skipped_count += 1
-                continue  # Skip this name in the *output file generation*
+                continue
 
-            # If the record is new to the DB, parse and add to the *output list*
             name = full_name.replace("*", "").strip()
             genus, species, variant, is_hybrid = "", "", "", False
 
@@ -87,6 +78,7 @@ class Command(BaseCommand):
             entry = {
                 "model": "genetics_manager.commercialphenotyperecipe",
                 "fields": {
+                    "name": full_name,
                     "phenotype": full_name,
                     "slug": "",
                     "genotype": "+/+",
@@ -96,11 +88,11 @@ class Command(BaseCommand):
                     "hybrid": is_hybrid,
                     "origin": "clownfish",
                     "created_by": 1,
+                    "required_genotypes": {},
                 },
             }
             data.append(entry)
 
-        # Use the requested standard output file name: phenotype_recipes.json
         output_file = "phenotype_recipes.json"
         with open(output_file, "w") as f:
             f.write(json.dumps(data, indent=2))
