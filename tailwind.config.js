@@ -4,7 +4,7 @@ module.exports = {
     './**/templates/**/*.html', // This should catch all HTML templates
   ],
   theme: {
-    // ... your theme config ...
+    extend: {},
   },
   plugins: [],
 }

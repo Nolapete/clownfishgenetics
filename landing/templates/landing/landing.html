@@ -1,3 +1,4 @@
+<!-- In clownfishgenetics/landing/templates/landing/landing.html -->
 {% load static %}
 {% load django_htmx %}
 
@@ -8,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clownfish Genetics Resource</title>
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <script src="{% static 'js/htmx.min.js' %}"></script>
+    {% htmx_script %}
     <style>
         :root { --clown-orange: #FF6F1D; }
         .bg-clown-orange { background-color: var(--clown-orange); }
@@ -17,7 +18,7 @@
         .hover\:bg-clown-orange:hover { background-color: var(--clown-orange); }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="bg-gray-100 text-gray-900">
 
     <div class="container mx-auto p-4">
         <header class="text-center mb-10">
@@ -25,40 +26,20 @@
             <p class="text-gray-600 mt-2">Explore the known variants and set up a genetic cross.</p>
         </header>
 
+        <!-- Search Bar -->
+        <div class="mb-6">
+            <input hx-get="{% url 'filter_fish_htmx' %}" hx-trigger="keyup changed delay:300ms, search" hx-target="#fish-list-container" hx-swap="innerHTML" name="search" type="text" placeholder="Type to filter clownfish names, variants, or species..." class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- MOVED: The results container is now ABOVE the fish list -->
+        <section id="results-container" class="mt-8 mb-8"></section>
+
         {% include 'landing/partials/selection_bar_partial.html' with p1_name='None' p2_name='None' %}
 
-        <main class="space-y-8 mb-20">
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Wild Type Clownfish</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {% for fish in wild_types %}
-                        <div class="bg-white p-5 rounded-lg shadow-md">
-                            <h3 class="text-lg font-bold">{{ fish.phenotype }}</h3>
-                            <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}" hx-target="#selector-bar" hx-swap="outerHTML" class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
-                                Select as Parent
-                            </button>
-                        </div>
-                    {% endfor %}
-                </div>
-            </section>
-
-            <section>
-                <h2 class="text-2xl font-semibold mb-4">Designer & Hybrid Clownfish</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {% for fish in designer_fish %}
-                        <div class="bg-white p-5 rounded-lg shadow-lg border border-clown-orange">
-                            <h3 class="text-lg font-bold">{{ fish.name }}</h3>
-                            <p class="text-sm text-gray-500">{{ fish.variant }}</p>
-                            <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}" hx-target="#selector-bar" hx-swap="outerHTML" class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
-                                Select as Parent
-                            </button>
-                        </div>
-                    {% endfor %}
-                </div>
-            </section>
+        <!-- This container is targeted by the search bar input -->
+        <main id="fish-list-container" class="space-y-8 mb-20">
+            {% include 'landing/partials/fish_cards_partial.html' with wild_types=wild_types designer_fish=designer_fish %}
         </main>
-
-        <section id="results-container" class="mt-8"></section>
     </div>
 </body>
 </html>

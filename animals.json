@@ -1,0 +1,2018 @@
+[
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 1,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Frostbite\"",
+      "slug": "",
+      "genotype": "Sf/+ DV/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Frostbite\"",
+      "hybrid": false,
+      "date_added": "2019-06-01T05:06:09Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 2,
+    "fields": {
+      "phenotype": "Premnas biaculeatus \"White Stripe\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "biaculeatus",
+      "variant": "\"White Stripe\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.791Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 3,
+    "fields": {
+      "phenotype": "Premnas sp. epigrammata \"Gold Stripe\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "sp. epigrammata",
+      "variant": "\"Gold Stripe\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.801Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 4,
+    "fields": {
+      "phenotype": "Premnas biaculeatus \"White Stripe (Indonesia / Philippines)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "biaculeatus",
+      "variant": "\"White Stripe (Indonesia / Philippines)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.809Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 5,
+    "fields": {
+      "phenotype": "Premnas biaculeatus \"White Stripe (PNG / Solomon Islands)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "biaculeatus",
+      "variant": "\"White Stripe (PNG / Solomon Islands)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.823Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 6,
+    "fields": {
+      "phenotype": "Premnas biaculeatus \"Morse Code\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "biaculeatus",
+      "variant": "\"Morse Code\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.838Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 7,
+    "fields": {
+      "phenotype": "Premnas biaculeatus \"Lightning\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "biaculeatus",
+      "variant": "\"Lightning\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.850Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 8,
+    "fields": {
+      "phenotype": "Premnas sp. epigrammata \"Goldflake / Gold Spot / Gold Rush\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "sp. epigrammata",
+      "variant": "\"Goldflake / Gold Spot / Gold Rush\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.859Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 9,
+    "fields": {
+      "phenotype": "Premnas sp. epigrammata \"Gold Nugget\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "sp. epigrammata",
+      "variant": "\"Gold Nugget\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.870Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 10,
+    "fields": {
+      "phenotype": "Premnas sp. epigrammata \"Peace Keeper\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "sp. epigrammata",
+      "variant": "\"Peace Keeper\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.879Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 11,
+    "fields": {
+      "phenotype": "Premnas \"White Gold\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Premnas",
+      "species": "",
+      "variant": "\"White Gold\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:15.890Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 12,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.900Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 13,
+    "fields": {
+      "phenotype": "Amphiprion percula",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "percula",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.911Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 14,
+    "fields": {
+      "phenotype": "Amphiprion sp. darwin",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sp. darwin",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.921Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 15,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Brown\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Brown\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.931Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 16,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Color Changing\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Color Changing\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.942Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 17,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"DaVinci / Fancy White / Gladiator\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"DaVinci / Fancy White / Gladiator\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.951Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 18,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Fancy/Vivid Fancy\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Fancy/Vivid Fancy\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.961Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 20,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Golden\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Golden\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.981Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 21,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Naked\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Naked\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:15.991Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 22,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Snowflake\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Snowflake\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 23,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Tangerine Albino\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Tangerine Albino\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.011Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 24,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Wide Bar Gladiator\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Wide Bar Gladiator\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.022Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 25,
+    "fields": {
+      "phenotype": "Amphiprion ocellaris \"Wyoming White\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ocellaris",
+      "variant": "\"Wyoming White\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.030Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 26,
+    "fields": {
+      "phenotype": "Amphiprion percula \"Nebula\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "percula",
+      "variant": "\"Nebula\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.041Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 27,
+    "fields": {
+      "phenotype": "Amphiprion percula \"Picasso\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "percula",
+      "variant": "\"Picasso\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.049Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 28,
+    "fields": {
+      "phenotype": "Amphiprion percula \"Platinum\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "percula",
+      "variant": "\"Platinum\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.060Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 29,
+    "fields": {
+      "phenotype": "Amphiprion sp. darwin \"Chocolate/Caramel\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sp. darwin",
+      "variant": "\"Chocolate/Caramel\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.069Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 30,
+    "fields": {
+      "phenotype": "Amphiprion sp. darwin \"Halfblack\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sp. darwin",
+      "variant": "\"Halfblack\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.080Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 31,
+    "fields": {
+      "phenotype": "Amphiprion sp. darwin \"Midnight\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sp. darwin",
+      "variant": "\"Midnight\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.091Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 32,
+    "fields": {
+      "phenotype": "Amphiprion sp. darwin \"Zombie Albino\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sp. darwin",
+      "variant": "\"Zombie Albino\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.102Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 33,
+    "fields": {
+      "phenotype": "Amphiprion \"Mocha\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Mocha\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.112Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 34,
+    "fields": {
+      "phenotype": "Amphiprion \"MochaVinci\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"MochaVinci\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.123Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 35,
+    "fields": {
+      "phenotype": "Amphiprion \"Black Ice\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Black Ice\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.140Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 36,
+    "fields": {
+      "phenotype": "Amphiprion \"Blacker Ice\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Blacker Ice\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.154Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 37,
+    "fields": {
+      "phenotype": "Amphiprion \"Chocolate Mocha\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Chocolate Mocha\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.164Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 38,
+    "fields": {
+      "phenotype": "Amphiprion \"Black Snowflake/Phantom\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Black Snowflake/Phantom\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.173Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 39,
+    "fields": {
+      "phenotype": "Amphiprion \"Percularis\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Percularis\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.184Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 40,
+    "fields": {
+      "phenotype": "Amphiprion \"Black Photon\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Black Photon\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.193Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 41,
+    "fields": {
+      "phenotype": "Amphiprion \"Smorcularis/Twilight\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Smorcularis/Twilight\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.204Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 42,
+    "fields": {
+      "phenotype": "Amphiprion \"Midnight Black Photon\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Midnight Black Photon\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.213Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 43,
+    "fields": {
+      "phenotype": "Amphiprion \"Double Black Photon\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Double Black Photon\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.223Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 44,
+    "fields": {
+      "phenotype": "Amphiprion \"Half-Black Photon\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Half-Black Photon\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.233Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 45,
+    "fields": {
+      "phenotype": "Amphiprion \"Snowflake Black Photon\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Snowflake Black Photon\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.243Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 46,
+    "fields": {
+      "phenotype": "Amphiprion \"Snow Onyx\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Snow Onyx\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.256Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 47,
+    "fields": {
+      "phenotype": "Amphiprion \"Picassnow\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Picassnow\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.272Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 48,
+    "fields": {
+      "phenotype": "Amphiprion \"White Knight\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"White Knight\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.283Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 49,
+    "fields": {
+      "phenotype": "Amphiprion latezonatus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latezonatus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.297Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 50,
+    "fields": {
+      "phenotype": "Amphiprion polymnus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.308Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 51,
+    "fields": {
+      "phenotype": "Amphiprion sebae",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sebae",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.318Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 52,
+    "fields": {
+      "phenotype": "Amphiprion polymnus \"Classic Brown\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "\"Classic Brown\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.329Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 53,
+    "fields": {
+      "phenotype": "Amphiprion polymnus \"Black\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "\"Black\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.340Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 54,
+    "fields": {
+      "phenotype": "Amphiprion polymnus \"BB/YC\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "\"BB/YC\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.354Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 55,
+    "fields": {
+      "phenotype": "Amphiprion polymnus \"Melanistic\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "\"Melanistic\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.365Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 56,
+    "fields": {
+      "phenotype": "Amphiprion polymnus \"White Horse\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "polymnus",
+      "variant": "\"White Horse\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.378Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 57,
+    "fields": {
+      "phenotype": "Amphiprion sebae \"Galaxy\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sebae",
+      "variant": "\"Galaxy\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.386Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 58,
+    "fields": {
+      "phenotype": "Amphiprion \"White Tipped\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"White Tipped\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.400Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 59,
+    "fields": {
+      "phenotype": "Amphiprion \"Red Bee\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "",
+      "variant": "\"Red Bee\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.411Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 60,
+    "fields": {
+      "phenotype": "Pramphiprion \"Cocoa\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Pramphiprion",
+      "species": "",
+      "variant": "\"Cocoa\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.420Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 61,
+    "fields": {
+      "phenotype": "Pramphiprion \"Blood Orange\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Pramphiprion",
+      "species": "",
+      "variant": "\"Blood Orange\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.431Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 62,
+    "fields": {
+      "phenotype": "Pramphiprion \"Mai Tai\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Pramphiprion",
+      "species": "",
+      "variant": "\"Mai Tai\"",
+      "hybrid": true,
+      "date_added": "2019-06-02T00:52:16.441Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 63,
+    "fields": {
+      "phenotype": "Amphiprion akallopisos",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "akallopisos",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.452Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 64,
+    "fields": {
+      "phenotype": "Amphiprion leucokranos",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "leucokranos",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.459Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 65,
+    "fields": {
+      "phenotype": "Amphiprion nigripes",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "nigripes",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.471Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 66,
+    "fields": {
+      "phenotype": "Amphiprion pacificus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "pacificus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.483Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 67,
+    "fields": {
+      "phenotype": "Amphiprion perideraion",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "perideraion",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.490Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 68,
+    "fields": {
+      "phenotype": "Amphiprion sandaracinos",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "sandaracinos",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.498Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 69,
+    "fields": {
+      "phenotype": "Amphiprion thiellei",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "thiellei",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.508Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 70,
+    "fields": {
+      "phenotype": "Amphiprion perideraion \"Sunkist\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "perideraion",
+      "variant": "\"Sunkist\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.518Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 71,
+    "fields": {
+      "phenotype": "Amphiprion barberi",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "barberi",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.528Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 72,
+    "fields": {
+      "phenotype": "Amphiprion ephippium",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ephippium",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.537Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 73,
+    "fields": {
+      "phenotype": "Amphiprion frenatus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "frenatus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.550Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 74,
+    "fields": {
+      "phenotype": "Amphiprion mccullochi",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "mccullochi",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.559Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 75,
+    "fields": {
+      "phenotype": "Amphiprion melanopus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.569Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 76,
+    "fields": {
+      "phenotype": "Amphiprion rubrocinctus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "rubrocinctus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.578Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 77,
+    "fields": {
+      "phenotype": "Amphiprion frenatus \"Okinawa\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "frenatus",
+      "variant": "\"Okinawa\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.589Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 78,
+    "fields": {
+      "phenotype": "Amphiprion melanopus \"SI\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "\"SI\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.601Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 79,
+    "fields": {
+      "phenotype": "Amphiprion melanopus \"Vanuatu\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "\"Vanuatu\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.611Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 80,
+    "fields": {
+      "phenotype": "Amphiprion melanopus \"New Caledonia\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "\"New Caledonia\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.626Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 81,
+    "fields": {
+      "phenotype": "Amphiprion melanopus \"Coral Sea\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "\"Coral Sea\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.635Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 82,
+    "fields": {
+      "phenotype": "Amphiprion ephippium \"Melanistic\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "ephippium",
+      "variant": "\"Melanistic\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.647Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 83,
+    "fields": {
+      "phenotype": "Amphiprion frenatus \"Phantom/Picasso/Galaxy\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "frenatus",
+      "variant": "\"Phantom/Picasso/Galaxy\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.659Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 84,
+    "fields": {
+      "phenotype": "Amphiprion frenatus \"Rotten Tomato\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "frenatus",
+      "variant": "\"Rotten Tomato\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.670Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 85,
+    "fields": {
+      "phenotype": "Amphiprion melanopus \"Stripeless\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "melanopus",
+      "variant": "\"Stripeless\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.682Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 86,
+    "fields": {
+      "phenotype": "Amphiprion akyndinos",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "akyndinos",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.697Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 87,
+    "fields": {
+      "phenotype": "Amphiprion allardi",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "allardi",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.709Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 88,
+    "fields": {
+      "phenotype": "Amphiprion bicinctus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "bicinctus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.718Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 89,
+    "fields": {
+      "phenotype": "Amphiprion chagosensis",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chagosensis",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.728Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 90,
+    "fields": {
+      "phenotype": "Amphiprion chrysogaster",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysogaster",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.735Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 91,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.746Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 92,
+    "fields": {
+      "phenotype": "Amphiprion clarkii",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.758Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 93,
+    "fields": {
+      "phenotype": "Amphiprion fuscocaudatus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "fuscocaudatus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.766Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 94,
+    "fields": {
+      "phenotype": "Amphiprion latifasciatus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latifasciatus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.774Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 95,
+    "fields": {
+      "phenotype": "Amphiprion omanensis",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "omanensis",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.785Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 96,
+    "fields": {
+      "phenotype": "Amphiprion tricinctus",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "tricinctus",
+      "variant": "",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.797Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 97,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"YT/YF Fiji\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"YT/YF Fiji\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.808Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 98,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"YT/YF Mariana/Guam\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"YT/YF Mariana/Guam\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.816Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 99,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"WT/YF\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"WT/YF\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.827Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 100,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"WT/BF\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"WT/BF\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.840Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 101,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"YT/YF/NB\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"YT/YF/NB\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.848Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 102,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Western Australia\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Western Australia\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.859Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 103,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Vanuatu\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Vanuatu\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.886Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 104,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"SI,CS,PNG,GBR\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"SI,CS,PNG,GBR\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.893Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 105,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Bonin Islands\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Bonin Islands\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.902Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 106,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Philippine\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Philippine\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.939Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 107,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Wallecea\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Wallecea\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.947Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 108,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Japan (SYT)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Japan (SYT)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.961Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 109,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"MI,G (YBWT)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"MI,G (YBWT)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.972Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 110,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Oman\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Oman\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.980Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 111,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"P/Y/C/CI (SWT)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"P/Y/C/CI (SWT)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:16.987Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 112,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"C/CKI (CPYT)\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"C/CKI (CPYT)\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.002Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 113,
+    "fields": {
+      "phenotype": "Amphiprion latifasciatus \"Southern Madagascar\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latifasciatus",
+      "variant": "\"Southern Madagascar\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.013Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 114,
+    "fields": {
+      "phenotype": "Amphiprion latifasciatus \"Northern Madagascar\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latifasciatus",
+      "variant": "\"Northern Madagascar\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.023Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 115,
+    "fields": {
+      "phenotype": "Amphiprion latifasciatus \"NWM/CI\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latifasciatus",
+      "variant": "\"NWM/CI\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.031Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 116,
+    "fields": {
+      "phenotype": "Amphiprion latifasciatus \"WTYE\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "latifasciatus",
+      "variant": "\"WTYE\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.042Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 117,
+    "fields": {
+      "phenotype": "Amphiprion bicinctus \"Pearl Eye\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "bicinctus",
+      "variant": "\"Pearl Eye\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.051Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 118,
+    "fields": {
+      "phenotype": "Amphiprion bicinctus \"Spotcinctus\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "bicinctus",
+      "variant": "\"Spotcinctus\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.061Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 119,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Pearl Eye\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Pearl Eye\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.070Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 120,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Galaxy\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Galaxy\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.080Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 121,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Meteor\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Meteor\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.089Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 122,
+    "fields": {
+      "phenotype": "Amphiprion clarkii \"Smudgy\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "clarkii",
+      "variant": "\"Smudgy\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.099Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 123,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"Meteor\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"Meteor\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.110Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 124,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"White Eyebrow\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"White Eyebrow\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.121Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 125,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"King Kong\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"King Kong\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.132Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 126,
+    "fields": {
+      "phenotype": "Amphiprion chrysopterus \"Northern Lights\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "chrysopterus",
+      "variant": "\"Northern Lights\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.143Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  },
+  {
+    "model": "genetics_manager.commercialphenotyperecipe",
+    "pk": 127,
+    "fields": {
+      "phenotype": "Amphiprion percula \"Addison's Quest\"",
+      "slug": "",
+      "genotype": "+/+",
+      "genus": "Amphiprion",
+      "species": "percula",
+      "variant": "\"Addison's Quest\"",
+      "hybrid": false,
+      "date_added": "2019-06-02T00:52:17.154Z",
+      "origin": "clownfish",
+      "created_by": 1
+    }
+  }
+]

@@ -1,0 +1,28 @@
+# initial_locus_data.yaml
+
+- model: genetics_manager.Locus
+  pk: 1
+  fields:
+    name: "Overbar"
+    # P (Picasso) and Sf (Snowflake) are both alleles for the same locus
+    alleles: ['P', 'Sf']
+
+- model: genetics_manager.Locus
+  pk: 2
+  fields:
+    name: "Lightning"
+    alleles: ['L']
+
+- model: genetics_manager.Locus
+  pk: 3
+  fields:
+    name: "Onyx"
+    # 'O' is the primary Onyx allele
+    alleles: ['O']
+
+- model: genetics_manager.Locus
+  pk: 4
+  fields:
+    name: "DarwinVariant"
+    # 'DV' and 'N' (Darwin Black) are likely variants here
+    alleles: ['DV', 'N']

@@ -1,0 +1,13 @@
+<!-- In clownfishgenetics/landing/templates/landing/partials/results_partial.html -->
+<div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
+    <p class="font-bold">Cross Results: {{ parent1_name }} x {{ parent2_name }}</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {% for phenotype, percentage in results.items %}
+        <div class="bg-white p-3 rounded shadow">
+            <p class="font-semibold">{{ phenotype }}</p>
+            <p class="text-xl font-bold text-clown-orange">{{ percentage|floatformat:2 }}%</p>
+        </div>
+    {% endfor %}
+</div>
