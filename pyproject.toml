@@ -52,7 +52,7 @@ exclude = [
     "cleaned_phenotype.py",
 ]
 # Ignore some specific rules if needed, e.g., missing docstrings
-ignore = ["D100", "D101", "D102", "D103", "D104"]
+ignore = ["D100", "D101", "D102", "D103", "D104", "S101"]
 
 [tool.ruff.format]
 # Enable Ruff's highly performant formatter as a drop-in Black replacement
