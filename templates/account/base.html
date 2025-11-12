@@ -1,0 +1,34 @@
+{% load static %}
+{% load django_htmx %}
+{% load i18n %}
+{% load account socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{% block title %}Account | clownfishgenetics.org{% endblock %}</title>
+
+    {% htmx_script %}
+    <style>
+        :root { --clown-orange: #FF6F1D; }
+        .bg-clown-orange { background-color: var(--clown-orange); }
+        .text-clown-orange { color: var(--clown-orange); }
+        .border-clown-orange { border-color: var(--clown-orange); }
+        .hover\:bg-clown-orange:hover { background-color: var(--clown-orange); }
+    </style>
+</head>
+<body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}' class="bg-gray-100 text-gray-900">
+
+    <div class="container mx-auto p-4">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-clown-orange">clownfishgenetics.org</h1>
+            <h1 class="text-4xl font-bold text-clown-orange">Clownfish Breeders' Resource & Calculator</h1>
+        </header>
+    <main>
+      {% block account_content %}{% endblock %}
+    </main>
+  </body>
+</html>

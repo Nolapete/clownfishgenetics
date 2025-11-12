@@ -1,0 +1,36 @@
+{% extends 'account/base.html' %}
+{% load static %}
+{% load django_htmx %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %}<h1>{% trans "Sign In" %}{% endblock %}</h1>
+
+{% block account_content %}
+
+  {% if form.non_field_errors %}
+    <div>
+      {{ form.non_field_errors }}
+    </div>
+  {% endif %}
+
+  <form method="post" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% trans "Sign In" %}</button>
+  </form>
+
+  <p>
+    <a href="{% url 'account_reset_password' %}">{% trans "Forgot password?" %}</a>
+  </p>
+
+  <hr />
+
+  {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+
+  <p>
+    {% trans "Don't have an account?" %}
+    <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+  </p>
+{% endblock %}
+

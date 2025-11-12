@@ -39,3 +39,12 @@ repos:
 #    hooks:
 #      - id: prettier
 #        exclude: ^uv.lock
+
+  - repo: local
+    hooks:
+      - id: uv-export-requirements
+        name: Export requirements.txt from uv
+        entry: uv export --format requirements-txt --no-hashes --output-file requirements.txt
+        language: system
+        pass_filenames: false
+        files: ^(pyproject\.toml|uv\.lock)$

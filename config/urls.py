@@ -10,4 +10,5 @@ urlpatterns = [
     path("", include("landing.urls")),
     path("calculator/", include("calculator.urls")),
     path("breeding/", include("calcRefactor.urls")),
+    path("accounts/", include("allauth.urls")),
 ]
