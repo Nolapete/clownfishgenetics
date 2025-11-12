@@ -1,0 +1,71 @@
+{% extends 'calcRefactor/base.html' %}
+
+{% block title %}Parent Details{% endblock title %}
+
+{% block content %}
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Parent Details</h1>
+    <a href="{% url 'parent-list' %}"
+       class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+        Back to List
+    </a>
+</div>
+
+<div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Clownfish Parent</h2>
+    </div>
+    <div class="px-6 py-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <strong class="text-gray-700">Variety:</strong>
+                <span class="ml-2">{{ parent.variety.name }}</span>
+            </div>
+            <div>
+                <strong class="text-gray-700">Species:</strong>
+                <span class="ml-2">{{ parent.variety.species }}</span>
+            </div>
+            <div>
+                <strong class="text-gray-700">Size:</strong>
+                <span class="ml-2">{{ parent.size }} inches</span>
+            </div>
+            <div>
+                <strong class="text-gray-700">Acquired Date:</strong>
+                <span class="ml-2">{{ parent.acquired_date|date:"M d, Y" }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add related objects section if needed -->
+<!-- Example: Display crosses involving this parent -->
+{% if parent.cross_set.all %}
+<div class="mt-6 bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-6 py-5 border-b border-gray-200">
+        <h2 class="text-lg font-medium text-gray-900">Crosses</h2>
+    </div>
+    <div class="px-6 py-5">
+        <ul class="space-y-2">
+        {% for cross in parent.cross_set.all %}
+            <li class="text-gray-700">
+                {{ cross.parent1.variety.name }} × {{ cross.parent2.variety.name }}
+                ({{ cross.date|date:"M d, Y" }})
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
+
+<hr class="my-6"/>
+<div class="flex space-x-4">
+    <a href="{% url 'variety-list' %}"
+       class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+        View Varieties
+    </a>
+    <a href="{% url 'cross-list' %}"
+       class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+        View Crosses
+    </a>
+</div>
+{% endblock content %}
