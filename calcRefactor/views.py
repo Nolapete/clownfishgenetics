@@ -38,6 +38,12 @@ class ParentListView(ListView):
     context_object_name = "parents"
 
 
+class ParentDetailView(DetailView):
+    model = Parent
+    template_name = "calcRefactor/parent_detail.html"
+    context_object_name = "parent"
+
+
 class ParentCreateView(CreateView):
     model = Parent
     form_class = ParentForm

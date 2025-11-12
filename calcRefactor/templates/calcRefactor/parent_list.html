@@ -1,58 +1,78 @@
 {% extends 'calcRefactor/base.html' %}
 
 <!-- Update the title to reflect "Parent List" -->
-{% block title %}Parent List{% endblock title %}
+{% block title %}Parent List{% endblock title %} {% block content %}
+<div class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold text-gray-800">Clownfish Parents</h1>
 
-{% block content %}
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-3xl font-bold text-gray-800">Clownfish Parents</h1>
+    <!-- Use an outlined button style for the "Add New Parent" link -->
+    <a
+            href="{% url 'parent-create' %}"
+            class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
+    >
+        Add New Parent
+    </a>
+</div>
 
-        <!-- Use an outlined button style for the "Add New Parent" link -->
-        <a href="{% url 'parent-create' %}"
-           class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
-            Add New Parent
-        </a>
-    </div>
+<!-- Changed parent_list to parents -->
+{% if parents %}
+<div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+        <tr>
+            <th
+                    scope="col"
+                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+                Variety
+            </th>
+            <th
+                    scope="col"
+                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
+            >
+                Details
+            </th>
+        </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+        <!-- Changed parent_list to parents -->
+        {% for parent in parents %}
+        <tr>
+            <td class="px-6 py-4 whitespace-nowrap">
+                {{ parent.variety.name }} ({{ parent.variety.species }})
+            </td>
+            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <!-- Use a smaller button style for "View Details" -->
+                <a
+                        href="{% url 'parent-detail' pk=parent.pk %}"
+                        class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white py-1 px-3 rounded text-xs transition duration-200"
+                >
+                    View Details
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="text-gray-600">No parents found. Consider adding one!</p>
+{% endif %}
 
-    {% if parent_list %}
-        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Variety</th>
-                        <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Details</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    {% for parent in parent_list %}
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ parent.variety.name }} ({{ parent.variety.species }})</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <!-- Use a smaller button style for "View Details" -->
-                                <a href="{% url 'parent-detail' pk=parent.pk %}"
-                                   class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white py-1 px-3 rounded text-xs transition duration-200">
-                                    View Details
-                                </a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    {% else %}
-        <p class="text-gray-600">No parents found. Consider adding one!</p>
-    {% endif %}
-
-    <hr class="my-6">
-    <div class="flex space-x-4">
-        <!-- Use outlined buttons for navigation links -->
-        <a href="{% url 'variety-list' %}"
-           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
-            View Varieties
-        </a>
-        <a href="{% url 'cross-list' %}"
-           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
-            View Crosses
-        </a>
-    </div>
+<hr class="my-6"/>
+<div class="flex space-x-4">
+    <!-- Use outlined buttons for navigation links -->
+    <a
+            href="{% url 'variety-list' %}"
+            class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
+    >
+        View Varieties
+    </a>
+    <a
+            href="{% url 'cross-list' %}"
+            class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
+    >
+        View Crosses
+    </a>
+</div>
 {% endblock content %}

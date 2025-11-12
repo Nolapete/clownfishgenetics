@@ -14,6 +14,7 @@ urlpatterns = [
     ),
     # Parent URLs
     path("parents/", views.ParentListView.as_view(), name="parent-list"),
+    path("parents/<int:pk>/", views.ParentDetailView.as_view(), name="parent-detail"),
     path("parents/new/", views.ParentCreateView.as_view(), name="parent-create"),
     # Cross URLs
     path("crosses/", views.CrossListView.as_view(), name="cross-list"),

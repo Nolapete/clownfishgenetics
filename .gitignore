@@ -82,8 +82,14 @@ db.sqlite3      # Default SQLite database file
 /static/        # Collected static files (can be uncommented if you use a build process)
 
 # Django static files
+<<<<<<< HEAD
 /staticfiles/
 /staticfiles_collected/
+=======
+staticfiles/
+staticfiles_collected/
+
+>>>>>>> calcRefactor-template-bugs
 
 # Prevents committing server-specific configuration
 # If you have specific names like "site_a.ini", add them here
