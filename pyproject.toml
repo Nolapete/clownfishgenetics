@@ -21,8 +21,10 @@ dependencies = [
     "phonenumbers==9.0.14",
     "pillow==11.3.0",
     "platformdirs==4.5.0",
+    "pre-commit>=4.4.0",
     "psycopg2-binary==2.9.10",
     "pyjwt>=2.10.1",
+    "pytest>=9.0.1",
     "pytokens==0.2.0",
     "pyyaml==6.0.2",
     "requests>=2.32.5",
@@ -31,23 +33,7 @@ dependencies = [
 ]
 
 [tool.ruff]
-# Match black's default line length
-line-length = 88
-target-version = "py312" # Set your target Python version
-[tool.ruff.lint]
-# Enable Flake8's F, E, W rules by default, plus some extras
-select = ["E", "W", "F", "I", "UP", "B", "C4", "DJ", "S"]
-# E: pycodestyle errors
-# W: pycodestyle warnings
-# F: Pyflakes
-# I: isort (import sorting)
-# UP: pyupgrade (modernizing syntax)
-# B: flake8-bugbear (common issues)
-# C4: flake8-comprehensions
-# DJ: Django-specific rules
-# S: bandit (security issues)
-
-# Exclude migration files from linting
+# Consistent Ruff settings: exclude migrations and set a consistent line length
 exclude = [
     "**/migrations/*.py",
     "phenotype.py",
@@ -55,12 +41,16 @@ exclude = [
     "fish.py",
     "cleaned_phenotype.py",
 ]
-# Ignore some specific rules if needed, e.g., missing docstrings
+line-length = 88
+
+[tool.ruff.lint]
+# Enable a comprehensive set of rules including security and Django specific checks
+select = ["E", "W", "F", "I", "UP", "B", "C4", "DJ", "S"]
+
+# Ignore rules related to missing documentation strings (D-codes from pydocstyle)
 ignore = ["D100", "D101", "D102", "D103", "D104", "S101"]
 
 [tool.ruff.format]
-# Enable Ruff's highly performant formatter as a drop-in Black replacement
-# It is recommended to use ruff format instead of black now
 exclude = [
     "**/migrations/*.py",
     "phenotype.py",
@@ -68,5 +58,7 @@ exclude = [
     "fish.py",
     "cleaned_phenotype.py",
 ]
+# Consistent formatting style: double quotes and spaces
 quote-style = "double"
 indent-style = "space"
+
