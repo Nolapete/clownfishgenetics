@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Clownfish Genetics Calculator</title>
-</head>
-<body>
-    <h1>Clownfish Genetics Punnett Square Calculator</h1>
-    <p>Choose the type of genetic cross to calculate:</p>
-    <ul>
-        <li><a href="{% url 'calculate_monohybrid' %}">Single Gene (Monohybrid) Cross</a></li>
-        <li><a href="{% url 'calculate_dihybrid' %}">Two Gene (Dihybrid) Cross</a></li>
-        <li><a href="{% url 'calculate_multiple_alleles' %}">Multiple Allele Cross</a></li>
-        <li><a href="{% url 'calculate_dynamic' %}">User-Defined Traits Calculator</a></li>
-    </ul>
-</body>
+    <head>
+        <title>Clownfish Genetics Calculator</title>
+    </head>
+    <body>
+        <h1>Clownfish Genetics Punnett Square Calculator</h1>
+        <p>Choose the type of genetic cross to calculate:</p>
+        <ul>
+            <li>
+                <a href="{% url 'calculate_monohybrid' %}">Single Gene (Monohybrid) Cross</a>
+            </li>
+            <li>
+                <a href="{% url 'calculate_dihybrid' %}">Two Gene (Dihybrid) Cross</a>
+            </li>
+            <li>
+                <a href="{% url 'calculate_multiple_alleles' %}">Multiple Allele Cross</a>
+            </li>
+            <li>
+                <a href="{% url 'calculate_dynamic' %}">User-Defined Traits Calculator</a>
+            </li>
+        </ul>
+    </body>
 </html>

@@ -1,19 +1,20 @@
 <!-- In landing/templates/landing/partials/fish_cards_partial.html -->
-
 <section>
     <h2 class="text-2xl font-semibold mb-4">Wild Type Clownfish</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {% for fish in wild_types %}
             <div class="bg-white p-5 rounded-lg shadow-md">
                 <h3 class="text-lg font-bold">{{ fish.phenotype }}</h3>
-                <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}" hx-target="#selector-bar" hx-swap="outerHTML" class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
+                <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}"
+                        hx-target="#selector-bar"
+                        hx-swap="outerHTML"
+                        class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
                     Select as Parent
                 </button>
             </div>
         {% endfor %}
     </div>
 </section>
-
 <section class="mt-8">
     <h2 class="text-2xl font-semibold mb-4">Designer & Hybrid Clownfish</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -21,7 +22,10 @@
             <div class="bg-white p-5 rounded-lg shadow-lg border border-clown-orange">
                 <h3 class="text-lg font-bold">{{ fish.name }}</h3>
                 <p class="text-sm text-gray-500">{{ fish.variant }}</p>
-                <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}" hx-target="#selector-bar" hx-swap="outerHTML" class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
+                <button hx-post="{% url 'select_parent_htmx' parent_id=fish.id %}"
+                        hx-target="#selector-bar"
+                        hx-swap="outerHTML"
+                        class="mt-3 w-full border border-clown-orange text-clown-orange py-2 px-4 rounded hover:bg-clown-orange hover:text-white">
                     Select as Parent
                 </button>
             </div>

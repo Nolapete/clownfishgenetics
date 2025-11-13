@@ -1,80 +1,62 @@
 <!-- calcRefactor/templates/calcRefactor/base.html -->
-{% load static %} {% load django_htmx %}
-
-<!doctype html>
+{% load static %}
+{% load django_htmx %}
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block title %}Clownfish Genetics{% endblock %}</title>
-    <!-- Link to the compiled Tailwind CSS file -->
-    <link href="{% static 'css/output.css' %}" rel="stylesheet"/>
-
-    <!-- HTMX Configuration -->
-    {% htmx_script %}
-
-    <!-- You can add additional head elements here if needed -->
-    {% block extra_head %}{% endblock %}
-</head>
-<!-- Added hx-headers to handle CSRF token across all HTMX requests -->
-<body
-        class="bg-gray-100 font-sans"
-        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
->
-<div class="min-h-screen">
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
-                <div>
-                    <a href="/" class="text-xl font-bold text-gray-800"
-                    >Clownfish Genetics</a
-                    >
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {% block title %}Clownfish Genetics{% endblock %}
+        </title>
+        <!-- Link to the compiled Tailwind CSS file -->
+        <link href="{% static 'css/output.css' %}" rel="stylesheet" />
+        <!-- HTMX Configuration -->
+        {% htmx_script %}
+        <!-- You can add additional head elements here if needed -->
+        {% block extra_head %}{% endblock %}
+    </head>
+    <!-- Added hx-headers to handle CSRF token across all HTMX requests -->
+    <body class="bg-gray-100 font-sans"
+          hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+        <div class="min-h-screen">
+            <!-- Navigation Bar -->
+            <nav class="bg-white shadow-lg">
+                <div class="max-w-6xl mx-auto px-4">
+                    <div class="flex justify-between items-center h-16">
+                        <div>
+                            <a href="/" class="text-xl font-bold text-gray-800">Clownfish Genetics</a>
+                        </div>
+                        <!-- Navigation Links -->
+                        <div class="flex space-x-4">
+                            <a href="{% url 'variety-list' %}"
+                               class="text-gray-600 hover:text-gray-900">Varieties</a>
+                            <a href="{% url 'parent-list' %}"
+                               class="text-gray-600 hover:text-gray-900">Parents</a>
+                            <a href="{% url 'cross-list' %}"
+                               class="text-gray-600 hover:text-gray-900">Crosses</a>
+                            <!-- Add other links as needed -->
+                        </div>
+                    </div>
                 </div>
-                <!-- Navigation Links -->
-                <div class="flex space-x-4">
-                    <a
-                            href="{% url 'variety-list' %}"
-                            class="text-gray-600 hover:text-gray-900"
-                    >Varieties</a
-                    >
-                    <a
-                            href="{% url 'parent-list' %}"
-                            class="text-gray-600 hover:text-gray-900"
-                    >Parents</a
-                    >
-                    <a
-                            href="{% url 'cross-list' %}"
-                            class="text-gray-600 hover:text-gray-900"
-                    >Crosses</a
-                    >
-                    <!-- Add other links as needed -->
-                </div>
-            </div>
+            </nav>
+            <!-- Main Content Area -->
+            <main class="max-w-6xl mx-auto mt-8 px-4">
+                <!-- Messages Framework (Optional but recommended) -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="p-4 mb-4 text-sm rounded-lg {% if message.tags == 'error' %}bg-red-100 text-red-700{% elif message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-blue-100 text-blue-700{% endif %}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <!-- Child template content goes here -->
+                {% block content %}{% endblock %}
+            </main>
         </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="max-w-6xl mx-auto mt-8 px-4">
-        <!-- Messages Framework (Optional but recommended) -->
-        {% if messages %} {% for message in messages %}
-        <div
-                class="p-4 mb-4 text-sm rounded-lg {% if message.tags == 'error' %}bg-red-100 text-red-700{% elif message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-blue-100 text-blue-700{% endif %}"
-        >
-            {{ message }}
-        </div>
-        {% endfor %} {% endif %}
-
-        <!-- Child template content goes here -->
-        {% block content %} {% endblock %}
-    </main>
-</div>
-
-<!-- Footer -->
-<footer class="mt-12 py-4 bg-white shadow-inner">
-    <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
-        © 2025 Clownfish Genetics
-    </div>
-</footer>
-</body>
+        <!-- Footer -->
+        <footer class="mt-12 py-4 bg-white shadow-inner">
+            <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">© 2025 Clownfish Genetics</div>
+        </footer>
+    </body>
 </html>

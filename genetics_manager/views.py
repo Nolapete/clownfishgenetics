@@ -1,8 +1,9 @@
 # In clownfishgenetics/landing/views.py (or a new view file)
 from django.shortcuts import render
-from genetics_manager.models import CommercialPhenotypeRecipe
+
 # Import our calculator utility functions
 from genetics_manager.calculator_utils import run_full_cross_process
+from genetics_manager.models import CommercialPhenotypeRecipe
 
 
 def calculate_cross_view(request):
@@ -11,8 +12,8 @@ def calculate_cross_view(request):
     """
     # 1. Get user input (example, you'd get this from request.POST)
     # Let's assume you've already filtered to get the parent objects
-    parent1_recipe_id = request.GET.get('parent1_id', 1)
-    parent2_recipe_id = request.GET.get('parent2_id', 2)
+    parent1_recipe_id = request.GET.get("parent1_id", 1)
+    parent2_recipe_id = request.GET.get("parent2_id", 2)
 
     parent1_recipe = CommercialPhenotypeRecipe.objects.get(id=parent1_recipe_id)
     parent2_recipe = CommercialPhenotypeRecipe.objects.get(id=parent2_recipe_id)
@@ -28,9 +29,9 @@ def calculate_cross_view(request):
 
     # 4. Pass the results to a Django template for display
     context = {
-        'parent1_name': parent1_recipe.name,
-        'parent2_name': parent2_recipe.name,
-        'results': results_percentages,
+        "parent1_name": parent1_recipe.name,
+        "parent2_name": parent2_recipe.name,
+        "results": results_percentages,
     }
 
-    return render(request, 'landing/results_template.html', context)
+    return render(request, "landing/results_template.html", context)

@@ -1,14 +1,12 @@
 {% extends 'calculator/base.html' %}
-
 {% block content %}
     <h2>Define Cross with Traits</h2>
-    <p>Define your genetic cross by selecting traits and parent genotypes from the options below. Select one or more traits to begin.</p>
+    <p>
+        Define your genetic cross by selecting traits and parent genotypes from the options below. Select one or more traits to begin.
+    </p>
     <form method="post">
         {% csrf_token %}
-        {% if error %}
-            <p style="color: red;">{{ error }}</p>
-        {% endif %}
-        
+        {% if error %}<p style="color: red;">{{ error }}</p>{% endif %}
         {% for field_pair in form_fields %}
             <div class="trait-field">
                 <h3>{{ field_pair.trait.name }}</h3>
@@ -24,7 +22,11 @@
                 </p>
             </div>
         {% endfor %}
-        <p><input type="submit" value="Calculate"></p>
+        <p>
+            <input type="submit" value="Calculate">
+        </p>
     </form>
-    <p class="back-link">or <a href="{% url 'parent_selection' %}">Select existing clownfish</a></p>
+    <p class="back-link">
+        or <a href="{% url 'parent_selection' %}">Select existing clownfish</a>
+    </p>
 {% endblock %}

@@ -1,15 +1,10 @@
 {% extends 'calculator/base.html' %}
-
 {% block content %}
     <h2>Select Parents for Cross</h2>
     <p>Choose two existing clownfish from the database to calculate their offspring.</p>
     <form method="post">
         {% csrf_token %}
-        {% if form.non_field_errors %}
-            <div style="color: red;">
-                {{ form.non_field_errors }}
-            </div>
-        {% endif %}
+        {% if form.non_field_errors %}<div style="color: red;">{{ form.non_field_errors }}</div>{% endif %}
         <p>
             <label for="{{ form.parent1.id_for_label }}">Parent 1</label>
             {{ form.parent1 }}
@@ -20,7 +15,11 @@
             {{ form.parent2 }}
             {{ form.parent2.errors }}
         </p>
-        <p><input type="submit" value="Calculate"></p>
+        <p>
+            <input type="submit" value="Calculate">
+        </p>
     </form>
-    <p class="back-link">or <a href="{% url 'calculator_view' %}">Define traits directly</a></p>
+    <p class="back-link">
+        or <a href="{% url 'calculator_view' %}">Define traits directly</a>
+    </p>
 {% endblock %}

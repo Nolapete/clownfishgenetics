@@ -61,4 +61,3 @@ exclude = [
 # Consistent formatting style: double quotes and spaces
 quote-style = "double"
 indent-style = "space"
-

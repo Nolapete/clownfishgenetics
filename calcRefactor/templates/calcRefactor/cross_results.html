@@ -1,78 +1,63 @@
 {% extends 'calcRefactor/base.html' %}
-
 <!-- Fix the title to be specific to the results -->
-{% block title %}Cross Results: {{ cross.parent1.variety.name }} X {{
-cross.parent2.variety.name }}{% endblock title %} {% block content %}
-<h1 class="text-3xl font-bold text-gray-800 mb-6">Cross Calculation Results</h1>
-
-{% if cross and results %}
-<div class="bg-white shadow-sm rounded-lg p-4 mb-6">
-    <p>
-        <strong class="text-gray-700">Cross:</strong>
-        {{ cross.parent1.variety.name }} X {{ cross.parent2.variety.name }}
-    </p>
-</div>
-
-<h3 class="text-xl font-semibold mb-4">Expected Progeny Outcomes</h3>
-
-<div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-    <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-        <tr>
-            <th
-                    scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-            >
-                Phenotype Name
-            </th>
-            <th
-                    scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-            >
-                Genotype
-            </th>
-            <th
-                    scope="col"
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-            >
-                Expected Ratio/Percentage
-            </th>
-        </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-        {% for result in results %}
-        <tr>
-            <td class="px-6 py-4 whitespace-nowrap">{{ result.phenotype }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ result.genotype }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ result.ratio }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-</div>
-
-{% elif cross %}
-<p class="text-gray-600">
-    No calculation results are available for this cross yet.
-</p>
-{% else %}
-<p class="text-gray-600">Invalid cross selected.</p>
-{% endif %}
-
-<hr class="my-6"/>
-<div class="flex space-x-4">
-    <!-- Use outlined buttons for navigation links -->
-    <a
-            href="{% url 'cross-detail' pk=cross.pk %}"
-            class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
-    >
-        Back to Cross Details
-    </a>
-    <a
-            href="{% url 'cross-list' %}"
-            class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
-    >
-        Back to Cross List
-    </a>
-</div>
+{% block title %}
+    Cross Results: {{ cross.parent1.variety.name }} X {{
+    cross.parent2.variety.name }}
+{% endblock title %}
+{% block content %}
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Cross Calculation Results</h1>
+    {% if cross and results %}
+        <div class="bg-white shadow-sm rounded-lg p-4 mb-6">
+            <p>
+                <strong class="text-gray-700">Cross:</strong>
+                {{ cross.parent1.variety.name }} X {{ cross.parent2.variety.name }}
+            </p>
+        </div>
+        <h3 class="text-xl font-semibold mb-4">Expected Progeny Outcomes</h3>
+        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Phenotype Name
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Genotype
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Expected Ratio/Percentage
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    {% for result in results %}
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ result.phenotype }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ result.genotype }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ result.ratio }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% elif cross %}
+        <p class="text-gray-600">No calculation results are available for this cross yet.</p>
+    {% else %}
+        <p class="text-gray-600">Invalid cross selected.</p>
+    {% endif %}
+    <hr class="my-6" />
+    <div class="flex space-x-4">
+        <!-- Use outlined buttons for navigation links -->
+        <a href="{% url 'cross-detail' pk=cross.pk %}"
+           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+            Back to Cross Details
+        </a>
+        <a href="{% url 'cross-list' %}"
+           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+            Back to Cross List
+        </a>
+    </div>
 {% endblock content %}

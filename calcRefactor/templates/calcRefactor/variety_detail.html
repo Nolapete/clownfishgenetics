@@ -1,50 +1,46 @@
 {% extends 'calcRefactor/base.html' %}
-
 <!-- Use the correct context name 'variety' -->
-{% block title %}Variety Details: {{ variety.name }}{% endblock title %}
+{% block title %}
+    Variety Details: {{ variety.name }}
+{% endblock title %}
 {% block content %}
-<h1 class="text-3xl font-bold text-gray-800 mb-6">Variety Details</h1>
-
-<!-- Use the correct context name 'variety' -->
-{% if variety %}
-<div class="bg-white shadow overflow-hidden sm:rounded-lg p-6 mb-6">
-    <h2 class="text-xl font-semibold mb-4 border-b pb-2">{{ variety.name }}</h2>
-
-    <div class="space-y-3">
-        <p>
-            <strong class="text-gray-600">Genus:</strong>
-            {{ variety.genus }}
-        </p>
-        <p>
-            <strong class="text-gray-600">Species:</strong>
-            {{ variety.species }}
-        </p>
-        <p>
-            <strong class="text-gray-600">Variant:</strong>
-            {{ variety.variant|default_if_none:"N/A" }}
-        </p>
-        <p>
-            <strong class="text-gray-600">Hybrid:</strong>
-            {{ variety.hybrid|yesno:"Yes,No" }}
-        </p>
-        <p>
-            <strong class="text-gray-600">Genotype Pattern:</strong>
-            {{ variety.genotype_pattern }}
-        </p>
-    </div>
-</div>
-{% else %}
-<p class="text-gray-600">Variety not found.</p>
-{% endif %}
-
-<hr class="my-6"/>
-<p>
-    <!-- Use an outlined button style for the "Back" link -->
-    <a
-            href="{% url 'variety-list' %}"
-            class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200"
-    >
-        Back to Variety List
-    </a>
-</p>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Variety Details</h1>
+    <!-- Use the correct context name 'variety' -->
+    {% if variety %}
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4 border-b pb-2">{{ variety.name }}</h2>
+            <div class="space-y-3">
+                <p>
+                    <strong class="text-gray-600">Genus:</strong>
+                    {{ variety.genus }}
+                </p>
+                <p>
+                    <strong class="text-gray-600">Species:</strong>
+                    {{ variety.species }}
+                </p>
+                <p>
+                    <strong class="text-gray-600">Variant:</strong>
+                    {{ variety.variant|default_if_none:"N/A" }}
+                </p>
+                <p>
+                    <strong class="text-gray-600">Hybrid:</strong>
+                    {{ variety.hybrid|yesno:"Yes,No" }}
+                </p>
+                <p>
+                    <strong class="text-gray-600">Genotype Pattern:</strong>
+                    {{ variety.genotype_pattern }}
+                </p>
+            </div>
+        </div>
+    {% else %}
+        <p class="text-gray-600">Variety not found.</p>
+    {% endif %}
+    <hr class="my-6" />
+    <p>
+        <!-- Use an outlined button style for the "Back" link -->
+        <a href="{% url 'variety-list' %}"
+           class="border border-gray-400 text-gray-700 hover:bg-gray-400 hover:text-white font-semibold py-2 px-4 rounded transition duration-200">
+            Back to Variety List
+        </a>
+    </p>
 {% endblock content %}

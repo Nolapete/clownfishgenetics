@@ -1,12 +1,16 @@
 # In clownfishgenetics/genetics_manager/management/commands/process_genotypes.py
 
+
 from django.core.management.base import BaseCommand
+
 from genetics_manager.models import CommercialPhenotypeRecipe, Locus
-import json
 
 
 class Command(BaseCommand):
-    help = 'Parses the raw "genotype" string field into the structured "required_genotypes" JSON field.'
+    help = (
+        'Parses the raw "genotype" string field into the structured '
+        '"required_genotypes" JSON field.'
+    )
 
     def handle(self, *args, **options):
         self.stdout.write("Starting genotype processing...")
@@ -27,7 +31,8 @@ class Command(BaseCommand):
         count = 0
 
         for recipe in recipes:
-            # 1. Ensure the name field is populated correctly first from the phenotype data
+            # 1. Ensure the name field is populated correctly
+            # first from the phenotype data
             if not recipe.name and recipe.phenotype:
                 recipe.name = recipe.phenotype.strip()
 
@@ -39,22 +44,28 @@ class Command(BaseCommand):
             gene_pairs = raw_genotype_string.split()
 
             for pair in gene_pairs:
-                allele1, allele2 = pair.split('/')
+                allele1, allele2 = pair.split("/")
 
                 locus_name = None
-                if allele1 != '+':
+                if allele1 != "+":
                     locus_name = locus_names_map.get(allele1)
-                elif allele2 != '+':
+                elif allele2 != "+":
                     locus_name = locus_names_map.get(allele2)
 
                 if locus_name:
                     structured_genotypes[locus_name] = pair
                 else:
-                    if pair != '+/+':
-                        self.stdout.write(self.style.WARNING(f"Unknown locus/allele: {pair} in recipe ID {recipe.pk}"))
+                    if pair != "+/+":
+                        self.stdout.write(
+                            self.style.WARNING(
+                                f"Unknown locus/allele: {pair} in recipe ID {recipe.pk}"
+                            )
+                        )
 
             recipe.required_genotypes = structured_genotypes
             recipe.save()
             count += 1
 
-        self.stdout.write(self.style.SUCCESS(f"Successfully processed {count} recipes."))
+        self.stdout.write(
+            self.style.SUCCESS(f"Successfully processed {count} recipes.")
+        )
