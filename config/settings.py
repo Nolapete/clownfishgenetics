@@ -123,6 +123,10 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "oscar.apps.search.context_processors.search_form",
+                "oscar.apps.checkout.context_processors.checkout",
+                "oscar.apps.communication.notifications.context_processors.notifications",
+                "oscar.core.context_processors.metadata",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
@@ -167,6 +171,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Django Oscar Settings (Minimum Requirements)
 OSCAR_SHOP_NAME = "Clownfish Breeders Resource"
 OSCAR_FROM_EMAIL = "support@clownfishgenetics.org"
+OSCAR_DEFAULT_CURRENCY = "USD"
 SITE_ID = 1  # Required by Allauth and Oscar
 
 # Optional: Set the user model if Oscar doesn't find it automatically
