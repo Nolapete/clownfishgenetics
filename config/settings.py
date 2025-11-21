@@ -4,29 +4,20 @@ from pathlib import Path
 import environ
 from oscar.defaults import *
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-
 env = environ.Env(DEBUG=(bool, False))
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env("DEBUG")
 
-DATABASES = {"default": env.db()}
-
-WHOOSH_INDEX_PATH = os.path.join(BASE_DIR, "whoosh_index")
-
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
-        "PATH": WHOOSH_INDEX_PATH,
-    },
-}
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 
 # Application definition
 
@@ -39,7 +30,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.flatpages",
     "django.contrib.sites",
-    "django.contrib.postgres",
     # Third party apps
     "rest_framework",
     "ninja",
@@ -108,6 +98,22 @@ MIDDLEWARE = [
     "django_htmx.middleware.HtmxMiddleware",
 ]
 
+
+if DEBUG:
+    INSTALLED_APPS += [
+        "debug_toolbar",
+    ]
+
+    MIDDLEWARE += [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]
+
+    # This setting is REQUIRED for the toolbar to appear in the browser
+    INTERNAL_IPS = [
+        "127.0.0.1",
+    ]
+
+
 ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
@@ -130,6 +136,14 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
+WSGI_APPLICATION = "config.wsgi.application"
+
+
+# Database
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+
+DATABASES = {"default": env.db()}
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -149,6 +163,43 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+# Django Oscar Settings (Minimum Requirements)
+OSCAR_SHOP_NAME = "Clownfish Breeders Resource"
+OSCAR_FROM_EMAIL = "support@clownfishgenetics.org"
+SITE_ID = 1  # Required by Allauth and Oscar
+
+# Optional: Set the user model if Oscar doesn't find it automatically
+OSCAR_USER_MODEL = "auth.User"
+
+WHOOSH_INDEX_PATH = os.path.join(BASE_DIR, "whoosh_index")
+
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "haystack.backends.whoosh_backend.WhooshEngine",
+        "PATH": WHOOSH_INDEX_PATH,
+    },
+}
+
+# Internationalization
+# https://docs.djangoproject.com/en/5.2/topics/i18n/
+
+LANGUAGE_CODE = "en-us"
+
+TIME_ZONE = "UTC"
+
+USE_I18N = True
+
+USE_TZ = True
+
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.2/howto/static-files/
+
+STATIC_URL = "/static/"
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 LOGIN_URL = "/accounts/login/"
 LOGIN_REDIRECT_URL = "/"
@@ -170,6 +221,13 @@ LOGIN_REQUIRED_EXEMPT_URLS = [
     r"^api/.*",  # let DRF permission classes handle API auth
 ]
 
+# DRF: default to authenticated; public endpoints can override with AllowAny
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
 # Allauth provider defaults (tweak as needed per provider docs)
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
@@ -183,31 +241,11 @@ SOCIALACCOUNT_PROVIDERS = {
 
 SOCIALACCOUNT_LOGIN_ON_GET = True
 
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
 
-WSGI_APPLICATION = "config.wsgi.application"
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
-LANGUAGE_CODE = "en-us"
-TIME_ZONE = "UTC"
-USE_I18N = True
-USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
-STATIC_URL = "/static/"
-
-# DRF: default to authenticated; public endpoints can override with AllowAny
-REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
-}
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATICFILES_DIRS = [
@@ -225,10 +263,3 @@ CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "UTC"
-
-# Django Oscar Settings (Minimum Requirements)
-OSCAR_SHOP_NAME = "Clownfish Breeders Resource"
-OSCAR_FROM_EMAIL = "support@clownfishgenetics.org"
-SITE_ID = 1  # Required by Allauth and Oscar
-# Optional: Set the user model if Oscar doesn't find it automatically
-OSCAR_USER_MODEL = "auth.User"

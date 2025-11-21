@@ -106,3 +106,4 @@ uwsgi.ini
 *.sublime-project
 *.sublime-workspace
 .direnv
+whoosh_index/
