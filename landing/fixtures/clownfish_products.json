@@ -1,0 +1,101 @@
+[
+  {
+    "model": "catalogue.productclass",
+    "pk": 1,
+    "fields": {
+      "name": "Fish",
+      "slug": "fish",
+      "requires_shipping": true,
+      "track_stock": true,
+      "options": []
+    }
+  },
+  {
+    "model": "catalogue.product",
+    "pk": 1,
+    "fields": {
+      "product_class": 1,
+      "title": "Ocellaris Clownfish (Common)",
+      "slug": "ocellaris-clownfish-common",
+      "description": "The standard, vibrant orange clownfish. Hardy and a great beginner fish.",
+      "date_created": "2025-01-01T00:00:00Z",
+      "is_public": true,
+      "structure": "standalone",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "partner.partner",
+    "pk": 1,
+    "fields": {
+      "name": "Pete's Aquatics"
+    }
+  },
+  {
+    "model": "partner.stockrecord",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "partner": 1,
+      "partner_sku": "OCLOWN001",
+      "num_in_stock": 50,
+      "num_allocated": 0,
+      "date_created": "2025-01-01T00:00:00Z",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalogue.product",
+    "pk": 2,
+    "fields": {
+      "product_class": 1,
+      "title": "Black Ice Clownfish",
+      "slug": "black-ice-clownfish",
+      "description": "A stunning designer clownfish with deep black and brilliant white bars.",
+      "date_created": "2025-01-01T00:00:00Z",
+      "is_public": true,
+      "structure": "standalone",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "partner.stockrecord",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "partner": 1,
+      "partner_sku": "BLKICE001",
+      "num_in_stock": 15,
+      "num_allocated": 0,
+      "date_created": "2025-01-01T00:00:00Z",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalogue.product",
+    "pk": 3,
+    "fields": {
+      "product_class": 1,
+      "title": "Platinum Percula Clownfish",
+      "slug": "platinum-percula-clownfish",
+      "description": "Solid white body with orange face and fins. A premium show fish.",
+      "date_created": "2025-01-01T00:00:00Z",
+      "is_public": true,
+      "structure": "standalone",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "partner.stockrecord",
+    "pk": 3,
+    "fields": {
+      "product": 3,
+      "partner": 1,
+      "partner_sku": "PLTNM001",
+      "num_in_stock": 5,
+      "num_allocated": 0,
+      "date_created": "2025-01-01T00:00:00Z",
+      "date_updated": "2025-01-01T00:00:00Z"
+    }
+  }
+]

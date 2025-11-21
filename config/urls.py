@@ -1,6 +1,7 @@
+from django.apps import apps
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path, re_path
-from django.conf import settings
 from django.views.generic import RedirectView
 
 admin.site.site_header = "clownfishgenetics.org Administration"
@@ -13,12 +14,18 @@ urlpatterns = [
     path("calculator/", include("calculator.urls")),
     path("breeding/", include("calcRefactor.urls")),
     path("accounts/", include("allauth.urls")),
-    re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)),
+    re_path(
+        r"^favicon\.ico$",
+        RedirectView.as_view(url="/static/images/favicon.ico", permanent=True),
+    ),
+    path("i18n/", include("django.conf.urls.i18n")),
+    path("shop", include(apps.get_app_config("oscar").urls[0])),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
+
     # Append the debug toolbar URLs to the existing list
     urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
+        path("__debug__/", include(debug_toolbar.urls)),
     ]
