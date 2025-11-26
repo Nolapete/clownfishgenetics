@@ -1,4 +1,5 @@
 # from nolapete.models import Animal
+from calculator.models import Clownfish
 
 
 def fmtIt(nm):
@@ -16,3 +17,7 @@ def fmtIt(nm):
 # animals = Animal.objects.all()
 # for a in animals:
 #     print(fmtIt(a.phenotype))
+
+clownfish = Clownfish.objects.all()
+for c in clownfish:
+    print(fmtIt(c.get_phenotype_string()))

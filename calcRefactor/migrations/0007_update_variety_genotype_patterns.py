@@ -4,8 +4,8 @@ from django.db import migrations, transaction
 
 
 def update_genotype_patterns(apps, schema_editor):
-    Recipe = apps.get_model('genetics_manager', 'CommercialPhenotypeRecipe')
-    Variety = apps.get_model('calcRefactor', 'Variety')
+    Recipe = apps.get_model("genetics_manager", "CommercialPhenotypeRecipe")
+    Variety = apps.get_model("calcRefactor", "Variety")
 
     with transaction.atomic():
         for recipe_obj in Recipe.objects.all():
@@ -29,16 +29,18 @@ def update_genotype_patterns(apps, schema_editor):
 
 def reverse_update_genotype_patterns(apps, schema_editor):
     # Optional: Logic to clear the field on rollback
-    Variety = apps.get_model('calcRefactor', 'Variety')
+    Variety = apps.get_model("calcRefactor", "Variety")
     Variety.objects.all().update(genotype_pattern="N/A")
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('calcRefactor', '0006_auto_20251111_2133'),
-        ('genetics_manager', '0009_alter_commercialphenotyperecipe_breeder_name'),
+        ("calcRefactor", "0006_auto_20251111_2133"),
+        ("genetics_manager", "0009_alter_commercialphenotyperecipe_breeder_name"),
     ]
 
     operations = [
-        migrations.RunPython(update_genotype_patterns, reverse_update_genotype_patterns),
+        migrations.RunPython(
+            update_genotype_patterns, reverse_update_genotype_patterns
+        ),
     ]

@@ -7,9 +7,9 @@ from django.db import migrations, transaction
 
 def copy_recipe_data(apps, schema_editor):
     # Get the historical versions of the models
-    Recipe = apps.get_model('genetics_manager', 'CommercialPhenotypeRecipe')
-    Variety = apps.get_model('calcRefactor', 'Variety')
-    Clownfish = apps.get_model('calculator', 'Clownfish')
+    Recipe = apps.get_model("genetics_manager", "CommercialPhenotypeRecipe")
+    Variety = apps.get_model("calcRefactor", "Variety")
+    Clownfish = apps.get_model("calculator", "Clownfish")
 
     with transaction.atomic():
         for recipe_obj in Recipe.objects.all():
@@ -17,30 +17,30 @@ def copy_recipe_data(apps, schema_editor):
             Variety.objects.get_or_create(
                 name=recipe_obj.name,
                 defaults={
-                    'genus': recipe_obj.genus or "Amphiprion",
-                    'species': recipe_obj.species or "ocellaris",
-                    'variant': recipe_obj.variant,
-                    'hybrid': recipe_obj.hybrid,
-                    'genotype_pattern': "N/A",  # Needs a default value as it's required
-                }
+                    "genus": recipe_obj.genus or "Amphiprion",
+                    "species": recipe_obj.species or "ocellaris",
+                    "variant": recipe_obj.variant,
+                    "hybrid": recipe_obj.hybrid,
+                    "genotype_pattern": "N/A",  # Needs a default value as it's required
+                },
             )
 
             # --- Populate Clownfish model (calculator) ---
             Clownfish.objects.get_or_create(
                 name=recipe_obj.name,
                 defaults={
-                    'genus': recipe_obj.genus or "Amphiprion",
-                    'species': recipe_obj.species or "ocellaris",
-                    'variant': recipe_obj.variant,
-                    'hybrid': recipe_obj.hybrid,
-                }
+                    "genus": recipe_obj.genus or "Amphiprion",
+                    "species": recipe_obj.species or "ocellaris",
+                    "variant": recipe_obj.variant,
+                    "hybrid": recipe_obj.hybrid,
+                },
             )
 
 
 def reverse_copy(apps, schema_editor):
     # Logic to remove the data if the migration is rolled back
-    Variety = apps.get_model('calcRefactor', 'Variety')
-    Clownfish = apps.get_model('calculator', 'Clownfish')
+    Variety = apps.get_model("calcRefactor", "Variety")
+    Clownfish = apps.get_model("calculator", "Clownfish")
 
     Variety.objects.all().delete()
     Clownfish.objects.all().delete()
@@ -49,9 +49,9 @@ def reverse_copy(apps, schema_editor):
 class Migration(migrations.Migration):
     dependencies = [
         # The exact latest dependencies for all three apps:
-        ('calcRefactor', '0005_variety_genus_variety_hybrid_variety_variant'),
-        ('genetics_manager', '0009_alter_commercialphenotyperecipe_breeder_name'),
-        ('calculator', '0006_clownfish_hybrid_clownfish_variant'),
+        ("calcRefactor", "0005_variety_genus_variety_hybrid_variety_variant"),
+        ("genetics_manager", "0009_alter_commercialphenotyperecipe_breeder_name"),
+        ("calculator", "0006_clownfish_hybrid_clownfish_variant"),
     ]
 
     operations = [
