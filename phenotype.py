@@ -1,6 +1,16 @@
 # from nolapete.models import Clownfish
-import newPhen
-from fmtIt import fmtIt
+import os
+import sys
+
+import django
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+# Set the settings module to use your config.settings
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+
+# Initialize Django
+django.setup()
 
 
 def pheno(genotype, parent1, parent2):
@@ -918,3 +928,12 @@ def pheno(genotype, parent1, parent2):
 #     genotype='+/+'
 #     results=pheno(genotype, parent1, parent2)
 #     print(results)
+
+import newPhen
+from calcRefactor.models import Variety
+from fmtIt import fmtIt
+
+for parent1 in Variety.objects.all():
+    print("Parent1 " + parent1.name)
+    for parent2 in Variety.objects.all():
+        print("   Parent2 " + parent2.name)
