@@ -4,6 +4,9 @@ import sys
 
 import django
 
+import newPhen
+from fmtIt import fmtIt
+
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Set the settings module to use your config.settings
@@ -929,11 +932,7 @@ def pheno(genotype, parent1, parent2):
 #     results=pheno(genotype, parent1, parent2)
 #     print(results)
 
-import newPhen
-from calcRefactor.models import Variety
-from fmtIt import fmtIt
-
-for parent1 in Variety.objects.all():
-    print("Parent1 " + parent1.name)
-    for parent2 in Variety.objects.all():
-        print("   Parent2 " + parent2.name)
+# for parent1 in Variety.objects.all():
+#     print("Parent1 " + parent1.name)
+#     for parent2 in Variety.objects.all():
+#         print("   Parent2 " + parent2.name)
