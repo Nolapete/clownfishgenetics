@@ -30,4 +30,4 @@ def get_progeny_phenotype_name(cross: Cross, genotype: str) -> str:
         pass  # No specific rule found, fall through to default logic.
 
     # Fallback to a generic name for unnamed crosses
-    return f"{variety1.species} ({variety1.name} X {variety2.name})"
+    return f"({variety1.name} X {variety2.name})"

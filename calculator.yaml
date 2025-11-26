@@ -1,0 +1,1603 @@
+- model: calculator.trait
+  pk: 21
+  fields:
+    name: Overbar
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 22
+  fields:
+    name: Lightning
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 23
+  fields:
+    name: Widebar
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 24
+  fields:
+    name: Goldflake
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 25
+  fields:
+    name: DaVinci
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 26
+  fields:
+    name: Albino
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 27
+  fields:
+    name: Onyx
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.trait
+  pk: 28
+  fields:
+    name: DarwinVariant
+    description: ''
+    inheritance_pattern: dominant
+- model: calculator.allele
+  pk: 38
+  fields:
+    trait: 21
+    name: P
+    display_name: P
+- model: calculator.allele
+  pk: 39
+  fields:
+    trait: 21
+    name: Sf
+    display_name: Sf
+- model: calculator.allele
+  pk: 40
+  fields:
+    trait: 21
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 41
+  fields:
+    trait: 22
+    name: L
+    display_name: L
+- model: calculator.allele
+  pk: 42
+  fields:
+    trait: 22
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 43
+  fields:
+    trait: 23
+    name: WB
+    display_name: WB
+- model: calculator.allele
+  pk: 44
+  fields:
+    trait: 23
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 45
+  fields:
+    trait: 24
+    name: G
+    display_name: G
+- model: calculator.allele
+  pk: 46
+  fields:
+    trait: 24
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 47
+  fields:
+    trait: 25
+    name: DV
+    display_name: DV
+- model: calculator.allele
+  pk: 48
+  fields:
+    trait: 25
+    name: N
+    display_name: N
+- model: calculator.allele
+  pk: 49
+  fields:
+    trait: 25
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 50
+  fields:
+    trait: 26
+    name: a
+    display_name: a
+- model: calculator.allele
+  pk: 51
+  fields:
+    trait: 26
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 52
+  fields:
+    trait: 27
+    name: O
+    display_name: O
+- model: calculator.allele
+  pk: 53
+  fields:
+    trait: 27
+    name: +
+    display_name: +
+- model: calculator.allele
+  pk: 54
+  fields:
+    trait: 28
+    name: DV
+    display_name: DV
+- model: calculator.allele
+  pk: 55
+  fields:
+    trait: 28
+    name: N
+    display_name: N
+- model: calculator.allele
+  pk: 56
+  fields:
+    trait: 28
+    name: +
+    display_name: +
+- model: calculator.genotypephenotype
+  pk: 26
+  fields:
+    trait: 28
+    allele1: 54
+    allele2: 56
+    phenotype: Amphiprion ocellaris "DaVinci / Fancy White / Gladiator"
+- model: calculator.genotypephenotype
+  pk: 27
+  fields:
+    trait: 25
+    allele1: 48
+    allele2: 48
+    phenotype: Amphiprion "Double Black Photon"
+- model: calculator.genotypephenotype
+  pk: 28
+  fields:
+    trait: 21
+    allele1: 39
+    allele2: 39
+    phenotype: Amphiprion "Double Black Photon"
+- model: calculator.genotypephenotype
+  pk: 29
+  fields:
+    trait: 22
+    allele1: 41
+    allele2: 42
+    phenotype: Premnas biaculeatus "Lightning"
+- model: calculator.genotypephenotype
+  pk: 30
+  fields:
+    trait: 21
+    allele1: 38
+    allele2: 38
+    phenotype: Amphiprion percula "Platinum"
+- model: calculator.genotypephenotype
+  pk: 31
+  fields:
+    trait: 21
+    allele1: 38
+    allele2: 40
+    phenotype: Amphiprion percula "Picasso"
+- model: calculator.genotypephenotype
+  pk: 32
+  fields:
+    trait: 21
+    allele1: 39
+    allele2: 40
+    phenotype: Amphiprion "Black Ice"
+- model: calculator.genotypephenotype
+  pk: 33
+  fields:
+    trait: 23
+    allele1: 43
+    allele2: 44
+    phenotype: Amphiprion ocellaris "Wide Bar Gladiator"
+- model: calculator.genotypephenotype
+  pk: 34
+  fields:
+    trait: 28
+    allele1: 55
+    allele2: 56
+    phenotype: Amphiprion ocellaris "Naked"
+- model: calculator.genotypephenotype
+  pk: 35
+  fields:
+    trait: 28
+    allele1: 54
+    allele2: 54
+    phenotype: Amphiprion ocellaris "Wyoming White"
+- model: calculator.genotypephenotype
+  pk: 36
+  fields:
+    trait: 25
+    allele1: 47
+    allele2: 49
+    phenotype: Amphiprion "MochaVinci"
+- model: calculator.genotypephenotype
+  pk: 37
+  fields:
+    trait: 24
+    allele1: 45
+    allele2: 45
+    phenotype: Premnas sp. epigrammata "Gold Nugget"
+- model: calculator.genotypephenotype
+  pk: 38
+  fields:
+    trait: 24
+    allele1: 45
+    allele2: 46
+    phenotype: Premnas sp. epigrammata "Goldflake / Gold Spot / Gold Rush"
+- model: calculator.clownfish
+  pk: 295
+  fields:
+    name: Premnas "White Gold"
+    genus: Premnas
+    species: ocellaris
+    variant: '"White Gold"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 296
+  fields:
+    name: Amphiprion ocellaris "DaVinci / Fancy White / Gladiator"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"DaVinci / Fancy White / Gladiator"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 297
+  fields:
+    name: Amphiprion polymnus "Classic Brown"
+    genus: Amphiprion
+    species: polymnus
+    variant: '"Classic Brown"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 298
+  fields:
+    name: Amphiprion "Double Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Double Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 299
+  fields:
+    name: Premnas biaculeatus "Lightning"
+    genus: Premnas
+    species: biaculeatus
+    variant: '"Lightning"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 300
+  fields:
+    name: Premnas biaculeatus "White Stripe"
+    genus: Premnas
+    species: biaculeatus
+    variant: '"White Stripe"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 301
+  fields:
+    name: Premnas biaculeatus "White Stripe (Indonesia / Philippines)"
+    genus: Premnas
+    species: biaculeatus
+    variant: '"White Stripe (Indonesia / Philippines)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 302
+  fields:
+    name: Premnas biaculeatus "Morse Code"
+    genus: Premnas
+    species: biaculeatus
+    variant: '"Morse Code"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 303
+  fields:
+    name: Amphiprion "Red Bee"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Red Bee"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 304
+  fields:
+    name: Pramphiprion "Citron"
+    genus: Pramphiprion
+    species: ocellaris
+    variant: '"Citron"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 305
+  fields:
+    name: Amphiprion percula "Platinum"
+    genus: Amphiprion
+    species: percula
+    variant: '"Platinum"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 306
+  fields:
+    name: Amphiprion percula "Picasso"
+    genus: Amphiprion
+    species: percula
+    variant: '"Picasso"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 307
+  fields:
+    name: Amphiprion "Black Ice"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Black Ice"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 308
+  fields:
+    name: Premnas biaculeatus "Lightning Double Dose"*
+    genus: Premnas
+    species: biaculeatus
+    variant: '"Lightning Double Dose"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 309
+  fields:
+    name: Premnas sp. darwin
+    genus: Premnas
+    species: sp. darwin
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 310
+  fields:
+    name: Amphiprion ocellaris "Color Changing"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Color Changing"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 311
+  fields:
+    name: Amphiprion "Picasso Half Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Picasso Half Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 312
+  fields:
+    name: Amphiprion "Blacker Lightning"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Blacker Lightning"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 313
+  fields:
+    name: Premnas sp. epigrammata
+    genus: Premnas
+    species: sp. epigrammata
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 314
+  fields:
+    name: Amphiprion "Chocolate Midnight"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Chocolate Midnight"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 315
+  fields:
+    name: Amphiprion "Dr. DaVinci"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Dr. DaVinci"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 316
+  fields:
+    name: Premnas biaculeatus "White Stripe (PNG / Solomon Islands)"
+    genus: Premnas
+    species: biaculeatus
+    variant: '"White Stripe (PNG / Solomon Islands)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 317
+  fields:
+    name: Amphiprion percula
+    genus: Amphiprion
+    species: percula
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 318
+  fields:
+    name: Amphiprion ocellaris "Frostbite"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Frostbite"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 319
+  fields:
+    name: Amphiprion "Dr."
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Dr."'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 320
+  fields:
+    name: Amphiprion "Half Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Half Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 321
+  fields:
+    name: Amphiprion "Picasso Percularis"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Picasso Percularis"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 322
+  fields:
+    name: Amphiprion "Sunset Mocha Snowflake"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Sunset Mocha Snowflake"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 323
+  fields:
+    name: Amphiprion "Maybe??? Red Bee"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Maybe??? Red Bee"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 324
+  fields:
+    name: Amphiprion "Midnight Lightning"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Midnight Lightning"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 325
+  fields:
+    name: Amphiprion ocellaris "Wide Bar Gladiator"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Wide Bar Gladiator"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 326
+  fields:
+    name: Amphiprion "Split-Face"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Split-Face"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 327
+  fields:
+    name: Premnas sp. epigrammata "Gold Stripe"
+    genus: Premnas
+    species: sp. epigrammata
+    variant: '"Gold Stripe"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 328
+  fields:
+    name: Amphiprion "Sunset Mocha"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Sunset Mocha"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 329
+  fields:
+    name: Amphiprion ocellaris "Wide Bar Mocha Gladiator"*
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Wide Bar Mocha Gladiator"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 330
+  fields:
+    name: Amphiprion "Snowflake Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Snowflake Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 331
+  fields:
+    name: Amphiprion ocellaris "Naked"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Naked"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 332
+  fields:
+    name: Amphiprion ocellaris "Snowflake"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Snowflake"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 333
+  fields:
+    name: Amphiprion ocellaris "DaVinci / Fancy White / Gladiator" het. albino
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"DaVinci / Fancy White / Gladiator" het. albino'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 334
+  fields:
+    name: Amphiprion ocellaris "Wyoming White"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Wyoming White"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 335
+  fields:
+    name: Amphiprion ocellaris "Snowflake Double Dose"*
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Snowflake Double Dose"*'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 336
+  fields:
+    name: Amphiprion percula "Nebula"
+    genus: Amphiprion
+    species: percula
+    variant: '"Nebula"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 337
+  fields:
+    name: Amphiprion sp. darwin "Chocolate/Caramel"
+    genus: Amphiprion
+    species: sp. darwin
+    variant: '"Chocolate/Caramel"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 338
+  fields:
+    name: Amphiprion sp. darwin "Midnight"
+    genus: Amphiprion
+    species: sp. darwin
+    variant: '"Midnight"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 339
+  fields:
+    name: Amphiprion "MochaVinci"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"MochaVinci"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 340
+  fields:
+    name: Premnas sp. epigrammata "Gold Nugget"
+    genus: Premnas
+    species: sp. epigrammata
+    variant: '"Gold Nugget"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 341
+  fields:
+    name: Premnas sp. epigrammata "Goldflake / Gold Spot / Gold Rush"
+    genus: Premnas
+    species: sp. epigrammata
+    variant: '"Goldflake / Gold Spot / Gold Rush"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 342
+  fields:
+    name: Amphiprion "Black Snowflake/Phantom"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Black Snowflake/Phantom"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 343
+  fields:
+    name: Amphiprion sp. darwin "Zombie Albino"
+    genus: Amphiprion
+    species: sp. darwin
+    variant: '"Zombie Albino"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 344
+  fields:
+    name: Premnas sp. epigrammata "Peace Keeper"
+    genus: Premnas
+    species: sp. epigrammata
+    variant: '"Peace Keeper"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 345
+  fields:
+    name: Amphiprion ocellaris
+    genus: Amphiprion
+    species: ocellaris
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 346
+  fields:
+    name: Amphiprion "Midnight Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Midnight Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 347
+  fields:
+    name: Amphiprion sp. darwin
+    genus: Amphiprion
+    species: sp. darwin
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 348
+  fields:
+    name: Amphiprion "Percularis"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Percularis"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 349
+  fields:
+    name: Amphiprion "Smorcularis/Twilight"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Smorcularis/Twilight"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 350
+  fields:
+    name: Amphiprion ocellaris "Brown"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Brown"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 351
+  fields:
+    name: Amphiprion ocellaris "Fancy/Vivid Fancy"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Fancy/Vivid Fancy"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 352
+  fields:
+    name: Amphiprion ocellaris "Golden"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Golden"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 353
+  fields:
+    name: Amphiprion "Mocha"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Mocha"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 354
+  fields:
+    name: Amphiprion ocellaris "Tangerine Albino"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Tangerine Albino"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 355
+  fields:
+    name: Amphiprion "Chocolate Mocha"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Chocolate Mocha"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 356
+  fields:
+    name: Amphiprion "Snow Onyx"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Snow Onyx"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 357
+  fields:
+    name: Amphiprion "Picassnow"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Picassnow"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 358
+  fields:
+    name: Amphiprion polymnus "Melanistic"
+    genus: Amphiprion
+    species: polymnus
+    variant: '"Melanistic"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 359
+  fields:
+    name: Amphiprion polymnus "White Horse"
+    genus: Amphiprion
+    species: polymnus
+    variant: '"White Horse"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 360
+  fields:
+    name: Amphiprion sebae "Galaxy"
+    genus: Amphiprion
+    species: sebae
+    variant: '"Galaxy"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 361
+  fields:
+    name: Pramphiprion "Cocoa"
+    genus: Pramphiprion
+    species: ocellaris
+    variant: '"Cocoa"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 362
+  fields:
+    name: Pramphiprion "Mai Tai"
+    genus: Pramphiprion
+    species: ocellaris
+    variant: '"Mai Tai"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 363
+  fields:
+    name: Amphiprion akallopisos
+    genus: Amphiprion
+    species: akallopisos
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 364
+  fields:
+    name: Amphiprion leucokranos
+    genus: Amphiprion
+    species: leucokranos
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 365
+  fields:
+    name: Amphiprion nigripes
+    genus: Amphiprion
+    species: nigripes
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 366
+  fields:
+    name: Amphiprion pacificus
+    genus: Amphiprion
+    species: pacificus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 367
+  fields:
+    name: Amphiprion sandaracinos
+    genus: Amphiprion
+    species: sandaracinos
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 368
+  fields:
+    name: Amphiprion thiellei
+    genus: Amphiprion
+    species: thiellei
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 369
+  fields:
+    name: Amphiprion barberi
+    genus: Amphiprion
+    species: barberi
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 370
+  fields:
+    name: Amphiprion ephippium
+    genus: Amphiprion
+    species: ephippium
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 371
+  fields:
+    name: Amphiprion frenatus
+    genus: Amphiprion
+    species: frenatus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 372
+  fields:
+    name: Amphiprion mccullochi
+    genus: Amphiprion
+    species: mccullochi
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 373
+  fields:
+    name: Amphiprion melanopus
+    genus: Amphiprion
+    species: melanopus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 374
+  fields:
+    name: Amphiprion rubrocinctus
+    genus: Amphiprion
+    species: rubrocinctus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 375
+  fields:
+    name: Amphiprion melanopus "SI"
+    genus: Amphiprion
+    species: melanopus
+    variant: '"SI"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 376
+  fields:
+    name: Amphiprion melanopus "Vanuatu"
+    genus: Amphiprion
+    species: melanopus
+    variant: '"Vanuatu"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 377
+  fields:
+    name: Amphiprion melanopus "New Caledonia"
+    genus: Amphiprion
+    species: melanopus
+    variant: '"New Caledonia"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 378
+  fields:
+    name: Amphiprion ephippium "Melanistic"
+    genus: Amphiprion
+    species: ephippium
+    variant: '"Melanistic"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 379
+  fields:
+    name: Amphiprion frenatus "Phantom/Picasso/Galaxy"
+    genus: Amphiprion
+    species: frenatus
+    variant: '"Phantom/Picasso/Galaxy"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 380
+  fields:
+    name: Amphiprion frenatus "Rotten Tomato"
+    genus: Amphiprion
+    species: frenatus
+    variant: '"Rotten Tomato"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 381
+  fields:
+    name: Amphiprion akyndinos
+    genus: Amphiprion
+    species: akyndinos
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 382
+  fields:
+    name: Amphiprion allardi
+    genus: Amphiprion
+    species: allardi
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 383
+  fields:
+    name: Amphiprion bicinctus
+    genus: Amphiprion
+    species: bicinctus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 384
+  fields:
+    name: Amphiprion chagosensis
+    genus: Amphiprion
+    species: chagosensis
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 385
+  fields:
+    name: Amphiprion chrysogaster
+    genus: Amphiprion
+    species: chrysogaster
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 386
+  fields:
+    name: Amphiprion chrysopterus
+    genus: Amphiprion
+    species: chrysopterus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 387
+  fields:
+    name: Amphiprion fuscocaudatus
+    genus: Amphiprion
+    species: fuscocaudatus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 388
+  fields:
+    name: Amphiprion latifasciatus
+    genus: Amphiprion
+    species: latifasciatus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 389
+  fields:
+    name: Amphiprion omanensis
+    genus: Amphiprion
+    species: omanensis
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 390
+  fields:
+    name: Amphiprion tricinctus
+    genus: Amphiprion
+    species: tricinctus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 391
+  fields:
+    name: Amphiprion chrysopterus "YT/YF Mariana/Guam"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"YT/YF Mariana/Guam"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 392
+  fields:
+    name: Amphiprion chrysopterus "WT/YF"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"WT/YF"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 393
+  fields:
+    name: Amphiprion chrysopterus "YT/YF/NB"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"YT/YF/NB"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 394
+  fields:
+    name: Amphiprion clarkii "Western Australia"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Western Australia"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 395
+  fields:
+    name: Amphiprion clarkii "Vanuatu"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Vanuatu"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 396
+  fields:
+    name: Amphiprion clarkii "SI,CS,PNG,GBR"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"SI,CS,PNG,GBR"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 397
+  fields:
+    name: Amphiprion clarkii "Philippine"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Philippine"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 398
+  fields:
+    name: Amphiprion clarkii "Wallecea"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Wallecea"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 399
+  fields:
+    name: Amphiprion clarkii "Japan (SYT)"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Japan (SYT)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 400
+  fields:
+    name: Amphiprion polymnus
+    genus: Amphiprion
+    species: polymnus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 401
+  fields:
+    name: Amphiprion sebae
+    genus: Amphiprion
+    species: sebae
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 402
+  fields:
+    name: Amphiprion "White Knight"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"White Knight"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 403
+  fields:
+    name: Amphiprion polymnus "Black"
+    genus: Amphiprion
+    species: polymnus
+    variant: '"Black"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 404
+  fields:
+    name: Amphiprion bicinctus "Pearl Eye"
+    genus: Amphiprion
+    species: bicinctus
+    variant: '"Pearl Eye"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 405
+  fields:
+    name: Amphiprion bicinctus "Spotcinctus"
+    genus: Amphiprion
+    species: bicinctus
+    variant: '"Spotcinctus"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 406
+  fields:
+    name: Amphiprion clarkii "Pearl Eye"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Pearl Eye"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 407
+  fields:
+    name: Amphiprion clarkii "Galaxy"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Galaxy"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 408
+  fields:
+    name: Amphiprion clarkii "Meteor"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Meteor"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 409
+  fields:
+    name: Amphiprion clarkii "Smudgy"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Smudgy"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 410
+  fields:
+    name: Amphiprion chrysopterus "Meteor"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"Meteor"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 411
+  fields:
+    name: Amphiprion chrysopterus "White Eyebrow"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"White Eyebrow"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 412
+  fields:
+    name: Amphiprion chrysopterus "King Kong"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"King Kong"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 413
+  fields:
+    name: Amphiprion chrysopterus "Northern Lights"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"Northern Lights"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 414
+  fields:
+    name: Amphiprion percula "Addison's Quest"
+    genus: Amphiprion
+    species: percula
+    variant: '"Addison''s Quest"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 415
+  fields:
+    name: Amphiprion clarkii "Oman"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Oman"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 416
+  fields:
+    name: Amphiprion clarkii "P/Y/C/CI (SWT)"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"P/Y/C/CI (SWT)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 417
+  fields:
+    name: Amphiprion latifasciatus "WTYE"
+    genus: Amphiprion
+    species: latifasciatus
+    variant: '"WTYE"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 418
+  fields:
+    name: Amphiprion sp. darwin "Halfblack"
+    genus: Amphiprion
+    species: sp. darwin
+    variant: '"Halfblack"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 419
+  fields:
+    name: Amphiprion "Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 420
+  fields:
+    name: Amphiprion perideraion "Sunkist"
+    genus: Amphiprion
+    species: perideraion
+    variant: '"Sunkist"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 421
+  fields:
+    name: Amphiprion clarkii "C/CKI (CPYT)"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"C/CKI (CPYT)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 422
+  fields:
+    name: Amphiprion latifasciatus "Northern Madagascar"
+    genus: Amphiprion
+    species: latifasciatus
+    variant: '"Northern Madagascar"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 423
+  fields:
+    name: Amphiprion polymnus "BB/YC"
+    genus: Amphiprion
+    species: polymnus
+    variant: '"BB/YC"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 424
+  fields:
+    name: Amphiprion "White Tipped"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"White Tipped"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 425
+  fields:
+    name: Pramphiprion "Blood Orange"
+    genus: Pramphiprion
+    species: ocellaris
+    variant: '"Blood Orange"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 426
+  fields:
+    name: Amphiprion latifasciatus "NWM/CI"
+    genus: Amphiprion
+    species: latifasciatus
+    variant: '"NWM/CI"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 427
+  fields:
+    name: Amphiprion "Half-Black Photon"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Half-Black Photon"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 428
+  fields:
+    name: Amphiprion perideraion
+    genus: Amphiprion
+    species: perideraion
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 429
+  fields:
+    name: Amphiprion frenatus "Okinawa"
+    genus: Amphiprion
+    species: frenatus
+    variant: '"Okinawa"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 430
+  fields:
+    name: Amphiprion melanopus "Coral Sea"
+    genus: Amphiprion
+    species: melanopus
+    variant: '"Coral Sea"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 431
+  fields:
+    name: Amphiprion melanopus "Stripeless"
+    genus: Amphiprion
+    species: melanopus
+    variant: '"Stripeless"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 432
+  fields:
+    name: Amphiprion clarkii
+    genus: Amphiprion
+    species: clarkii
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 433
+  fields:
+    name: Amphiprion "Blacker Ice"
+    genus: Amphiprion
+    species: ocellaris
+    variant: '"Blacker Ice"'
+    hybrid: true
+- model: calculator.clownfish
+  pk: 434
+  fields:
+    name: Amphiprion latezonatus
+    genus: Amphiprion
+    species: latezonatus
+    variant: ''
+    hybrid: false
+- model: calculator.clownfish
+  pk: 435
+  fields:
+    name: Amphiprion chrysopterus "YT/YF Fiji"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"YT/YF Fiji"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 436
+  fields:
+    name: Amphiprion chrysopterus "WT/BF"
+    genus: Amphiprion
+    species: chrysopterus
+    variant: '"WT/BF"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 437
+  fields:
+    name: Amphiprion clarkii "Bonin Islands"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"Bonin Islands"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 438
+  fields:
+    name: Amphiprion clarkii "MI,G (YBWT)"
+    genus: Amphiprion
+    species: clarkii
+    variant: '"MI,G (YBWT)"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 439
+  fields:
+    name: Amphiprion latifasciatus "Southern Madagascar"
+    genus: Amphiprion
+    species: latifasciatus
+    variant: '"Southern Madagascar"'
+    hybrid: false
+- model: calculator.clownfish
+  pk: 440
+  fields:
+    name: Amphiprion maohiensis
+    genus: Amphiprion
+    species: maohiensis
+    variant: ''
+    hybrid: false
+- model: calculator.clownfishgenotype
+  pk: 51
+  fields:
+    clownfish: 296
+    trait: 28
+    allele1: 54
+    allele2: 56
+- model: calculator.clownfishgenotype
+  pk: 52
+  fields:
+    clownfish: 298
+    trait: 25
+    allele1: 48
+    allele2: 48
+- model: calculator.clownfishgenotype
+  pk: 53
+  fields:
+    clownfish: 298
+    trait: 21
+    allele1: 39
+    allele2: 39
+- model: calculator.clownfishgenotype
+  pk: 54
+  fields:
+    clownfish: 299
+    trait: 22
+    allele1: 41
+    allele2: 42
+- model: calculator.clownfishgenotype
+  pk: 55
+  fields:
+    clownfish: 305
+    trait: 21
+    allele1: 38
+    allele2: 38
+- model: calculator.clownfishgenotype
+  pk: 56
+  fields:
+    clownfish: 306
+    trait: 21
+    allele1: 38
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 57
+  fields:
+    clownfish: 307
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 58
+  fields:
+    clownfish: 311
+    trait: 21
+    allele1: 38
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 59
+  fields:
+    clownfish: 318
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 60
+  fields:
+    clownfish: 318
+    trait: 28
+    allele1: 54
+    allele2: 56
+- model: calculator.clownfishgenotype
+  pk: 61
+  fields:
+    clownfish: 321
+    trait: 21
+    allele1: 38
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 62
+  fields:
+    clownfish: 322
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 63
+  fields:
+    clownfish: 325
+    trait: 23
+    allele1: 43
+    allele2: 44
+- model: calculator.clownfishgenotype
+  pk: 64
+  fields:
+    clownfish: 331
+    trait: 28
+    allele1: 55
+    allele2: 56
+- model: calculator.clownfishgenotype
+  pk: 65
+  fields:
+    clownfish: 332
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 66
+  fields:
+    clownfish: 333
+    trait: 28
+    allele1: 54
+    allele2: 56
+- model: calculator.clownfishgenotype
+  pk: 67
+  fields:
+    clownfish: 334
+    trait: 28
+    allele1: 54
+    allele2: 54
+- model: calculator.clownfishgenotype
+  pk: 68
+  fields:
+    clownfish: 335
+    trait: 21
+    allele1: 39
+    allele2: 39
+- model: calculator.clownfishgenotype
+  pk: 69
+  fields:
+    clownfish: 339
+    trait: 25
+    allele1: 47
+    allele2: 49
+- model: calculator.clownfishgenotype
+  pk: 70
+  fields:
+    clownfish: 340
+    trait: 24
+    allele1: 45
+    allele2: 45
+- model: calculator.clownfishgenotype
+  pk: 71
+  fields:
+    clownfish: 341
+    trait: 24
+    allele1: 45
+    allele2: 46
+- model: calculator.clownfishgenotype
+  pk: 72
+  fields:
+    clownfish: 342
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 73
+  fields:
+    clownfish: 356
+    trait: 21
+    allele1: 39
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 74
+  fields:
+    clownfish: 357
+    trait: 21
+    allele1: 38
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 75
+  fields:
+    clownfish: 402
+    trait: 21
+    allele1: 38
+    allele2: 40
+- model: calculator.clownfishgenotype
+  pk: 76
+  fields:
+    clownfish: 433
+    trait: 21
+    allele1: 39
+    allele2: 40

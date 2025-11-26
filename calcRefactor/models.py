@@ -17,7 +17,7 @@ class Variety(models.Model):
         verbose_name_plural = "Varieties"
 
     def __str__(self):
-        return f'{self.species} "{self.name}"'
+        return f"{self.name} {self.genotype_pattern}"
 
 
 class Parent(models.Model):

@@ -1,0 +1,144 @@
+- model: calcRefactor.progenynamingrule
+  pk: 8
+  fields:
+    cross_rule: 4
+    genotype_pattern: Sf/+ N/+
+    phenotype_name: Amphiprion "Blacker Lightning"
+- model: calcRefactor.progenynamingrule
+  pk: 9
+  fields:
+    cross_rule: 4
+    genotype_pattern: Sf/+
+    phenotype_name: Amphiprion "Blacker Ice"
+- model: calcRefactor.progenynamingrule
+  pk: 10
+  fields:
+    cross_rule: 4
+    genotype_pattern: N/+
+    phenotype_name: Amphiprion "Chocolate Midnight"
+- model: calcRefactor.progenynamingrule
+  pk: 11
+  fields:
+    cross_rule: 4
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Chocolate Mocha"
+- model: calcRefactor.progenynamingrule
+  pk: 12
+  fields:
+    cross_rule: 5
+    genotype_pattern: P/+
+    phenotype_name: Amphiprion "Picasso Half Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 13
+  fields:
+    cross_rule: 5
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Half Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 14
+  fields:
+    cross_rule: 6
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Chocolate Mocha"
+- model: calcRefactor.progenynamingrule
+  pk: 15
+  fields:
+    cross_rule: 7
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Mocha"
+- model: calcRefactor.progenynamingrule
+  pk: 16
+  fields:
+    cross_rule: 8
+    genotype_pattern: +/+
+    phenotype_name: Pramphrion "Blood Orange"
+- model: calcRefactor.progenynamingrule
+  pk: 17
+  fields:
+    cross_rule: 9
+    genotype_pattern: +/+
+    phenotype_name: Premnas sp. epigrammata "Goldflake / Gold Spot / Gold Rush"
+- model: calcRefactor.progenynamingrule
+  pk: 18
+  fields:
+    cross_rule: 10
+    genotype_pattern: +/+
+    phenotype_name: Pramphrion "Citron"
+- model: calcRefactor.progenynamingrule
+  pk: 19
+  fields:
+    cross_rule: 11
+    genotype_pattern: P/+
+    phenotype_name: Amphiprion "Smorcularis/Twilight"
+- model: calcRefactor.progenynamingrule
+  pk: 20
+  fields:
+    cross_rule: 11
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 21
+  fields:
+    cross_rule: 12
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Midnight Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 22
+  fields:
+    cross_rule: 13
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Double Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 23
+  fields:
+    cross_rule: 14
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Half Black Photon"
+- model: calcRefactor.progenynamingrule
+  pk: 24
+  fields:
+    cross_rule: 15
+    genotype_pattern: Sf/+ P/+
+    phenotype_name: Amphiprion "White Knight"
+- model: calcRefactor.progenynamingrule
+  pk: 25
+  fields:
+    cross_rule: 16
+    genotype_pattern: Sf/+
+    phenotype_name: Amphiprion "Blacker Ice"
+- model: calcRefactor.progenynamingrule
+  pk: 26
+  fields:
+    cross_rule: 16
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Chocolate Mocha"
+- model: calcRefactor.progenynamingrule
+  pk: 27
+  fields:
+    cross_rule: 17
+    genotype_pattern: Sf/+
+    phenotype_name: Amphiprion "Black Snowflake/Phantom"
+- model: calcRefactor.progenynamingrule
+  pk: 28
+  fields:
+    cross_rule: 18
+    genotype_pattern: Sf/+ P/+
+    phenotype_name: Amphiprion "Picassnow"
+- model: calcRefactor.progenynamingrule
+  pk: 29
+  fields:
+    cross_rule: 18
+    genotype_pattern: Sf/+
+    phenotype_name: Amphiprion "Snow Onyx"
+- model: calcRefactor.progenynamingrule
+  pk: 30
+  fields:
+    cross_rule: 18
+    genotype_pattern: P/+
+    phenotype_name: Amphiprion "Picasso Percularis"
+- model: calcRefactor.progenynamingrule
+  pk: 31
+  fields:
+    cross_rule: 18
+    genotype_pattern: +/+
+    phenotype_name: Amphiprion "Percularis"

@@ -1,0 +1,75 @@
+- model: calcRefactor.crossnamingrule
+  pk: 4
+  fields:
+    variety1: 309
+    variety2: 340
+- model: calcRefactor.crossnamingrule
+  pk: 5
+  fields:
+    variety1: 308
+    variety2: 348
+- model: calcRefactor.crossnamingrule
+  pk: 6
+  fields:
+    variety1: 355
+    variety2: 349
+- model: calcRefactor.crossnamingrule
+  pk: 7
+  fields:
+    variety1: 327
+    variety2: 349
+- model: calcRefactor.crossnamingrule
+  pk: 8
+  fields:
+    variety1: 347
+    variety2: 315
+- model: calcRefactor.crossnamingrule
+  pk: 9
+  fields:
+    variety1: 342
+    variety2: 329
+- model: calcRefactor.crossnamingrule
+  pk: 10
+  fields:
+    variety1: 319
+    variety2: 302
+- model: calcRefactor.crossnamingrule
+  pk: 11
+  fields:
+    variety1: 311
+    variety2: 308
+- model: calcRefactor.crossnamingrule
+  pk: 12
+  fields:
+    variety1: 340
+    variety2: 319
+- model: calcRefactor.crossnamingrule
+  pk: 13
+  fields:
+    variety1: 421
+    variety2: 349
+- model: calcRefactor.crossnamingrule
+  pk: 14
+  fields:
+    variety1: 421
+    variety2: 319
+- model: calcRefactor.crossnamingrule
+  pk: 15
+  fields:
+    variety1: 358
+    variety2: 308
+- model: calcRefactor.crossnamingrule
+  pk: 16
+  fields:
+    variety1: 309
+    variety2: 311
+- model: calcRefactor.crossnamingrule
+  pk: 17
+  fields:
+    variety1: 435
+    variety2: 311
+- model: calcRefactor.crossnamingrule
+  pk: 18
+  fields:
+    variety1: 334
+    variety2: 308

@@ -35,8 +35,8 @@
                     <!-- Changed cross_list to crosses -->
                     {% for cross in crosses %}
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent1.variety.species }} "{{ cross.parent1.variety.name }}"</td>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent2.variety.species }} "{{ cross.parent2.variety.name }}"</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent1.variety.name }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ cross.parent2.variety.name }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <!-- Use a slightly smaller button style for "View Details" -->
                                 <a href="{% url 'cross-detail' pk=cross.pk %}"

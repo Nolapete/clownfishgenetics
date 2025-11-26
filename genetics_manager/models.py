@@ -28,6 +28,7 @@ class CommercialPhenotypeRecipe(models.Model):
     breeder_name = models.CharField(max_length=100, blank=True)
     required_genotypes = models.JSONField(
         blank=True,
+        default=dict,
         help_text="JSON dictionary mapping Locus name to required "
         "genotype. Format: {'Locus Name': 'Allele1/Allele2'}",
     )
@@ -36,7 +37,7 @@ class CommercialPhenotypeRecipe(models.Model):
     # Fields for legacy data from animals.json
     phenotype = models.CharField(max_length=255, unique=True, blank=True)
     slug = models.SlugField(blank=True)
-    genotype = models.CharField(max_length=255, blank=True)
+    genotype = models.CharField(max_length=255, blank=True, default="+/+")
     genus = models.CharField(max_length=50, blank=True)
     species = models.CharField(max_length=50, blank=True)
     variant = models.CharField(max_length=255, blank=True)

@@ -13,6 +13,7 @@ class ProgenyNamingRuleInline(admin.TabularInline):
 @admin.register(CrossNamingRule)
 class CrossNamingRuleAdmin(admin.ModelAdmin):
     list_display = ("variety1", "variety2")
+    autocomplete_fields = ("variety1", "variety2")
     inlines = [ProgenyNamingRuleInline]
 
 
@@ -24,7 +25,7 @@ class VarietyAdmin(admin.ModelAdmin):
 
 @admin.register(Parent)
 class ParentAdmin(admin.ModelAdmin):
-    list_display = ("id", "variety")
+    list_display = ("variety",)
     list_filter = ("variety",)
     search_fields = ("variety__name",)
 
