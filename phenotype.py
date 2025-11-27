@@ -1,33 +1,20 @@
 # from nolapete.models import Clownfish
-import os
-import sys
-
-import django
-
-import newPhen
 from fmtIt import fmtIt
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-# Set the settings module to use your config.settings
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
-
-# Initialize Django
-django.setup()
+from newPhen import newPhen
 
 
-def pheno(genotype, parent1, parent2):
+def phenowork(genotype, parent1, parent2):
     g1 = genotype.strip()
-    p1S = parent1.split()
-    p1Q = parent1.split(' "')
-    p2S = parent2.split()
-    p2Q = parent2.split(' "')
-    spP1part1 = parent1.index(" ")
-    spP2part1 = parent2.index(" ")
-    spP1part2 = parent1.find(" ", spP1part1 + 1)
-    spP2part2 = parent2.find(" ", spP2part1 + 1)
-    spP1part3 = parent1.find(" ", spP1part2 + 1)
-    spP2part3 = parent2.find(" ", spP2part2 + 1)
+    p1s = parent1.split()
+    p1q = parent1.split(' "')
+    p2s = parent2.split()
+    p2q = parent2.split(' "')
+    spp1part1 = parent1.index(" ")
+    spp2part1 = parent2.index(" ")
+    spp1part2 = parent1.find(" ", spp1part1 + 1)
+    spp2part2 = parent2.find(" ", spp2part1 + 1)
+    spp1part3 = parent1.find(" ", spp1part2 + 1)
+    spp2part3 = parent2.find(" ", spp2part2 + 1)
     p1epigra = parent1.find("Premnas sp. epigrammata")
     p2epigra = parent2.find("Premnas sp. epigrammata")
     p1darwin = parent1.find("Premnas sp. darwin")
@@ -36,40 +23,40 @@ def pheno(genotype, parent1, parent2):
 
     if parent1.find("ocellaris") != -1 and parent2.find("ocellaris") != -1:
         pheno = newPhen(
-            fmtIt(p1S[0]).join(
+            fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             ),
             g1,
         )
-    elif p1S[0] == p2S[0]:
-        pheno = fmtIt(p1S[0]).join(
+    elif p1s[0] == p2s[0]:
+        pheno = fmtIt(p1s[0]).join(
             [
                 " (",
-                fmtIt(parent1[spP1part1 + 1 :]),
+                fmtIt(parent1[spp1part1 + 1 :]),
                 " X ",
-                fmtIt(parent2[spP2part1 + 1 :]),
+                fmtIt(parent2[spp2part1 + 1 :]),
                 ")",
             ]
         )
 
     elif parent1.find("percula") != -1 and parent2.find("percula") != -1:
         pheno = newPhen(
-            fmtIt(p1S[0]).join(
+            fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             ),
@@ -87,14 +74,14 @@ def pheno(genotype, parent1, parent2):
             elif g1 == "+/+":
                 pheno = fmtIt("Amphiprion percula")
             else:
-                pheno = fmtIt(p1S[0]).join(
+                pheno = fmtIt(p1s[0]).join(
                     [
                         " ",
-                        fmtIt(p1S[1]),
+                        fmtIt(p1s[1]),
                         " (",
-                        parent1[spP1part2 + 1 :],
+                        parent1[spp1part2 + 1 :],
                         " X ",
-                        parent2[spP2part2 + 1 :],
+                        parent2[spp2part2 + 1 :],
                         ")",
                     ]
                 )
@@ -106,14 +93,14 @@ def pheno(genotype, parent1, parent2):
             elif g1 == "+/+":
                 pheno = repr(fmtIt("Amphiprion (Mocha genetics)"))
             else:
-                pheno = fmtIt(p1S[0]).join(
+                pheno = fmtIt(p1s[0]).join(
                     [
                         " ",
-                        fmtIt(p1S[1]),
+                        fmtIt(p1s[1]),
                         " (",
-                        parent1[spP1part2 + 1 :],
+                        parent1[spp1part2 + 1 :],
                         " X ",
-                        parent2[spP2part2 + 1 :],
+                        parent2[spp2part2 + 1 :],
                         ")",
                     ]
                 )
@@ -139,19 +126,19 @@ def pheno(genotype, parent1, parent2):
                 pheno = fmtIt('Premnas sp. epigrammata "Gold Stripe"')
             else:
                 pheno = fmtIt(
-                    "Premnas sp. epigrammata".join([" ", parent1[spP1part3:]])
+                    "Premnas sp. epigrammata".join([" ", parent1[spp1part3:]])
                 )
         elif p1epigra != -1:
-            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spP1part3:]]))
+            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spp1part3:]]))
 
         elif p1darwin != -1:
-            pheno = fmtIt("Premnas sp. darwin".join([" ", parent1[spP1part3:]]))
+            pheno = fmtIt("Premnas sp. darwin".join([" ", parent1[spp1part3:]]))
 
-        elif spP1part2 != -1:
-            pheno = fmtIt(parent1[0, spP1part2].join([" ", parent1[spP1part2 + 1 :]]))
+        elif spp1part2 != -1:
+            pheno = fmtIt(parent1[0, spp1part2].join([" ", parent1[spp1part2 + 1 :]]))
 
         else:
-            pheno = fmtIt(parent1[0, spP1part1].join([" ", parent1[spP1part1 + 1 :]]))
+            pheno = fmtIt(parent1[0, spp1part1].join([" ", parent1[spp1part1 + 1 :]]))
 
     elif (
         parents.find('Premnas biaculeatus "Lightning"') != -1
@@ -187,14 +174,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -209,14 +196,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Dr."')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -232,14 +219,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt("Amphiprion percula")
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -256,7 +243,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Premnas sp. epigrammata "Gold Stripe"')
         else:
-            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spP1part3:]]))
+            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spp1part3:]]))
 
     elif (
         parents.find('Premnas sp. epigrammata "Gold Stripe"') != -1
@@ -270,7 +257,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Premnas sp. epigrammata "Gold Stripe"')
         else:
-            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spP1part3:]]))
+            pheno = fmtIt("Premnas sp. epigrammata".join([" ", parent1[spp1part3:]]))
 
     elif (
         parents.find('Amphiprion "Black Snowflake/Phantom"') != -1
@@ -279,50 +266,50 @@ def pheno(genotype, parent1, parent2):
         if g1 == "Sf/+ N/+":
             pheno = fmtIt('Amphiprion "Midnight Lightning"')
         elif g1 == "Sf/+":
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
         elif g1 == "N/+":
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
         elif g1 == "+/+":
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -340,12 +327,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Chocolate Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    parent1[spP1part1 + 1],
+                    parent1[spp1part1 + 1],
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -363,12 +350,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Chocolate Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    str(parent2[spP2part1 + 1 :]),
+                    str(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -378,12 +365,12 @@ def pheno(genotype, parent1, parent2):
         and parents.find('Amphiprion "Mocha"') != -1
     ):
         if g1 == "Sf/+ DV/+":
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -392,12 +379,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Sunset Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -411,12 +398,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Half Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -430,12 +417,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Half Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -449,14 +436,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = repr(fmtIt("Amphiprion (Mocha genetics)"))
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -470,14 +457,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Sunset Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -555,17 +542,17 @@ def pheno(genotype, parent1, parent2):
             pheno = "(".join([fmtIt('Pramphiprion "Cocoa"'), ")"])
 
     elif (
-        p1S[0] == "Premnas"
-        and p2S[0] != "Premnas"
-        or p1S[0] != "Premnas"
-        and p2S[0] == "Premnas"
+        p1s[0] == "Premnas"
+        and p2s[0] != "Premnas"
+        or p1s[0] != "Premnas"
+        and p2s[0] == "Premnas"
     ):
         pheno = fmtIt("Pramphiprion ").join(
             [
                 "(",
-                fmtIt(parent1[spP1part1 + 1]),
+                fmtIt(parent1[spp1part1 + 1]),
                 " X ",
-                fmtIt(parent2[spP2part1 + 1 :]),
+                fmtIt(parent2[spp2part1 + 1 :]),
                 ")",
             ]
         )
@@ -609,12 +596,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -644,12 +631,12 @@ def pheno(genotype, parent1, parent2):
         if g1 == "Sf/+ P/+":
             pheno = fmtIt('Amphiprion "White Knight"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -663,14 +650,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Chocolate Mocha"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " ",
-                    fmtIt(p1S[1]),
+                    fmtIt(p1s[1]),
                     " (",
-                    parent1[spP1part2 + 1 :],
+                    parent1[spp1part2 + 1 :],
                     " X ",
-                    parent2[spP2part2 + 1 :],
+                    parent2[spp2part2 + 1 :],
                     ")",
                 ]
             )
@@ -683,22 +670,22 @@ def pheno(genotype, parent1, parent2):
             pheno = fmtIt('Amphiprion "Black Snowflake/Phantom"')
         else:
             if p1darwin == -1:
-                pheno = fmtIt(parent1[0, spP1part1]).join(
+                pheno = fmtIt(parent1[0, spp1part1]).join(
                     [
                         " (",
-                        fmtIt(parent1[spP1part1 + 1]),
+                        fmtIt(parent1[spp1part1 + 1]),
                         " X ",
-                        parent2[spP2part1 + 1 :],
+                        parent2[spp2part1 + 1 :],
                         ")",
                     ]
                 )
             else:
-                pheno = fmtIt(parent1[0, spP1part1]).join(
+                pheno = fmtIt(parent1[0, spp1part1]).join(
                     [
                         " (",
-                        parent1[spP1part1 + 1],
+                        parent1[spp1part1 + 1],
                         " X ",
-                        fmtIt(parent2[spP2part1 + 1 :]),
+                        fmtIt(parent2[spp2part1 + 1 :]),
                         ")",
                     ]
                 )
@@ -716,12 +703,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Percularis"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -737,12 +724,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -756,12 +743,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -777,12 +764,12 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
@@ -798,64 +785,64 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno = fmtIt(p1S[0]).join(
+            pheno = fmtIt(p1s[0]).join(
                 [
                     " (",
-                    fmtIt(parent1[spP1part1 + 1]),
+                    fmtIt(parent1[spp1part1 + 1]),
                     " X ",
-                    fmtIt(parent2[spP2part1 + 1 :]),
+                    fmtIt(parent2[spp2part1 + 1 :]),
                     ")",
                 ]
             )
 
     # elif p1epigra != -1 and (p1epigra == p2epigra)):
     #     pheno=fmtIt('Premnas sp. epigrammata').join(
-    #     " (", parent1[spP1part3 + 1]), " X ",
-    #         parent2[spP2part3:], ")"])
+    #     " (", parent1[spp1part3 + 1]), " X ",
+    #         parent2[spp2part3:], ")"])
 
     elif p1darwin != -1 and (p1darwin == p2darwin):
         pheno = fmtIt("Amphiprion sp. darwin").join(
-            [" (", parent1[spP1part3 + 1], " X ", parent2[spP2part3:], ")"]
+            [" (", parent1[spp1part3 + 1], " X ", parent2[spp2part3:], ")"]
         )
 
     elif (
-        p1S[0] == p2S[0]
-        and p1S[1] == p2S[1]
-        and p1S[1] != "sp."
-        and len(p1S) >= 2
-        and len(p2S) >= 2
-        and (len(p1Q) == 1 or len(p2Q) == 1)
+        p1s[0] == p2s[0]
+        and p1s[1] == p2s[1]
+        and p1s[1] != "sp."
+        and len(p1s) >= 2
+        and len(p2s) >= 2
+        and (len(p1q) == 1 or len(p2q) == 1)
     ):
-        momV, dadV = "", ""
-        if parent1[spP1part2 + 1 :].find(p1S[1]) == -1:
-            momV = parent1[spP1part2 + 1 :]
-            dadV = '"Unknown Origin"'
+        momv, dadv = "", ""
+        if parent1[spp1part2 + 1 :].find(p1s[1]) == -1:
+            momv = parent1[spp1part2 + 1 :]
+            dadv = '"Unknown Origin"'
         else:
-            momV = '"Unknown Origin"'
-            dadV = parent2[spP2part2 + 1 :]
+            momv = '"Unknown Origin"'
+            dadv = parent2[spp2part2 + 1 :]
 
-        pheno = fmtIt(p1S[0]).join([" ", fmtIt(p1S[1]), " (", momV, " X ", dadV, ")"])
+        pheno = fmtIt(p1s[0]).join([" ", fmtIt(p1s[1]), " (", momv, " X ", dadv, ")"])
 
     elif p1epigra == -1 and p1darwin == -1 and p2epigra != -1:
-        pheno = fmtIt(p1S[0]).join(
+        pheno = fmtIt(p1s[0]).join(
             [
                 " (",
-                fmtIt(parent1[spP1part1 + 1]),
+                fmtIt(parent1[spp1part1 + 1]),
                 " X ",
                 fmtIt("sp. epigrammata"),
-                parent2[spP2part3:],
+                parent2[spp2part3:],
                 ")",
             ]
         )
 
     elif p1epigra != -1 and p2epigra == -1 and p2darwin == -1:
-        pheno = fmtIt(p1S[0]).join(
+        pheno = fmtIt(p1s[0]).join(
             [
                 " (",
                 fmtIt("sp. epigrammata"),
-                parent1[spP1part3],
+                parent1[spp1part3],
                 " X ",
-                fmtIt(parent2[spP2part1 + 1 :]),
+                fmtIt(parent2[spp2part1 + 1 :]),
                 ")",
             ]
         )
@@ -872,25 +859,25 @@ def pheno(genotype, parent1, parent2):
             pheno = "(".join([fmtIt('Amphiprion "Mocha"'), ")"])
 
     elif p1epigra == -1 and p1darwin == -1 and p2darwin != -1:
-        pheno = fmtIt(p1S[0]).join(
+        pheno = fmtIt(p1s[0]).join(
             [
                 " (",
-                fmtIt(parent1[spP1part1 + 1 :]),
+                fmtIt(parent1[spp1part1 + 1 :]),
                 " X ",
                 fmtIt("sp. darwin"),
-                parent2[spP2part3:],
+                parent2[spp2part3:],
                 ")",
             ]
         )
 
     elif p1darwin != -1 and p2epigra == -1 and p2darwin == -1:
-        pheno = fmtIt(p1S[0]).join(
+        pheno = fmtIt(p1s[0]).join(
             [
                 " (",
                 fmtIt("sp. darwin"),
-                parent1[spP1part3:],
+                parent1[spp1part3:],
                 " X ",
-                fmtIt(parent2[spP2part1 + 1 :]),
+                fmtIt(parent2[spp2part1 + 1 :]),
                 ")",
             ]
         )
@@ -906,20 +893,20 @@ def pheno(genotype, parent1, parent2):
         else:
             pheno = "(".join([fmtIt('Amphiprion "Percularis"'), ")"])
 
-    elif p1S[0] == p2S[0] and p1S[1] == p2S[1]:
-        pheno = fmtIt(p1S[0]).join(
+    elif p1s[0] == p2s[0] and p1s[1] == p2s[1]:
+        pheno = fmtIt(p1s[0]).join(
             [
                 " ",
-                fmtIt(p1S[1]),
+                fmtIt(p1s[1]),
                 " (",
-                parent1[spP1part2 + 1 :],
+                parent1[spp1part2 + 1 :],
                 " X ",
-                parent2[spP2part2 + 1 :],
+                parent2[spp2part2 + 1 :],
                 ") TEST1",
             ]
         )
 
-    elif parent1[0:spP1part1] != parent2[0:spP2part1]:
+    elif parent1[0:spp1part1] != parent2[0:spp2part1]:
         pheno = fmtIt(parent1).join([" X ", fmtIt(parent2)])
     return pheno
 
@@ -931,8 +918,3 @@ def pheno(genotype, parent1, parent2):
 #     genotype='+/+'
 #     results=pheno(genotype, parent1, parent2)
 #     print(results)
-
-# for parent1 in Variety.objects.all():
-#     print("Parent1 " + parent1.name)
-#     for parent2 in Variety.objects.all():
-#         print("   Parent2 " + parent2.name)
