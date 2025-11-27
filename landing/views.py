@@ -12,6 +12,21 @@ from genetics_manager.models import CommercialPhenotypeRecipe
 def index(request):
     return render(request, "landing/index.html")
 
+def about(request):
+    return render(request, "landing/about.html")
+
+def contact(request):
+    return render(request, "landing/contact.html")
+
+def privacy_policy(request):
+    return render(request, "landing/privacy_policy.html")
+def cbr(request):
+    return render(request, 'landing/cbr.html', {
+        'site_name': 'Clownfish Genetics',
+        'primary_color': '#FF6B35',
+        'secondary_color': '#F7931E',
+        'hero_image': 'images/clownfish-hero.jpg'
+    })
 
 def landing_page(request):
     all_clownfish = CommercialPhenotypeRecipe.objects.all().order_by(
