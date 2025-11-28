@@ -15,6 +15,8 @@ class fish:
 def format_allele(p1, p2):
     """Ensures dominant (uppercase/non-wild) allele comes first
     in the display string."""
+    if p1 == "+" and p2 == "+":
+        return "+/+"
     if p1 == "+":
         if "a" <= p2 <= "z":
             return p1 + "/" + p2
@@ -25,20 +27,40 @@ def format_allele(p1, p2):
     return p1 + "/" + p2
 
 
+# def cross_at_index(ind, length, h_axis, v_axis):
+#     """Calculates the genotype at a specific index in the
+#     virtual Punnett square table."""
+#     start = length // 2
+#     x, y = ind
+#     res_parts = []
+#     ax_ind = 0
+#
+#     while start > 0:
+#         xpart = h_axis[ax_ind] if x >= start else h_axis[ax_ind]
+#         ypart = v_axis[ax_ind] if y >= start else v_axis[ax_ind]
+#         if xpart != "+" or ypart != "+":
+#             res_parts.append(format_allele(xpart, ypart))
+#
+#         x %= start
+#         y %= start
+#         start //= 2
+#         ax_ind += 1
+#
+#     return " ".join(res_parts)
+
 def cross_at_index(ind, length, h_axis, v_axis):
-    """Calculates the genotype at a specific index in the
-    virtual Punnett square table."""
-    start = length // 2
+    """Fix: Handle each locus independently"""
     x, y = ind
     res_parts = []
+    start = length // 2
     ax_ind = 0
 
     while start > 0:
-        xpart = h_axis[ax_ind] if x >= start else h_axis[ax_ind]
-        ypart = v_axis[ax_ind] if y >= start else v_axis[ax_ind]
-        if xpart != "+" or ypart != "+":
-            res_parts.append(format_allele(xpart, ypart))
+        # Get alleles from THIS bit level only
+        h_allele = h_axis[ax_ind][0 if x < start else 1]  # Fix tuple indexing
+        v_allele = v_axis[ax_ind][0 if y < start else 1]
 
+        res_parts.append(format_allele(h_allele, v_allele))
         x %= start
         y %= start
         start //= 2
@@ -89,12 +111,20 @@ def analyze_results_by_recipe(results_list, total_count, recipes, all_trait_name
     phenotype_counts = {}
 
     for result_dict in results_list:
+        matched = False
         for recipe in recipes:
             if recipe["criteria"](result_dict):
                 name = recipe["name"]
                 phenotype_counts[name] = phenotype_counts.get(name, 0.0) + (
                     100.0 / total_count
                 )
-                break
+                matched = True
+                break  # Still first-match-wins, but now criteria must be precise
+
+        # Optional: Handle unmatched (add default recipe last)
+        if not matched:
+            phenotype_counts["Unmatched"] = phenotype_counts.get("Unmatched", 0.0) + (
+                100.0 / total_count
+            )
 
     return phenotype_counts

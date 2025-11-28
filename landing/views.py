@@ -12,41 +12,40 @@ from genetics_manager.models import CommercialPhenotypeRecipe
 def index(request):
     return render(request, "landing/index.html")
 
+
 def about(request):
     return render(request, "landing/about.html")
+
 
 def contact(request):
     return render(request, "landing/contact.html")
 
+
 def privacy_policy(request):
     return render(request, "landing/privacy_policy.html")
+
+
 def cbr(request):
-    return render(request, 'landing/cbr.html', {
-        'site_name': 'Clownfish Genetics',
-        'primary_color': '#FF6B35',
-        'secondary_color': '#F7931E',
-        'hero_image': 'images/clownfish-hero.jpg'
-    })
+    return render(
+        request,
+        "landing/cbr.html",
+        {
+            "site_name": "Clownfish Genetics",
+            "primary_color": "#FF6B35",
+            "secondary_color": "#F7931E",
+            "hero_image": "images/clownfish-hero.jpg",
+        },
+    )
+
 
 def landing_page(request):
     all_clownfish = CommercialPhenotypeRecipe.objects.all().order_by(
         "genus", "species", "variant"
     )
-    wild_types = []
-    designer_fish = []
-    for fish_recipe in all_clownfish:
-        is_pure_wild_type = all(
-            gene_pair == "+/+" for gene_pair in fish_recipe.genotype.split()
-        )
-        if is_pure_wild_type:
-            wild_types.append(fish_recipe)
-        else:
-            designer_fish.append(fish_recipe)
+    wild_types = [recipe for recipe in all_clownfish if recipe.is_pure_wild_type]
+    designer_fish = [recipe for recipe in all_clownfish if not recipe.is_pure_wild_type]
 
-    context = {
-        "wild_types": wild_types,
-        "designer_fish": designer_fish,
-    }
+    context = {"wild_types": wild_types, "designer_fish": designer_fish}
     return render(request, "landing/landing.html", context)
 
 
@@ -64,9 +63,7 @@ def get_phenotype_recipes_from_db():
         formatted_recipes.append(
             {"name": db_recipe.name, "criteria": criteria_function}
         )
-    formatted_recipes.append(
-        {"name": "Generic/Unnamed Hybrid", "criteria": lambda g: True}
-    )
+
     return formatted_recipes
 
 
@@ -95,10 +92,10 @@ def calculate_cross_htmx(request):
             parent1_fish_obj, parent2_fish_obj
         )
 
-        PHENOTYPE_RECIPES_DB = get_phenotype_recipes_from_db()
+        phenotype_recipes_db = get_phenotype_recipes_from_db()
 
         results_percentages = analyze_results_by_recipe(
-            results_list, total_count, PHENOTYPE_RECIPES_DB, all_trait_names
+            results_list, total_count, phenotype_recipes_db, all_trait_names
         )
 
         context = {
@@ -152,19 +149,8 @@ def filter_fish_htmx(request):
             | models.Q(variant__icontains=search_query)
         )
 
-    wild_types = []
-    designer_fish = []
-    for fish_recipe in filtered_fish:
-        is_pure_wild_type = all(
-            gene_pair == "+/+" for gene_pair in fish_recipe.genotype.split()
-        )
-        if is_pure_wild_type:
-            wild_types.append(fish_recipe)
-        else:
-            designer_fish.append(fish_recipe)
+    wild_types = [recipe for recipe in filtered_fish if recipe.is_pure_wild_type]
+    designer_fish = [recipe for recipe in filtered_fish if not recipe.is_pure_wild_type]
 
-    context = {
-        "wild_types": wild_types,
-        "designer_fish": designer_fish,
-    }
+    context = {"wild_types": wild_types, "designer_fish": designer_fish}
     return render(request, "landing/partials/fish_cards_partial.html", context)
