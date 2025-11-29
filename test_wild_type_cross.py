@@ -1,13 +1,19 @@
 # test_wild_type_cross_debug.py
-from genetics_manager.calculator_utils import cross_fish_structured, fish, analyze_results_by_recipe
-from genetics_manager.models import CommercialPhenotypeRecipe
+from genetics_manager.calculator_utils import (
+    analyze_results_by_recipe,
+    cross_fish_structured,
+    fish,
+)
+from genetics_manager.models import CommercialPhenotypeRecipe, Locus
 from landing.views import get_phenotype_recipes_from_db
 
 print("=== DEBUG WILDTYPE ===")
 
 # Wild parents
-wild_recipe = CommercialPhenotypeRecipe.objects.filter(name__icontains="ocellaris").first()
-trait_dict = {locus.name: "+/+" for locus in list(Locus.objects.order_by('id'))}
+wild_recipe = CommercialPhenotypeRecipe.objects.filter(
+    name__icontains="Amphiprion ocellaris"
+).first()
+trait_dict = {locus.name: "+/+" for locus in list(Locus.objects.order_by("id"))}
 
 f1 = fish(trait_dict)
 results_list, total_count, all_trait_names = cross_fish_structured(f1, f1)

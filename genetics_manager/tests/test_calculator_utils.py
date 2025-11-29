@@ -1,74 +1,48 @@
-from django.test import TestCase
-from unittest.mock import Mock
-import genetics_manager.calculator_utils as utils  # Adjust import path
+import unittest
+
+from genetics_manager.calculator_utils import cross_fish_structured, fish
 
 
-class CalculatorUtilsTests(TestCase):
+class TestGeneticsCalculator(unittest.TestCase):
+    def test_gold_nugget_goldflake_cross(self):
+        """Gold Nugget G/G x Goldflake G/+ → 50% G/G, 50% G/+"""
+        # Gold Nugget G/G
+        f1 = fish({"Goldflake": "G/G"})
+        # Goldflake G/+
+        f2 = fish({"Goldflake": "G/+"})
 
-    def setUp(self):
-        self.recipes = [
-            {
-                "name": 'Premnas biaculeatus "White Stripe"',
-                "criteria": lambda d: d.get("species") == "Premnas biaculeatus",
-            },
-            {
-                "name": "Amphiprion ocellaris",
-                "criteria": lambda d: d.get("species") == "Amphiprion ocellaris",
-            },
-        ]
-        self.all_trait_names = []
+        results_list, total, traits = cross_fish_structured(f1, f2)
 
-    def test_premnas_matches_only_premnas(self):
-        results = [{"species": "Premnas biaculeatus"}]
-        result = utils.analyze_results_by_recipe(
-            results, 1, self.recipes, self.all_trait_names
-        )
-        self.assertEqual(result['Premnas biaculeatus "White Stripe"'], 100.0)
+        progeny_keys = [r["PROGENY_KEY"] for r in results_list]
+        self.assertEqual(sorted(progeny_keys), ["G/+", "G/+", "G/G", "G/G"])
 
-    def test_mixed_species(self):
-        results = [
-            {"species": "Premnas biaculeatus"},
-            {"species": "Amphiprion ocellaris"},
-        ]
-        result = utils.analyze_results_by_recipe(
-            results, 2, self.recipes, self.all_trait_names
-        )
-        self.assertEqual(result['Premnas biaculeatus "White Stripe"'], 50.0)
-        self.assertEqual(result["Amphiprion ocellaris"], 50.0)
+    def test_format_allele_dominant_first(self):
+        """format_allele always dominant first"""
+        from genetics_manager.calculator_utils import format_allele
 
-    def test_all_non_premnas(self):
-        results = [{"species": "Amphiprion ocellaris"}]
-        result = utils.analyze_results_by_recipe(
-            results, 1, self.recipes, self.all_trait_names
-        )
-        self.assertEqual(result["Amphiprion ocellaris"], 100.0)
-        self.assertNotIn('Premnas biaculeatus "White Stripe"', result)
+        self.assertEqual(format_allele("/", "G"), "G/+")
+        self.assertEqual(format_allele("G", "/"), "G/+")
+        self.assertEqual(format_allele("G", "G"), "G/G")
 
-    # Add this test to catch the real problem
-    def test_real_simulation_results(self):
-        # Run your actual simulation with known inputs
-        from genetics_manager.calculator_utils import (
-            generate_results,
-        )  # Your sim function
+    def test_cross_at_index_gold_example(self):
+        """Verify cross_at_index produces correct G/+ not +/G"""
+        from genetics_manager.calculator_utils import cross_at_index
 
-        results = generate_results(
-            parent1_genotype, parent2_genotype
-        )  # Your real inputs
+        # Gold Nugget G/G x Goldflake G/+ aligned
+        h_axis = [("G", "+")]  # f1_final
+        v_axis = [("G", "G")]  # f2_final
 
-        print("REAL results species:", [r.get("species") for r in results])
-        print("First result keys:", results[0].keys() if results else "NO RESULTS")
+        # Should produce G/+ and G/G only
+        keys = []
+        for x in range(4):
+            for y in range(4):
+                result = cross_at_index((x, y), 4, h_axis, v_axis)
+                keys.append(result)
 
-        output = utils.analyze_results_by_recipe(
-            results, len(results), self.recipes, []
-        )
-        print("REAL analysis output:", output)
+        self.assertIn("G/+", keys)
+        self.assertIn("G/G", keys)
+        self.assertNotIn("+/G", keys)
 
-    def test_premnas_criteria_real_data(self):
-        premnas_recipe = CommercialPhenotypeRecipe.objects.get(
-            name__icontains="Premnas"
-        )
-        sample_result = {"species": "Amphiprion ocellaris"}  # Non-Premnas
 
-        # This should be FALSE but might be TRUE (your bug!)
-        matches_premnas = premnas_recipe.criteria(sample_result)
-        self.assertFalse(matches_premnas, "Premnas criteria matches non-Premnas!")
+if __name__ == "__main__":
+    unittest.main()

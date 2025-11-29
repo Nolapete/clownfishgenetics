@@ -1,8 +1,8 @@
 from django.db import models  # Import models for Q objects
 from django.shortcuts import get_object_or_404, render
 
+from calcRefactor.models import Cross, Progeny, Variety
 from genetics_manager.calculator_utils import (
-    analyze_results_by_recipe,
     cross_fish_structured,
     fish,
 )
@@ -85,6 +85,75 @@ def calculate_cross_htmx(request):
         p1_genotypes = p1_recipe.required_genotypes
         p2_genotypes = p2_recipe.required_genotypes
 
+        # === ROBUST FALLBACK: NO CROSS DATA ===
+        # FIXED: Safe exact match instead of icontains
+        try:
+            variety1 = Variety.objects.get(name__exact=p1_recipe.name)
+        except (Variety.MultipleObjectsReturned, Variety.DoesNotExist):
+            variety1 = Variety.objects.filter(name__exact=p1_recipe.name).first()
+
+        try:
+            variety2 = Variety.objects.get(name__exact=p2_recipe.name)
+        except (Variety.MultipleObjectsReturned, Variety.DoesNotExist):
+            variety2 = Variety.objects.filter(name__exact=p2_recipe.name).first()
+
+        cross = Cross.objects.filter(
+            models.Q(parent1__variety=variety1, parent2__variety=variety2)
+            | models.Q(parent1__variety=variety2, parent2__variety=variety1)
+        ).first()
+
+        if not cross:  # NO CROSS OR PROGENY DATA
+            if p1_recipe.name == p2_recipe.name:
+                # IDENTICAL PARENTS - use legacy genotype field
+                p1_geno_str = p1_recipe.genotype or "+/+"
+                results = {
+                    f"{p1_recipe.name} {p1_geno_str}": {
+                        "percentage": 100.0,
+                        "genotype": "",
+                    }
+                }
+            else:
+                # DIFFERENT PARENTS - use legacy genotype fields
+                p1_geno_str = p1_recipe.genotype or "+/+"
+                p2_geno_str = p2_recipe.genotype or "+/+"
+                results = {
+                    f"{p1_recipe.name} {p1_geno_str} "
+                    f"x {p2_recipe.name} {p2_geno_str}": {
+                        "percentage": 100.0,
+                        "genotype": "",
+                    }
+                }
+            context = {
+                "parent1_name": p1_recipe.name,
+                "parent2_name": p2_recipe.name,
+                "results": results,
+            }
+            return render(request, "landing/partials/results_partial.html", context)
+        # === END ROBUST FALLBACK ===
+
+        # WILDTYPE SPECIAL CASE (still needed for identical wildtype)
+        if (not p1_genotypes or p1_genotypes == {}) and (
+            not p2_genotypes or p2_genotypes == {}
+        ):
+            if p1_recipe.name == p2_recipe.name:
+                results = {
+                    f"{p1_recipe.name} +/+": {"percentage": 100.0, "genotype": ""}
+                }
+            else:
+                results = {
+                    f"{p1_recipe.name} +/+ x {p2_recipe.name} +/+": {
+                        "percentage": 100.0,
+                        "genotype": "",
+                    }
+                }
+            context = {
+                "parent1_name": p1_recipe.name,
+                "parent2_name": p2_recipe.name,
+                "results": results,
+            }
+            return render(request, "landing/partials/results_partial.html", context)
+
+        # NORMAL GENETICS CALCULATION
         parent1_fish_obj = fish(p1_genotypes)
         parent2_fish_obj = fish(p2_genotypes)
 
@@ -92,16 +161,54 @@ def calculate_cross_htmx(request):
             parent1_fish_obj, parent2_fish_obj
         )
 
-        phenotype_recipes_db = get_phenotype_recipes_from_db()
+        # FIXED: Safe exact match (second occurrence)
+        try:
+            variety1 = Variety.objects.get(name__exact=p1_recipe.name)
+        except (Variety.MultipleObjectsReturned, Variety.DoesNotExist):
+            variety1 = Variety.objects.filter(name__exact=p1_recipe.name).first()
 
-        results_percentages = analyze_results_by_recipe(
-            results_list, total_count, phenotype_recipes_db, all_trait_names
-        )
+        try:
+            variety2 = Variety.objects.get(name__exact=p2_recipe.name)
+        except (Variety.MultipleObjectsReturned, Variety.DoesNotExist):
+            variety2 = Variety.objects.filter(name__exact=p2_recipe.name).first()
+
+        cross = Cross.objects.filter(
+            models.Q(parent1__variety=variety1, parent2__variety=variety2)
+            | models.Q(parent1__variety=variety2, parent2__variety=variety1)
+        ).first()
+
+        if cross:
+            progeny_map = {
+                p.genotype: p.phenotype_name
+                for p in Progeny.objects.filter(cross=cross).distinct("genotype")
+            }
+            print(f"DEBUG - Cross found: {cross}")
+            print(f"DEBUG - Progeny map: {progeny_map}")
+            print(
+                f"DEBUG - results_list PROGENY_KEYs: "
+                f"{[offspring.get('PROGENY_KEY') for offspring in results_list]}"
+            )
+        else:
+            print("DEBUG - No cross found")
+            progeny_map = {}
+
+        results = {}  # phenotype → {percentage, genotype}
+
+        for offspring in results_list:
+            progeny_key = offspring.get("PROGENY_KEY", "+/+")
+            if progeny_key in progeny_map:
+                phenotype = progeny_map[progeny_key]
+                percentage = 100.0 / total_count
+                if phenotype not in results:
+                    results[phenotype] = {"percentage": 0.0, "genotype": progeny_key}
+                results[phenotype]["percentage"] += percentage
+
+        print(f"Final results: {results}")
 
         context = {
             "parent1_name": p1_recipe.name,
             "parent2_name": p2_recipe.name,
-            "results": results_percentages,
+            "results": results,
         }
         return render(request, "landing/partials/results_partial.html", context)
 

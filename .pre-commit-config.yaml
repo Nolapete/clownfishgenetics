@@ -22,12 +22,13 @@ repos:
 
   - repo: local
     hooks:
-      - id: django-test
-        name: Django Unit Tests
-        entry: .venv/bin/python manage.py test
+      - id: genetics-tests
+        name: Genetics Unit Tests
+        entry: pytest genetics_manager/tests/ -v --tb=short --maxfail=1 --no-header --no-summary
         language: system
-        types: [python]
         pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.9.9

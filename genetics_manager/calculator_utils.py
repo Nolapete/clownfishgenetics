@@ -13,93 +13,104 @@ class fish:
 
 
 def format_allele(p1, p2):
-    """Ensures dominant (uppercase/non-wild) allele comes first
-    in the display string."""
-    if p1 == "+" and p2 == "+":
-        return "+/+"
-    if p1 == "+":
-        if "a" <= p2 <= "z":
-            return p1 + "/" + p2
-        return p2 + "/" + p1
-    elif p2 == "+":
-        if "a" <= p1 <= "z":
-            return p2 + "/" + p1
-    return p1 + "/" + p2
+    """'/' = wildtype allele, output +/+ format for Progeny matching"""
+    # Map '/' → '+' for Progeny DB matching
+    a1 = "+" if p1 == "/" else p1
+    a2 = "+" if p2 == "/" else p2
 
+    # Dominant first
+    if a1 != "+" and a2 != "+" and ord(a1[0]) < ord(a2[0]):
+        return f"{a1}/{a2}"
+    return f"{a2}/{a1}" if a2 != "+" else f"{a1}/+" if a1 != "+" else "+/+"
 
-# def cross_at_index(ind, length, h_axis, v_axis):
-#     """Calculates the genotype at a specific index in the
-#     virtual Punnett square table."""
-#     start = length // 2
-#     x, y = ind
-#     res_parts = []
-#     ax_ind = 0
-#
-#     while start > 0:
-#         xpart = h_axis[ax_ind] if x >= start else h_axis[ax_ind]
-#         ypart = v_axis[ax_ind] if y >= start else v_axis[ax_ind]
-#         if xpart != "+" or ypart != "+":
-#             res_parts.append(format_allele(xpart, ypart))
-#
-#         x %= start
-#         y %= start
-#         start //= 2
-#         ax_ind += 1
-#
-#     return " ".join(res_parts)
 
 def cross_at_index(ind, length, h_axis, v_axis):
-    """Fix: Handle each locus independently"""
     x, y = ind
-    res_parts = []
-    start = length // 2
-    ax_ind = 0
+    geno_parts = []
 
-    while start > 0:
-        # Get alleles from THIS bit level only
-        h_allele = h_axis[ax_ind][0 if x < start else 1]  # Fix tuple indexing
-        v_allele = v_axis[ax_ind][0 if y < start else 1]
+    for ax_ind in range(len(h_axis)):
+        x_bit_set = (x >> ax_ind) & 1
+        y_bit_set = (y >> ax_ind) & 1
+        xpart = h_axis[ax_ind][1 - x_bit_set]
+        ypart = v_axis[ax_ind][1 - y_bit_set]
 
-        res_parts.append(format_allele(h_allele, v_allele))
-        x %= start
-        y %= start
-        start //= 2
-        ax_ind += 1
+        geno = format_allele(xpart, ypart)  # ← FIXED! G/+ not +/G
+        geno_parts.append(geno)
 
-    return " ".join(res_parts)
+    non_wild = [g for g in geno_parts if g != "+/+"]
+    return " ".join(non_wild) if non_wild else "+/+"
 
 
 def cross_fish_structured(f1, f2):
-    """Performs a cross and returns a structured list of genotype dictionaries."""
+    """v11: Safe indexing fixed"""
+    VALID_LOCI = ["Sf", "N", "P", "DV", "L", "O", "WB", "G", "a"]
+
+    LOCI_MAP = {
+        "Snowflake": "Sf",
+        "Naked": "N",
+        "Albino": "a",
+        "Picasso": "P",
+        "DaVinci": "DV",
+        "Lightning": "L",
+        "Onyx": "O",
+        "Widebar": "WB",
+        "Goldflake": "G",
+    }
+
+    LOCUS_ORDER = {loci: i for i, loci in enumerate(VALID_LOCI)}
+
     f1_types = f1.get_types().copy()
     f2_types = f2.get_types().copy()
-    f1_type_names = set(f1_types.keys())
-    f2_type_names = set(f2_types.keys())
 
-    for n in f2_type_names - f1_type_names:
-        f1_types[n] = ("+", "+")
-    for n in f1_type_names - f2_type_names:
-        f2_types[n] = ("+", "+")
+    def parse_and_map(trait_dict):
+        parsed = {}
+        for trait_name, geno in trait_dict.items():
+            locus = LOCI_MAP.get(trait_name, trait_name)
+            if locus in VALID_LOCI and isinstance(geno, str) and "/" in geno:
+                alleles = geno.split("/")
+                parsed[locus] = (alleles[0], alleles[1])
+            else:
+                parsed[locus] = ("/", "/")
+        return parsed
 
-    all_trait_names = sorted(f1_type_names.union(f2_type_names))
-    f1_final = [f1_types[name] for name in all_trait_names]
-    f2_final = [f2_types[name] for name in all_trait_names]
+    f1_types = parse_and_map(f1_types)
+    f2_types = parse_and_map(f2_types)
+
+    valid_traits = [
+        locus for locus in VALID_LOCI if locus in f1_types or locus in f2_types
+    ]
+    all_trait_names = sorted(valid_traits, key=lambda x: LOCUS_ORDER[x])
+
+    f1_final = [f1_types.get(name, ("/", "/")) for name in all_trait_names]
+    f2_final = [f2_types.get(name, ("/", "/")) for name in all_trait_names]
+
+    print(f"MAPPED TRAITS: {all_trait_names}")
+    print(f"ALIGNED f1_final: {f1_final}")
+    print(f"ALIGNED f2_final: {f2_final}")
 
     table_length = 2 ** len(f1_final)
     results_list = []
 
     for x in range(table_length):
         for y in range(table_length):
-            genotype_list = cross_at_index(
-                (x, y), table_length, f1_final, f2_final
-            ).split()
-            genotype_dict = {}
+            genotype_str = cross_at_index((x, y), table_length, f1_final, f2_final)
+            genotype_list = genotype_str.split()
 
+            # ✅ SAFE INDEXING
+            non_wild = []
+            for i in range(len(all_trait_names)):
+                geno = genotype_list[i] if i < len(genotype_list) else "+/+"
+                if geno != "+/+":
+                    non_wild.append(geno)
+            # progeny_key = ' '.join(non_wild) if non_wild else "+/+"
+            progeny_key = genotype_str
+
+            # ✅ SAFE DICT
+            genotype_dict = {}
             for i, name in enumerate(all_trait_names):
-                if i < len(genotype_list):
-                    genotype_dict[name] = genotype_list[i]
-                else:
-                    genotype_dict[name] = "+/+"
+                geno = genotype_list[i] if i < len(genotype_list) else "+/+"
+                genotype_dict[name] = geno
+            genotype_dict["PROGENY_KEY"] = progeny_key
 
             results_list.append(genotype_dict)
 
