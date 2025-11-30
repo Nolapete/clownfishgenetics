@@ -133,6 +133,8 @@ def cross_fish(f1, f2):
 
 def fmtIt(nm):
     parts = nm.split(' "')
+
+    return nm # skip italics
     if len(parts) == 2:
         newnm = "".join([parts[0], ' <i>"', parts[1], "</i>"])
         # print(newnm)
@@ -142,6 +144,7 @@ def fmtIt(nm):
         newnm = "<i>".join([parts[0], "</i>"])
 
     return newnm
+
 
 
 def newPhen(nm, geno):
