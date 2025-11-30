@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("genetics_manager", "0005_alter_commercialphenotyperecipe_phenotype"),
     ]

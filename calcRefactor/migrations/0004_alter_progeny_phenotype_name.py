@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("calcRefactor", "0003_crossnamingrule_progenynamingrule"),
     ]

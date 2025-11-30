@@ -10,7 +10,8 @@ admin.site.index_title = "Clownfish Genetics Admin Portal"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("landing.urls")),
+    path("", include(("landing.urls", "landing"), namespace="landing")),
+    path("cbr/", include(("cbr.urls", "cbr"), namespace="cbr")),
     path("calculator/", include("calculator.urls")),
     path("breeding/", include("calcRefactor.urls")),
     path("accounts/", include("allauth.urls")),

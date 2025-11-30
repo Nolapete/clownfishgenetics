@@ -46,6 +46,8 @@ dependencies = [
 exclude = [
     "**/migrations/*.py",    
     "cleaned_phenotype.py",
+    "phenotype.py",
+    "fish.py",
 ]
 line-length = 88
 
@@ -60,6 +62,8 @@ ignore = ["D100", "D101", "D102", "D103", "D104", "F403", "S101"]
 exclude = [
     "**/migrations/*.py",    
     "cleaned_phenotype.py",
+    "phenotype.py",
+    "fish.py",
 ]
 # Consistent formatting style: double quotes and spaces
 quote-style = "double"

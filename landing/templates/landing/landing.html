@@ -26,7 +26,7 @@
             </header>
             <!-- Search Bar -->
             <div class="mb-6">
-                <input hx-get="{% url 'filter_fish_htmx' %}"
+                <input hx-get="{% url 'landing:filter_fish_htmx' %}"
                        hx-trigger="keyup changed delay:300ms, search"
                        hx-target="#fish-list-container"
                        hx-swap="innerHTML"

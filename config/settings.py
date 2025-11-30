@@ -83,6 +83,7 @@ INSTALLED_APPS = [
     "calcRefactor",
     "genetics_manager",
     "store.apps.StoreConfig",
+    "cbr",
 ]
 
 MIDDLEWARE = [

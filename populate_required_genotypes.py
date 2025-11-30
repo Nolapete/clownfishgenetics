@@ -1,19 +1,17 @@
-import sys
-import django
-
 # Setup Django environment if running standalone (adjust your project name)
 # Uncomment below if you run outside manage.py shell
 # import os
 # os.environ.setdefault("DJANGO_SETTINGS_MODULE", "your_project.settings")
 # django.setup()
 
-from genetics_manager.models import CommercialPhenotypeRecipe, Locus
 from django.db import transaction
+
+from genetics_manager.models import CommercialPhenotypeRecipe, Locus
 
 
 def main():
     loci = list(Locus.objects.order_by("id"))
-    print(f"Loci found ({len(loci)}): {[l.name for l in loci]}")
+    print(f"Loci found ({len(loci)}): {[allele.name for allele in loci]}")
 
     # Filter recipes with empty required_genotypes and genotype != "+/+"
     # Also include recipes with incorrect required_genotypes
@@ -28,12 +26,16 @@ def main():
             genotype_pairs = recipe.genotype.split()
             if len(genotype_pairs) != len(loci):
                 print(
-                    f"SKIP: {recipe.name} genotype count ({len(genotype_pairs)}) != loci count ({len(loci)})"
+                    f"SKIP: {recipe.name} genotype count "
+                    f"({len(genotype_pairs)}) != loci count ({len(loci)})"
                 )
                 continue
 
-            expected = {locus.name: pair for locus, pair in zip(loci, genotype_pairs)}
-            if not recipe.required_genotypes or recipe.required_genotypes == {}:
+            expected = {
+                locus.name: pair
+                for locus, pair in zip(loci, genotype_pairs, strict=True)
+            }
+            if (not recipe.required_genotypes or recipe.required_genotypes) == {}:
                 # Empty required_genotypes, populate it
                 recipe.required_genotypes = expected
                 recipe.save(update_fields=["required_genotypes"])
@@ -54,5 +56,7 @@ def main():
                     # print(f"CORRECTED: {recipe.name}")
 
     print(
-        f"Done. Empty populated: {empty_count}, Incorrect detected: {incorrect_count}, Total updated: {updated_count}"
+        f"Done. Empty populated: {empty_count}, "
+        f"Incorrect detected: {incorrect_count}, "
+        f"Total updated: {updated_count}"
     )

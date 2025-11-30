@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("calcRefactor", "0004_alter_progeny_phenotype_name"),
     ]

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Clownfish Genetics{% endblock %}</title>
-    {% load static django_htmx %}
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {% block title %}Clownfish Genetics{% endblock %}
+        </title>
+        {% load static django_htmx %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -17,129 +19,143 @@
                 }
             }
         }
-    </script>
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    {% block extra_css %}{% endblock %}
-</head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-orange-50 to-amber-50 text-gray-900 antialiased">
-    <!-- Sticky Navbar -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="{% url 'cbr' %}" class="text-2xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-primary to-secondary">
-                        Clownfish Genetics
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <!-- Clownfish Genetics Projects Dropdown -->
-                    <div class="relative group">
-                        <button class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-primary font-medium rounded-md transition-colors">
-                            <span>Projects</span>
-                            <svg class="w-4 h-4"  stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </script>
+        <link href="{% static 'css/base.css' %}" rel="stylesheet">
+        {% block extra_css %}{% endblock %}
+    </head>
+    <body class="min-h-screen flex flex-col bg-gradient-to-br from-orange-50 to-amber-50 text-gray-900 antialiased">
+        <!-- Sticky Navbar -->
+        <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex items-center">
+                        <a href="{% url 'cbr:index' %}"
+                           class="text-2xl font-bold bg-gradient-to-r bg-clip-text text-transparent from-primary to-secondary">
+                            Clownfish Genetics
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <!-- Clownfish Genetics Projects Dropdown -->
+                        <div class="relative group">
+                            <button class="flex items-center space-x-2 px-3 py-2 text-gray-700 hover:text-primary font-medium rounded-md transition-colors">
+                                <span>Projects</span>
+                                <svg class="w-4 h-4"  stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-gray-200">
+                                {% if user.is_authenticated %}
+                                    <div class="border-t border-gray-100 my-1"></div>
+                                    <a href="{% url 'cbr:index' %}"
+                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Calculator Refactor</a>
+                                    <a href="{% url 'cbr:calculator_view' %}"
+                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Genetics Calculator</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!-- Store Link (django-oscar) -->
+                        <a href="{% url 'catalogue:index' %}"
+                           class="px-3 py-2 text-gray-700 hover:text-primary font-medium rounded-md transition-colors">Store</a>
+                    </div>
+                    <!-- User Menu -->
+                    <div class="flex items-center space-x-4">
+                        {% if user.is_authenticated %}
+                            {% if user.is_superuser %}
+                                <span class="px-3 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">Superuser: {{ user.username }}</span>
+                            {% else %}
+                                <span class="text-sm text-gray-700">Welcome, {{ user.username }}</span>
+                            {% endif %}
+                            <a hx-post="{% url 'account_logout' %}"
+                               hx-target="body"
+                               hx-swap="outerHTML"
+                               class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-opacity-90 transition-all htmx-indicator:hidden">
+                                Logout
+                            </a>
+                        {% else %}
+                            <a hx-get="{% url 'account_login' %}"
+                               hx-target="body"
+                               hx-swap="outerHTML"
+                               class="px-4 py-2 bg-secondary text-white text-sm font-medium rounded-md hover:bg-opacity-90 transition-all htmx-indicator:hidden">
+                                Login
+                            </a>
+                        {% endif %}
+                        <!-- Mobile menu button -->
+                        <button class="md:hidden p-1 rounded-md text-gray-700 hover:text-primary focus:outline-none"
+                                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                            <svg class="h-6 w-6"  viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
-                        <div class="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 border border-gray-200">                            
-                            {% if user.is_authenticated %}
-                                <div class="border-t border-gray-100 my-1"></div>
-                                    <a href="{% url 'breeding:index' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Calculator Refactor</a>
-                                    <a href="{% url 'calculator:calculator_view' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Genetics Calculator</a>
-                            {% endif %}
-                        </div>
                     </div>
-                    <!-- Store Link (django-oscar) -->
-                    <a href="{% url 'catalogue:index' %}" class="px-3 py-2 text-gray-700 hover:text-primary font-medium rounded-md transition-colors">Store</a>
                 </div>
-                <!-- User Menu -->
-                <div class="flex items-center space-x-4">
+                <!-- Mobile menu -->
+                <div id="mobile-menu"
+                     class="md:hidden hidden pb-4 border-t border-gray-200">
                     {% if user.is_authenticated %}
-                        {% if user.is_superuser %}
-                            <span class="px-3 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">Superuser: {{ user.username }}</span>
-                        {% else %}
-                            <span class="text-sm text-gray-700">Welcome, {{ user.username }}</span>
-                        {% endif %}
-                        <a hx-post="{% url 'account_logout' %}" hx-target="body" hx-swap="outerHTML"
-                           class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-md hover:bg-opacity-90 transition-all htmx-indicator:hidden">
-                            Logout
-                        </a>
-                    {% else %}
-                        <a hx-get="{% url 'account_login' %}" hx-target="body" hx-swap="outerHTML"
-                           class="px-4 py-2 bg-secondary text-white text-sm font-medium rounded-md hover:bg-opacity-90 transition-all htmx-indicator:hidden">
-                            Login
-                        </a>
+                        <a href="{% url 'cbr:index' %}"
+                           class="block px-4 py-2 text-gray-700 hover:text-primary">Calculator Refactor</a>
+                        <a href="{% url 'cbr:calculator_view' %}"
+                           class="block px-4 py-2 text-gray-700 hover:text-primary">Genetics Calculator</a>
                     {% endif %}
-                    <!-- Mobile menu button -->
-                    <button class="md:hidden p-1 rounded-md text-gray-700 hover:text-primary focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                        <svg class="h-6 w-6"  viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
+                    <a href="{% url 'catalogue:index' %}"
+                       class="block px-4 py-2 text-gray-700 hover:text-primary">Store</a>
                 </div>
             </div>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden pb-4 border-t border-gray-200">
-                {% if user.is_authenticated %}
-                    <a href="{% url 'breeding:index' %}" class="block px-4 py-2 text-gray-700 hover:text-primary">Calculator Refactor</a>
-                    <a href="{% url 'calculator:calculator_view' %}" class="block px-4 py-2 text-gray-700 hover:text-primary">Genetics Calculator</a>
-                {% endif %}
-                <a href="{% url 'catalogue:index' %}" class="block px-4 py-2 text-gray-700 hover:text-primary">Store</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    {% block hero %}
-    <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 py-20 md:py-32">
-        <div class="absolute inset-0 bg-[url('{% static hero_image|default:"images/clownfish-hero.jpg" %}')] bg-cover bg-center opacity-60 -z-10"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                    {% block hero_title %}Clownfish Genetics{% endblock %}
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
-                    {% block hero_subtitle %}Advanced breeding tools and genetics management{% endblock %}
-                </p>
-                {% block hero_cta %}
-                    <a href="{% url 'calculator:home' %}" class="inline-flex items-center px-8 py-4 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
-                        Start Calculating
-                    </a>
+        </nav>
+        <!-- Hero Section -->
+        {% block hero %}
+            <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10 py-20 md:py-32">
+                <div class="absolute inset-0 bg-[url('{% static hero_image|default:"images/clownfish-hero.jpg" %}')] bg-cover bg-center opacity-60 -z-10">
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                            {% block hero_title %}Clownfish Genetics{% endblock %}
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                            {% block hero_subtitle %}Advanced breeding tools and genetics management{% endblock %}
+                        </p>
+                        {% block hero_cta %}
+                            <a href="{% url 'home' %}"
+                               class="inline-flex items-center px-8 py-4 bg-primary text-white text-lg font-semibold rounded-lg hover:bg-opacity-90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                                Start Calculating
+                            </a>
+                        {% endblock %}
+                    </div>
+                </div>
+            </section>
+        {% endblock %}
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                {% block content %}
+                    <div class="text-center py-20">
+                        <p class="text-2xl text-gray-600">Content goes here</p>
+                    </div>
                 {% endblock %}
             </div>
-        </div>
-    </section>
-    {% endblock %}
-
-    <!-- Main Content -->
-    <main class="flex-grow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-            {% block content %}
-                <div class="text-center py-20">
-                    <p class="text-2xl text-gray-600">Content goes here</p>
-                </div>
-            {% endblock %}
-        </div>
-    </main>
-
-    <!-- Sticky Footer -->
-    <footer class="bg-gradient-to-r from-primary to-secondary text-white mt-auto border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid md:grid-cols-2 gap-8 text-center md:text-left">
-                <div>
-                    <p class="text-lg font-semibold mb-4">&copy; {% now "Y" %} Clownfish Genetics. All rights reserved.</p>
-                </div>
-                <div class="space-y-2">
-                    {% block footer_links %}
-                        <a href="{% url 'landing:about' %}" class="block hover:text-gray-200 transition-colors">About</a>
-                        <a href="{% url 'landing:contact' %}" class="block hover:text-gray-200 transition-colors">Contact</a>
-                        <a href="{% url 'landing:privacy_policy' %}" class="block hover:text-gray-200 transition-colors">Privacy</a>
-                    {% endblock %}
+        </main>
+        <!-- Sticky Footer -->
+        <footer class="bg-gradient-to-r from-primary to-secondary text-white mt-auto border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid md:grid-cols-2 gap-8 text-center md:text-left">
+                    <div>
+                        <p class="text-lg font-semibold mb-4">&copy; {% now "Y" %} Clownfish Genetics. All rights reserved.</p>
+                    </div>
+                    <div class="space-y-2">
+                        {% block footer_links %}
+                            <a href="{% url 'landing:about' %}"
+                               class="block hover:text-gray-200 transition-colors">About</a>
+                            <a href="{% url 'landing:contact' %}"
+                               class="block hover:text-gray-200 transition-colors">Contact</a>
+                            <a href="{% url 'landing:privacy_policy' %}"
+                               class="block hover:text-gray-200 transition-colors">Privacy</a>
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <script src="{% static 'js/base.js' %}" defer></script>
-    {% block extra_js %}{% endblock %}
-</body>
+        </footer>
+        <script src="{% static 'js/base.js' %}" defer></script>
+        {% block extra_js %}{% endblock %}
+    </body>
 </html>

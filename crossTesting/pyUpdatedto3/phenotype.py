@@ -28,14 +28,14 @@ def pheno(genotype, parent1, parent2):
 
     if "ocellaris" in parent1 and "ocellaris" in parent2:
         pheno_val = newPhen(
-            f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})",
+            f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})",
             g1,
         )
     elif p1S[0] == p2S[0]:
-        pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+        pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif "percula" in parent1 and "percula" in parent2:
         pheno_val = newPhen(
-            f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})",
+            f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})",
             g1,
         )
     elif parent1 == parent2:
@@ -49,7 +49,7 @@ def pheno(genotype, parent1, parent2):
             elif g1 == "+/+":
                 pheno_val = fmtIt("Amphiprion percula")
             else:
-                pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+                pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
         elif parent1 == 'Amphiprion "Black Ice"':
             if g1 == "Sf/+":
                 pheno_val = fmtIt('Amphiprion ocellaris "Snowflake"')
@@ -58,7 +58,7 @@ def pheno(genotype, parent1, parent2):
             elif g1 == "+/+":
                 pheno_val = f"{fmtIt('Amphiprion')}(Mocha genetics)"
             else:
-                pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+                pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
         elif parent1 == 'Premnas biaculeatus "Lightning"':
             if g1 == "L/+":
                 pheno_val = fmtIt('Premnas biaculeatus "Lightning"')
@@ -85,11 +85,11 @@ def pheno(genotype, parent1, parent2):
             pheno_val = f"Premnas sp. darwin {parent1[spP1part3:]}"
         elif spP1part2 != -1:
             pheno_val = (
-                f"{fmtIt(parent1[0:spP1part2])} {fmtIt(parent1[spP1part2 + 1:])}"
+                f"{fmtIt(parent1[0:spP1part2])} {fmtIt(parent1[spP1part2 + 1 :])}"
             )
         else:
             pheno_val = (
-                f"{fmtIt(parent1[0:spP1part1])} {fmtIt(parent1[spP1part1 + 1:])}"
+                f"{fmtIt(parent1[0:spP1part1])} {fmtIt(parent1[spP1part1 + 1 :])}"
             )
     elif (
         'Premnas biaculeatus "Lightning"' in parents
@@ -122,7 +122,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Mocha"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif (
         'Amphiprion "Double Black Photon"' in parents
         and 'Amphiprion ocellaris "DaVinci / Fancy White / Gladiator"' in parents
@@ -132,7 +132,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Dr."')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif (
         'Amphiprion percula "Picasso"' in parents
         and 'Amphiprion percula "Platinum"' in parents
@@ -144,7 +144,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt("Amphiprion percula")
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif (
         'Premnas sp. epigrammata "Gold Nugget"' in parents
         and 'Premnas sp. epigrammata "Goldflake / Gold Spot / Gold Rush"' in parents
@@ -180,13 +180,13 @@ def pheno(genotype, parent1, parent2):
         if g1 == "Sf/+ N/+":
             pheno_val = fmtIt('Amphiprion "Midnight Lightning"')
         elif g1 == "Sf/+":
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
         elif g1 == "N/+":
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
         elif g1 == "+/+":
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif (
         'Amphiprion "Black Ice"' in parents
         and 'Amphiprion sp. darwin "Midnight"' in parents
@@ -200,19 +200,19 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Chocolate Mocha"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion ocellaris "Frostbite"' in parents
         and 'Amphiprion "Mocha"' in parents
     ):
         if g1 == "Sf/+ DV/+":
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
         elif g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Sunset Mocha Snowflake"')
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Sunset Mocha"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion percula "Picasso"' in parents
         and 'Amphiprion "Black Photon"' in parents
@@ -222,7 +222,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Half Black Photon"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion percula "Picasso"' in parents
         and 'Amphiprion "Midnight Black Photon"' in parents
@@ -232,7 +232,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Half Black Photon"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion ocellaris "Snowflake"' in parents
         and "Amphiprion sp. darwin" in parents
@@ -242,14 +242,14 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = f"{fmtIt('Amphiprion')}(Mocha genetics)"
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif 'Amphiprion "Black Ice"' in parents and "ocellaris" in parents:
         if g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Sunset Mocha Snowflake"')
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Sunset Mocha"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif "Amphiprion polymnus" in parents and "Amphiprion sebae" in parents:
         pheno_val = fmtIt('Amphiprion "White Tipped"')
     elif 'Amphiprion "Mocha"' in parents and "Amphiprion sp. darwin" in parents:
@@ -266,7 +266,7 @@ def pheno(genotype, parent1, parent2):
         if g1 == "+/+":
             pheno_val = fmtIt('Pramphiprion "Blood Orange"')
         else:
-            pheno_val = f"({fmtIt('Pramphiprion \"Blood Orange\"')})"
+            pheno_val = f"({fmtIt('Pramphiprion "Blood Orange"')})"
     elif (
         'Premnas sp. epigrammata "Gold Nugget"' in parents
         and 'Premnas sp. epigrammata "Gold Stripe"' in parents
@@ -276,26 +276,26 @@ def pheno(genotype, parent1, parent2):
         if g1 == "+/+":
             pheno_val = fmtIt('Premnas "White Gold"')
         else:
-            pheno_val = f"({fmtIt('Premnas \"White Gold\"')})"
+            pheno_val = f"({fmtIt('Premnas "White Gold"')})"
     elif "percula" in parents and "biaculeatus" in parents:
         if g1 == "+/+":
             pheno_val = fmtIt('Pramphiprion "Citron"')
         else:
-            pheno_val = f"({fmtIt('Pramphiprion \"Citron\"')})"
+            pheno_val = f"({fmtIt('Pramphiprion "Citron"')})"
     elif "ocellaris" in parents and "biaculeatus" in parents:
         if g1 == "+/+":
             pheno_val = fmtIt('Pramphiprion "Mai Tai"')
         else:
-            pheno_val = f"({fmtIt('Pramphiprion \"Mai Tai\"')})"
+            pheno_val = f"({fmtIt('Pramphiprion "Mai Tai"')})"
     elif "darwin" in parents and "biaculeatus" in parents:
         if g1 == "+/+":
             pheno_val = fmtIt('Pramphiprion "Cocoa"')
         else:
-            pheno_val = f"({fmtIt('Pramphiprion \"Cocoa\"')})"
+            pheno_val = f"({fmtIt('Pramphiprion "Cocoa"')})"
     elif (p1S[0] == "Premnas" and p2S[0] != "Premnas") or (
         p1S[0] != "Premnas" and p2S[0] == "Premnas"
     ):
-        pheno_val = f"{fmtIt('Pramphiprion ')} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+        pheno_val = f"{fmtIt('Pramphiprion ')} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion chrysopterus "YT/YF Fiji"' in parents
         and "Amphiprion barberi" in parents
@@ -317,7 +317,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif 'Amphiprion sp. darwin "Midnight"' in parents and "percula" in parents:
         pheno_val = fmtIt('Amphiprion "Midnight Black Photon"')
     elif 'Amphiprion "Black Photon"' in parents and "Amphiprion sp. darwin" in parents:
@@ -331,22 +331,22 @@ def pheno(genotype, parent1, parent2):
         if g1 == "Sf/+ P/+":
             pheno_val = fmtIt('Amphiprion "White Knight"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif 'Amphiprion "Black Ice"' in parents and "Amphiprion sp. darwin" in parents:
         if g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Blacker Ice"')
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Chocolate Mocha"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} {fmtIt(' '.join(p1S))} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]})"
     elif 'Amphiprion "Blacker Ice"' in parents and "Amphiprion sp. darwin" in parents:
         if g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Black Snowflake/Phantom"')
         else:
             if not p1darwin:
-                pheno_val = f"{fmtIt(parent1[0:spP1part1])} ({fmtIt(parent1[spP1part1 + 1:])} X {parent2[spP2part1 + 1:]})"
+                pheno_val = f"{fmtIt(parent1[0:spP1part1])} ({fmtIt(parent1[spP1part1 + 1 :])} X {parent2[spP2part1 + 1 :]})"
             else:
-                pheno_val = f"{fmtIt(parent1[0:spP1part1])} ({parent1[spP1part1 + 1:]} X {fmtIt(parent2[spP2part1 + 1:])})"
+                pheno_val = f"{fmtIt(parent1[0:spP1part1])} ({parent1[spP1part1 + 1 :]} X {fmtIt(parent2[spP2part1 + 1 :])})"
     elif (
         'Amphiprion ocellaris "Snowflake"' in parents
         and 'Amphiprion percula "Picasso"' in parents
@@ -360,7 +360,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Percularis"')
         else:
-            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(' '.join(p1S))} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif 'Amphiprion "Midnight Lightning"' in parents and "percula" in parents:
         if g1 == "Sf/+":
@@ -370,7 +370,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif 'Amphiprion "Black Snowflake/Phantom"' in parents and "percula" in parents:
         if g1 == "Sf/+":
@@ -378,7 +378,7 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif (
         'Amphiprion "Black Snowflake/Phantom"' in parents
@@ -391,10 +391,10 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "+/+":
             pheno_val = fmtIt('Amphiprion "Black Photon"')
         else:
-            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt(parent2[spP2part1 + 1:])})"
+            pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif p1darwin and p1darwin == p2darwin:
-        pheno_val = f"{fmtIt('Amphiprion sp. darwin')} ({parent1[spP1part3 + 1:]} X {parent2[spP2part3:]})"
+        pheno_val = f"{fmtIt('Amphiprion sp. darwin')} ({parent1[spP1part3 + 1 :]} X {parent2[spP2part3:]})"
 
     elif (
         p1S[0] == p2S[0]
@@ -414,10 +414,10 @@ def pheno(genotype, parent1, parent2):
         pheno_val = f"{fmtIt(p1S[0])} {fmtIt(p1S[1])} ({momV} X {dadV})"
 
     elif not p1epigra and not p1darwin and p2epigra:
-        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt('sp. epigrammata')} {parent2[spP2part3:]})"
+        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt('sp. epigrammata')} {parent2[spP2part3:]})"
 
     elif p1epigra and not p2epigra and not p2darwin:
-        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt('sp. epigrammata')} {parent1[spP1part3:]} X {fmtIt(parent2[spP2part1 + 1:])})"
+        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt('sp. epigrammata')} {parent1[spP1part3:]} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif "Amphiprion ocellaris" in parents and "Amphiprion sp. darwin" in parents:
         if g1 == "+/+":
@@ -425,13 +425,13 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Black Ice"')
         else:
-            pheno_val = f"({fmtIt('Amphiprion \"Mocha\"')})"
+            pheno_val = f"({fmtIt('Amphiprion "Mocha"')})"
 
     elif not p1epigra and not p1darwin and p2darwin:
-        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1:])} X {fmtIt('sp. darwin')} {parent2[spP2part3:]})"
+        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt(parent1[spP1part1 + 1 :])} X {fmtIt('sp. darwin')} {parent2[spP2part3:]})"
 
     elif p1darwin and not p2epigra and not p2darwin:
-        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt('sp. darwin')} {parent1[spP1part3:]} X {fmtIt(parent2[spP2part1 + 1:])})"
+        pheno_val = f"{fmtIt(p1S[0])} ({fmtIt('sp. darwin')} {parent1[spP1part3:]} X {fmtIt(parent2[spP2part1 + 1 :])})"
 
     elif "Amphiprion percula" in parents and "Amphiprion ocellaris" in parents:
         if g1 == "+/+":
@@ -439,10 +439,10 @@ def pheno(genotype, parent1, parent2):
         elif g1 == "Sf/+":
             pheno_val = fmtIt('Amphiprion "Snow Onyx"')
         else:
-            pheno_val = f"({fmtIt('Amphiprion \"Percularis\"')})"
+            pheno_val = f"({fmtIt('Amphiprion "Percularis"')})"
 
     elif p1S[0] == p2S[0] and p1S[1] == p2S[1]:
-        pheno_val = f"{fmtIt(p1S[0])} {fmtIt(p1S[1])} ({parent1[spP1part2 + 1:]} X {parent2[spP2part2 + 1:]}) TEST1"
+        pheno_val = f"{fmtIt(p1S[0])} {fmtIt(p1S[1])} ({parent1[spP1part2 + 1 :]} X {parent2[spP2part2 + 1 :]}) TEST1"
     elif parent1[0:spP1part1] != parent2[0:spP2part1]:
         pheno_val = f"{fmtIt(parent1)} X {fmtIt(parent2)}"
     else:

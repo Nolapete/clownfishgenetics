@@ -22,10 +22,6 @@ class Locus(models.Model):
 class CommercialPhenotypeRecipe(models.Model):
     objects = models.Manager()
 
-    @property
-    def is_pure_wild_type(self):
-        return all(gene_pair == "+/+" for gene_pair in self.genotype.split())
-
     name = models.CharField(
         max_length=100,
         unique=True,
@@ -56,6 +52,13 @@ class CommercialPhenotypeRecipe(models.Model):
         verbose_name = "Phenotype Recipe"
         verbose_name_plural = "Phenotype Recipes"
 
+    def __str__(self):
+        return self.name
+
+    @property
+    def is_pure_wild_type(self):
+        return all(gene_pair == "+/+" for gene_pair in self.genotype.split())
+
     def criteria(self, result_dict):
         if not self.required_genotypes or self.required_genotypes == {}:
             return all(val == "+/+" for val in result_dict.values())
@@ -63,6 +66,3 @@ class CommercialPhenotypeRecipe(models.Model):
             if result_dict.get(locus) != required_gt:
                 return False
         return True
-
-    def __str__(self):
-        return self.name

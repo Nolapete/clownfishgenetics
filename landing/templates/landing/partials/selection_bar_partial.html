@@ -9,7 +9,7 @@
         Selected Parent 2: <span class="font-semibold text-clown-orange">{{ p2_name }}</span>
     </div>
     {% if p1_id and p2_id %}
-        <button hx-post="{% url 'calculate_cross_htmx' %}"
+        <button hx-post="{% url 'landing:calculate_cross_htmx' %}"
                 hx-trigger="click"
                 hx-target="#results-container"
                 hx-swap="innerHTML"
