@@ -29,5 +29,5 @@ urlpatterns = [
         name="cross-calculate",
     ),
     # Basic App Index
-    path("", views.CrossListView.as_view(), name="index"),
+    path("breeding/", views.CrossListView.as_view(), name="index"),
 ]
